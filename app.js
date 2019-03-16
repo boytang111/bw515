@@ -4,7 +4,7 @@ App({
   onLaunch: function () {
     // 登录
     var that=this;
-    
+    //登陆提交到login页面
   },
   globalData: {
     url:'https://applet.qm-vip.com',
