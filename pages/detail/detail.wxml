@@ -1,0 +1,71 @@
+<view class="product-photo">
+  <image src='../../img/good-picture.png'></image>
+</view>
+
+<view class='cost'>320积分</view>
+<view class='original-price'>人民币：￥100</view>
+<view class='title'>这里是商品名称</view>
+
+<view class='description'>
+  <text>商品描述：
+1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
+1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
+1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
+1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
+  </text>
+</view>
+
+<view class='exchange'>
+  <!-- <view class='button'>立即兑换</view> -->
+  <view class='button refuse'>积分不足</view>
+  <navigator><text>其他获取方式</text></navigator>
+</view>
+
+<view class='black'>
+
+ <view class='more-container' wx:if="{{true}}">
+  <image src='../../img/close.png' class='close'></image>
+  <view class='get-title'>你可以通过以下方式获取</view>
+  <view class='get-button'>30积分赢回家</view>
+  <navigator url='../score-rule/score-rule'><text>如何获得更多积分</text></navigator>
+ </view>
+
+  <view class='more-container' wx:if="{{false}}">
+    <view class='content'>您确认要花费30积分来赢礼品？</view>
+    <view class='buttons'>
+      <text>否</text>
+      <text>是</text>
+    </view>
+  </view>
+
+  <view class='more-container' wx:if="{{false}}">
+    <image src='../../img/close.png' class='close'></image>
+    <view class='get-title'>很遗憾，未能博取该礼品</view>
+    <view class='comfort'>作为安慰，小创为您准备了 一张优惠券</view>
+    <view class='get-button lose'>立即领取</view>
+  </view>
+
+  <view class='more-container' wx:if="{{false}}">
+    <image src='../../img/close.png' class='close'></image>
+    <view class='coupon'>
+      <view class='text'>
+        <view>积分99折扣</view>
+      </view>
+      <image src='../../img/good-picture.png'></image>
+    </view>
+    <view class='prize-name'>无线蓝牙音箱 积分80%折扣优惠券</view>
+    <navigator><text>进入我的优惠券查看</text></navigator>
+    <view class='get-button lose'>再来一次</view>
+  </view>
+
+  <view class='gift-container' wx:if="{{false}}">
+    <image class='congratulation' src='../../img/congratulation.png'></image>
+    <view class='gift-title'>恭喜你博取到了本件礼品:</view>
+    <view class='prize'>
+      <image src='../../img/good-picture.png'></image>
+    </view>
+    <view class='gift'>奖品名字</view>
+    <navigator class='look-for'>查看获奖记录</navigator>
+  </view>
+
+</view>

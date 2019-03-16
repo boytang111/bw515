@@ -1,0 +1,83 @@
+<view class='unwanted'>不使用优惠券</view>
+
+<scroll-view class='content' scroll-y>
+  <view class='refuse'>
+    <view class='coupon'>
+      <view class='over-view'>
+        <text>折扣90%</text>
+      </view>
+      <view class='info'>
+        <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+        <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+      </view>
+    </view>
+    <view class='reason'>
+      <image src='../../img/reason.png'></image>
+      <text>不可用原因：</text>
+      <text>限联名品牌商品使用</text>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+  <view class='coupon'>
+    <view class='over-view'>
+      <text>折扣90%</text>
+    </view>
+    <view class='info'>
+      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
+      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+    </view>
+  </view>
+</scroll-view>

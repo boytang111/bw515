@@ -1,0 +1,51 @@
+<view class='container'>
+  <view class='info-item'>
+    <text>头像</text>
+    <image src='../../img/default-avatar.png'></image>
+  </view>
+  <view class='info-item'>
+    <text>昵称</text>
+    <view>微信昵称</view>
+  </view>
+  <view class='info-item'>
+    <text>手机号</text>
+    <view>130*****023</view>
+  </view>
+  <view class='info-item'>
+    <text>生日</text>
+    <view class='arrow active'>请选择</view>
+  </view>
+
+  <view class='detail-content'>
+    <view class='input-item'>
+      <text>生日：</text>
+      <picker mode='date'>xxxx-xx-xx</picker>
+    </view>
+    <view class='btn'>保存</view>
+  </view>
+
+  <view class='info-item'>
+    <text>性别</text>
+    <view class='arrow active'>男</view>
+  </view>
+
+  <view class='detail-content'>
+    <view class='selector'>
+      <text class='active'>男</text>
+      <text>女</text>
+    </view>
+    <view class='btn'>保存</view>
+  </view>
+  
+  <navigator class='info-item' url='../addres-manage/address-manage'>
+    <text>收货地址</text>
+    <view class='arrow'> </view>
+  </navigator>
+  <navigator class='info-item'>
+    <text>百威创新会员手册</text>
+    <view class='arrow'> </view>
+  </navigator>
+  <view class='info-item'>
+    <text>退出登录</text>
+  </view>
+</view>

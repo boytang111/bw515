@@ -1,0 +1,116 @@
+<view class="personal">
+  <image src='../../img/default-avatar.png' class='avatar'></image>
+  <text class='nick-name'>微信昵称</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>888</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class='title'>积分明细</view>
+
+<view class='time-selector'>
+  <picker mode='date' fields='month'>2019年02月<text>></text></picker>
+  <view>收入1200积分  使用300积分</view>
+</view>
+
+<view class='nav'>
+  <navigator class='nav-item active'>已获得积分</navigator>
+  <navigator class='nav-item'>已使用积分</navigator>
+</view>
+
+<scroll-view class='content' scroll-y>
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>
+        <text>兑换虚拟物品</text>
+        <navigator>详情>></navigator>
+      </view>
+      <text class='take'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>连续7天登录</view>
+      <text class='add'>10积分</text>
+    </view>
+  </view>
+  
+</scroll-view>

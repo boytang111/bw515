@@ -1,0 +1,87 @@
+<view class='container'>
+  <navigator class='add-line' url='../edit-address/edit-address'>
+    <view class='add'>+</view>
+    <text>新增收货地址</text>
+  </navigator>
+
+  <view class='address'>
+    <view class='info'>
+      <view>
+        <text>XX先生</text>
+        <text>132106xxxxx</text>
+      </view>
+      <view>
+        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
+        <text class='brand'>家</text>
+      </view>
+    </view>
+    <navigator url='../edit-address/edit-address'>
+      <image src='../../img/edit.png'></image>
+    </navigator>
+  </view>
+
+  <view class='address'>
+    <view class='info'>
+      <view>
+        <text>XX先生</text>
+        <text>132106xxxxx</text>
+      </view>
+      <view>
+        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
+        <text class='brand'>家</text>
+      </view>
+    </view>
+    <navigator url='../edit-address/edit-address'>
+      <image src='../../img/edit.png'></image>
+    </navigator>
+  </view>
+
+  <view class='address'>
+    <view class='info'>
+      <view>
+        <text>XX先生</text>
+        <text>132106xxxxx</text>
+      </view>
+      <view>
+        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
+        <text class='brand'>家</text>
+      </view>
+    </view>
+    <navigator url='../edit-address/edit-address'>
+      <image src='../../img/edit.png'></image>
+    </navigator>
+  </view>
+
+  <view class='address'>
+    <view class='info'>
+      <view>
+        <text>XX先生</text>
+        <text>132106xxxxx</text>
+      </view>
+      <view>
+        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
+        <text class='brand'>家</text>
+      </view>
+    </view>
+    <navigator url='../edit-address/edit-address'>
+      <image src='../../img/edit.png'></image>
+    </navigator>
+  </view>
+
+  <view class='address'>
+    <view class='info'>
+      <view>
+        <text>XX先生</text>
+        <text>132106xxxxx</text>
+      </view>
+      <view>
+        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
+        <text class='brand'>家</text>
+      </view>
+    </view>
+    <navigator url='../edit-address/edit-address'>
+      <image src='../../img/edit.png'></image>
+    </navigator>
+  </view>
+
+</view>

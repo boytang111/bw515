@@ -1,0 +1,65 @@
+<view class="personal">
+  <image src='../../img/default-avatar.png' class='avatar'></image>
+  <text class='nick-name'>微信昵称</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>888</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+
+<view class='brand'>
+  <view class='brand-title'>
+    <image src='../../img/star.png' class='star'></image>
+    <text>通讯·网购</text>
+  </view>
+  <view class='sort'>
+    <view class='desc'>最新上架</view>
+    <view class='asc'>礼品价值</view>
+  </view>
+</view>
+
+<view class='container'>
+  <view class='good-item sold-out'>
+    <image src='../../img/good-picture.png'></image>
+    <view class='info'>
+      <view class='title'>这里是商品名字</view>
+      <view class='price'>300积分</view>
+    </view>
+  </view>
+  <view class='good-item silver'>
+    <image src='../../img/good-picture.png'></image>
+    <view class='info'>
+      <view class='title'>这里是商品名字</view>
+      <view class='price'>300积分</view>
+    </view>
+  </view>
+  <view class='good-item gold'>
+    <image src='../../img/good-picture.png'></image>
+    <view class='info'>
+      <view class='title'>这里是商品名字</view>
+      <view class='price'>300积分</view>
+    </view>
+  </view>
+  <view class='good-item platinum'>
+    <image src='../../img/good-picture.png'></image>
+    <view class='info'>
+      <view class='title'>这里是商品名字</view>
+      <view class='price'>300积分</view>
+    </view>
+  </view>
+  <view class='good-item'>
+    <image src='../../img/good-picture.png'></image>
+    <view class='info'>
+      <view class='title'>这里是商品名字</view>
+      <view class='price'>300积分</view>
+    </view>
+  </view>
+  <view class='good-item'>
+    <image src='../../img/good-picture.png'></image>
+    <view class='info'>
+      <view class='title'>这里是商品名字</view>
+      <view class='price'>300积分</view>
+    </view>
+  </view>
+</view>

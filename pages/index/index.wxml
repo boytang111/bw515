@@ -1,0 +1,90 @@
+<view class="personal">
+  <image src='../../img/default-avatar.png' class='avatar'></image>
+  <text class='nick-name'>微信昵称</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>888</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class='container'>
+  <image src='../../img/index-bg.png'></image>
+  <view class='pans'>
+    <navigator class='btn' url='../draw/draw'>
+      <image src='../../img/pai1.png'></image>
+      <view>醉爱翻牌</view>
+    </navigator>
+    <navigator class='btn'>
+      <image src='../../img/pai2.png'></image>
+      <view>品牌联名</view>
+    </navigator>
+    <navigator class='btn' url='../activity/activity'>
+      <image src='../../img/pai3.png'></image>
+      <view>当季促销</view>
+    </navigator>
+  </view>
+
+</view>
+
+<view class='black' wx:if="{{false}}">
+
+  <view class='new' wx:if="{{false}}">
+    <image src='../../img/congratulation.png'></image>
+    <view class='title'>欢迎加入百威创新大家庭</view>
+    <view class='gift'>抽奖机会x1次</view>
+    <view class='gift'>已经放入您的卡券中心</view>
+    <view class='confirm'>
+      <text>知道了</text>
+      <navigator url='../luck/luck'>去抽奖</navigator>
+    </view>
+  </view>
+
+  <view class='dialog-container' wx:if="{{false}}">
+    <image src='../../img/close.png' class='close'></image>
+    <view class='title'>你有一张百威创新会员卡待领取！</view>
+    <view class='sub-title'>你有一张百威创新会员卡待领取！</view>
+    <image class='card' src='../../img/get-card.png'></image>
+    <view class='agree-container'>
+      <view class='box'>
+        <image src='../../img/black-tick.png'></image>
+      </view>
+      <view class='text'>本人已充分阅读、理解并接受<text>百威创新会员手册及隐私条款</text>的约定和约束，并且明确同意百威创新出于想本人提供服务的必要。收集、使用兵种必要时向第三方共享本人自愿提供的信息。</view>
+    </view>
+    <view class='btnon'>马上领取</view>
+  </view>
+
+  <view class='dialog-container' wx:if="{{false}}">
+    <image src='../../img/close.png' class='close'></image>
+    <view class='title'>请完善会员信息</view>
+    <view class='sub-title'>会员精选啤酒、会员专属大礼包等着你</view>
+    <view class='input-item'>
+      <text>真实姓名</text>
+      <input></input>
+    </view>
+    <view class='input-item'>
+      <text>生日</text>
+      <input></input>
+    </view>
+    <view class='input-item'>
+      <text>性别</text>
+      <view class='sex'>
+        <view class='male active'>
+          <view></view>
+        </view>
+        <view class='female'>
+          <view></view>
+        </view>
+      </view>
+    </view>
+    <view class='input-item'>
+      <text>电子邮箱</text>
+      <input></input>
+    </view>
+    <view class='input-item textarea'>
+      <text>收货地址</text>
+      <textarea></textarea>
+    </view>
+    <view class='btnon'>提交</view>
+  </view>
+
+</view>

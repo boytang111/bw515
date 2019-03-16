@@ -1,0 +1,272 @@
+page{
+  background: #f5f5f5;
+}
+
+.personal{
+  display: flex;
+  align-items: center;
+  background: #000;
+  padding: 8rpx 24rpx;
+}
+.avatar{
+  width: 82rpx;
+  height: 82rpx;
+  flex-shrink: 0;
+}
+.logo{
+  height: 54rpx;
+  width: 180rpx;
+}
+.nick-name{
+  margin-left: 20rpx;
+  color: white;
+  font-size: 30rpx;
+}
+.score{
+  flex: 1;
+  text-align: center;
+  font-size: 32rpx;
+  color: white;
+}
+.score text{
+  vertical-align: middle;
+  line-height: 40rpx;
+}
+.score text:last-child{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.title{
+  background: #888;
+  text-align: center;
+  color: white;
+  line-height: 70rpx;
+  font-size: 36rpx;
+}
+
+.nav{
+  background: white;
+  border-bottom: solid 1rpx #e1e1e1;
+  display: flex;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: #888;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.nav .nav-item{
+  flex: 1;
+  position: relative;
+  border-right: solid 1rpx #e1e1e1;
+}
+.nav .nav-item:last-child{
+  border: none;
+}
+.nav-item.active{
+  color: black;
+}
+.nav-item.active::after{
+  content: '';
+  display: block;
+  height: 4rpx;
+  width: 140rpx;
+  background: black;
+  position: absolute;
+  bottom: -20rpx;
+  left: calc(50% - 70rpx);
+}
+
+.sub-nav{
+  font-size: 24rpx;
+  color: #9a9a9a;
+  display: flex;
+  padding: 20rpx 80rpx;
+  justify-content: space-around;
+}
+.sub-nav view.active{
+  color: black;
+}
+
+.content{
+  height: calc(100vh - 350rpx);
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+
+.coupon{
+  background: white;
+  padding: 20rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.coupon.used::after{
+  content: '已用';
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  background: #a8a8a8;
+  color: white;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  padding-top: 40rpx;
+  width: 180rpx;
+  text-align: center;
+  transform-origin: 50% 50%;
+  transform: rotate(30deg) translate(44rpx, -70rpx);
+}
+.coupon .over-view{
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+  background: #0080FF;
+  font-size: 24rpx;
+  color: white;
+  border-radius: 10rpx 0 0 10rpx;
+  border-right: dashed 1rpx white;
+  position: relative;
+}
+.coupon.expire .over-view{
+  background: #BDBDBD;
+}
+.coupon .over-view::after{
+  content: '';
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  background: white;
+  border-radius: 15rpx;
+  position: absolute;
+  left: -15rpx;
+  top: 45rpx;
+}
+.coupon .over-view text{
+  display: block;
+  font-style: italic;
+  transform-origin: 50% 50%;
+  transform: translateY(40rpx) rotate(-30deg);
+}
+.coupon .info{
+  position: relative;
+  height: 120rpx;
+}
+.coupon .coupon-title{
+  font-size: 28rpx;
+  color: black;
+}
+.coupon.expire .coupon-title,.coupon.expire .coupon-time{
+  color: #9d9d9d;
+}
+.coupon .coupon-time{
+  color: #888;
+  font-size: 28rpx;
+}
+.coupon navigator{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 28rpx;
+  color: #646464;
+  border-bottom: solid 1rpx #646464;
+}
+
+.coupon.detail{
+  padding: 0;
+  display: block;
+}
+.detail .name{
+  font-size: 26rpx;
+  padding: 20rpx;
+  border-bottom: solid 1rpx #d1d1d1;
+}
+.coupon1{
+  background: #0080FF;
+  width: 548rpx;
+  height: 214rpx;
+  margin: auto;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  position: relative;
+}
+.coupon1::before{
+  content: '';
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background: white;
+  position: absolute;
+  top: calc(50% - 25rpx);
+  left: -25rpx;
+}
+.coupon1::after{
+  content: '';
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background: white;
+  position: absolute;
+  top: calc(50% - 25rpx);
+  right: -25rpx;
+}
+.coupon1 image{
+  width: 274rpx;
+  height: 160rpx;
+}
+.coupon1 .text{
+  font-size: 32rpx;
+  height: 100%;
+  color: white;
+  flex: 1;
+  margin-right: 20rpx;
+  border-right: dashed 1rpx white;
+}
+.coupon1 .text view{
+  transform: rotate(-30deg) translate(-40rpx, 50rpx);
+  font-style: italic;
+}
+.name1{
+  font-size: 32rpx;
+  color: #232323;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.name1 text{
+  color: #828282;
+  margin-left: 30rpx;
+}
+.cost{
+  color: #960000;
+  text-align: center;
+  font-size: 38rpx;
+  margin-top: 30rpx;
+}
+.original-price{
+  text-align: center;
+  color: #6b6666;
+  font-size: 30rpx;
+}
+.original-price text{
+  text-decoration: line-through;
+}
+.time-footer{
+  color: #7d7d7d;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  margin-top: 30rpx;
+}
+.time-footer text:last-child{
+  border-bottom: solid 1rpx #7d7d7d;
+}

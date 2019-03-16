@@ -1,0 +1,57 @@
+<view class='top-bg'>
+  <view class='user-status'>
+    <navigator>
+      <image src='../../img/setting.png' class='icon'></image>
+      <view>设置</view>
+    </navigator>
+    <view>微信昵称</view>
+    <view class='avatar'>
+      <image src='../../img/default-avatar.png'></image>
+    </view>
+    <view>积分：888</view>
+    <navigator>
+      <image src='../../img/breadcrumb.png' class='icon'></image>
+      <view>积分规则</view>
+    </navigator>
+  </view>
+  <view class='card'>
+    <image src='../../img/card.png'></image>
+    <view class='ps'>（经验值等同于用户所获积分总数）</view>
+    <view class='progress'>
+      <view style='height:100%;width:50%;background:#818181;border-radius: 8rpx;'></view>
+      <view class='text'>456/1000</view>
+    </view>
+    <view class='privilege'>
+      <view>特权1:xxxx</view>
+      <view>特权1:xxxx</view>
+      <view>特权1:xxxx</view>
+    </view>
+  </view>
+</view>
+
+<view class='nav-icons'>
+  <navigator class='nav-item' url='../score-detail/score-detail'>
+    <image src='../../img/personal1.png'></image>
+    <view>积分明细</view>
+  </navigator>
+  <navigator class='nav-item' url='../coupon/coupon'>
+    <image src='../../img/personal2.png'></image>
+    <view>卡券中心</view>
+  </navigator>
+  <navigator class='nav-item' url='../exchange-history/exchange-history'>
+    <image src='../../img/personal3.png'></image>
+    <view>兑换记录</view>
+  </navigator>
+  <navigator class='nav-item'>
+    <image src='../../img/personal4.png'></image>
+    <view>我的订单</view>
+  </navigator>
+</view>
+
+<view class='title'>百威精彩·上海</view>
+<view class='address'>
+  <text>更换地址</text>
+  <image src='../../img/position.png'></image>
+</view>
+
+<image class='personal-img' src='../../img/personal-img.png'></image>

@@ -1,0 +1,114 @@
+<!--index.wxml-->
+<view class="container">
+  <image src='../../img/login-bg.png' class='bg'></image>
+  <view class='black'></view>
+
+  <view class='dialog-check' wx:if="{{user}}">
+    <view class='dialog-title'>
+      <image src='../../img/beer-dialog.png'></image>
+      <view>
+        <text class='age-title'>你已经年满18周岁了吗？</text>
+        <view class='agree-container'>
+          <view class='box'>
+            <image src='../../img/black-tick.png'></image>
+          </view>
+          <view class='text'>已年满18周岁，并同意百威英博<text>隐私条款</text></view>
+        </view>
+      </view>
+    </view>
+    <view class='des'>获取你的昵称、头像、地区及性别</view>
+    <view class='user-info'>
+      <image src='../../img/login-bg.png' class='avatar'></image>
+      <view>
+        <view>微信个人信息</view>
+        <view>个人ID</view>
+      </view>
+      <image src='../../img/tick.png' class='tick'></image>
+    </view>
+    <view class='apply-btn'>
+      <button>取消</button>
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">允许</button>
+    </view>
+  </view>
+
+  <view class='clause' wx:if="{{false}}">
+    <image class='close' src='../../img/close.png'></image>
+    <text class='title'>隐私条款</text>
+    <text class='term'>
+与使用本网站有关的数据保护信息
+
+Dear visitor,
+尊敬的访客:
+
+thank you for visiting our website. To ensure that you feel safe and happy visiting our website, the following information gives you a comprehensive guide as to what we do with your details. This data privacy policy is designed to inform you about how we collect, use and pass on your personal data.
+感谢您访问我们的网站。为了确保您能够安全并愉快地访问我们的网站，以下信息向您详细解释了我们将如何处理您的详细信息。制定本隐私政策的目的在于告知您我们将如何收集、使用和传输您的个人数据。
+
+1.  General
+     概述
+
+Protecting your privacy is very important to us. Therefore, our internet presence is designed that it can, in principle, be used anonymously. We use the information which we receive and save when you visit our websites solely for ABI internal consumer profile insight analysis purposes, such as to improve the design of our websites. We have access to your computer’s IP address for the sole purpose of averting attacks which would negatively affect the functionality of our internet presence (hacker attacks, viruses, denial-of-service attacks, spam). 
+保护您的隐私对我们来说非常重要。因此，我们的网站被设计为在原则上可被匿名使用。我们仅因消费者洞察内部分析目的使用在您访问我们网站时我们所接收和保存的信息，例如改善我们的网站设计等。我们能够获取您的计算机IP地址，但其唯一目的是避免我们的网站功能受到负面攻击（黑客攻击、病毒、拒绝服务攻击、垃圾邮件）。
+    </text>
+  </view>
+
+  <view class='gift-dialog' wx:if="{{false}}">
+    <image class='close' src='../../img/close.png'></image>
+    <view class='title'>定制您的喜好</view>
+    <view class='sub-title'>为了进行更好的专属服务，请先选择您的喜好。提交后将获得一份新人礼。</view>
+    <view class='title'>以下啤酒中你最爱喝的是？</view>
+    
+    <view class='choose'>
+      <view class='beer'>
+        <view>米凯罗</view>
+        <image src='../../img/beer5.png'></image>
+      </view>
+      <view class='beer'>
+        <view>金尊</view>
+        <image src='../../img/beer2.png'></image>
+      </view>
+      <view class='beer'>
+        <view>百威</view>
+        <image src='../../img/beer1.png'></image>
+      </view>
+      <view class='beer active'>
+        <view>哈尔滨冰萃</view>
+        <image src='../../img/beer3.png'></image>
+      </view>
+      <view class='beer'>
+        <view>哈尔滨白啤</view>
+        <image src='../../img/beer4.png'></image>
+      </view>
+    </view>
+    
+    <view class='title'>以下奖品中你最喜欢的是？</view>
+    <view class='flex-box'>
+      <view class='item gift active'>
+        <image src='../../img/gift1.png'></image>
+        <view>美食</view>
+      </view>
+      <view class='item gift'>
+        <image src='../../img/gift2.png'></image>
+        <view>潮牌</view>
+      </view>
+      <view class='item gift'>
+        <image src='../../img/gift3.png'></image>
+        <view>电音</view>
+      </view>
+    </view>
+    <view class='submit'>提交</view>
+    <view class='jump'><text>暂时跳过</text></view>
+  </view>
+
+  <view class='dialog-check' wx:if="{{phone}}">
+    <view class='logo-box'>
+      <image src='../../img/logo1.png'></image>
+      <text>申请使用</text>
+    </view>
+    <view class='des'>你的手机号码</view>
+    <view class='apply-btn'>
+      <button>拒绝</button>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">允许</button>
+    </view>
+  </view>
+
+</view>

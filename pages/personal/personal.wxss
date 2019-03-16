@@ -1,0 +1,136 @@
+.top-bg{
+  height: 470rpx;
+  background-color: black;
+  background-image: linear-gradient(#252525, #d8d8d8 62%);
+  position: relative;
+}
+.top-bg::after{
+  content: '';
+  display: block;
+  border-left: solid 100vw #d8d8d8;
+  border-bottom: solid 100rpx transparent;
+  position: absolute;
+  left: 0;
+  bottom: -100rpx;
+}
+.user-status{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-size: 28rpx;
+  padding: 20rpx 0;
+}
+.user-status navigator{
+  font-size: 18rpx;
+  text-align: center;
+}
+.user-status .icon{
+  width: 32rpx;
+  height: 32rpx;
+}
+.user-status .avatar{
+  width: 120rpx;
+  position: relative;
+}
+.user-status .avatar image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+  border-bottom: solid 1rpx #e1e1e1;
+  position: absolute;
+  left: -30rpx;
+  top: -30rpx;
+  z-index: 2;
+}
+.top-bg .card{
+  position: relative;
+  z-index: 1;
+  width: 680rpx;
+  height: 420rpx;
+  background: white;
+  margin: auto;
+  border: solid 1rpx #e1e1e1;
+  border-radius: 16rpx;
+}
+.card .ps{
+  font-size: 24rpx;
+  text-align: center;
+  color: #888;
+}
+.card image{
+  width: 100%;
+  height: 260rpx;
+  margin-top: 20rpx;
+}
+.progress{
+  height: 16rpx;
+  width: 580rpx;
+  border: solid 1rpx rgb(182, 182, 182);
+  border-radius: 8rpx;
+  background: #D6D6D6;
+  margin: auto;
+  position: relative;
+  margin-top: 10rpx;
+}
+.progress .text{
+  color: white;
+  font-size: 16rpx;
+  line-height: 18rpx;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.card .privilege{
+  display: flex;
+  font-size: 26rpx;
+  color: #252525;
+  justify-content: space-around;
+  padding: 10rpx 40rpx;
+}
+
+.nav-icons{
+  margin-top: 80rpx;
+  padding: 0 120rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-icons .nav-item{
+  width: 120rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.nav-icons .nav-item image{
+  width: 58rpx;
+  height: 58rpx;
+}
+
+.title{
+  font-size: 38rpx;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.address{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  color: #888;
+  margin-top: 10rpx;
+}
+.address text{
+  border-bottom: solid 1rpx #888;
+}
+.address image{
+  width: 20rpx;
+  height: 28rpx;
+  margin-left: 10rpx;
+}
+.personal-img{
+  width: 570rpx;
+  height: 250rpx;
+  display: block;
+  margin: 40rpx auto;
+}

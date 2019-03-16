@@ -1,0 +1,21 @@
+<view class='title'>
+  <image src='../../img/red-tick.png'></image>
+  <text>恭喜，兑换成功</text>
+</view>
+<image class='product' src='../../img/good-picture.png'></image>
+
+<view class='name'>手机无线蓝牙音箱迷你低音炮 1个</view>
+<view class='cost'>花费：<text>180积分</text></view>
+<view class='balance'>积分余额：8200积分</view>
+
+<view class='info'>
+  <view class='code'>
+    <text>序列码：FD24897SFD</text>
+    <view>复制</view>
+  </view>
+  <navigator>兑换地址：<text>https://0x9.me/Iay9n</text></navigator>
+</view>
+
+<navigator class='more'>
+  <text>查看更多兑换记录>></text>
+</navigator>

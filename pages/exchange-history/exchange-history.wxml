@@ -1,0 +1,69 @@
+<view class="personal">
+  <image src='../../img/default-avatar.png' class='avatar'></image>
+  <text class='nick-name'>微信昵称</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>888</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class='title'>卡券中心</view>
+
+<view class='nav'>
+  <navigator class='nav-item active'>虚拟物品</navigator>
+  <navigator class='nav-item'>实际商品</navigator>
+</view>
+
+<scroll-view class='content' scroll-y>
+  <view class='list-item'>
+    <view class='first'>
+      <view>京东-100元京东e卡<text>2个</text></view>
+      <view>花费：<text>600积分</text></view>
+    </view>
+    <view class='detail'>
+      <image src='../../img/good-picture.png'></image>
+      <view class='code'>
+        <text>序列码：FD24897SFD</text>
+        <view>复制</view>
+      </view>
+      <view class='link'>兑换地址：<text>https://0x9.me/Iay9n</text></view>
+    </view>
+    <view class='footer'>
+      <view>兑换日期：2019.02.10</view>
+      <view>兑换状态：<text class='red'>未领取</text></view>
+    </view>
+  </view>
+
+  <view class='list-item'>
+    <view class='first'>
+      <view>京东-100元京东e卡<text>2个</text></view>
+      <view>花费：<text>600积分</text></view>
+    </view>
+    <view class='footer'>
+      <view>兑换日期：2019.02.10</view>
+      <view>兑换状态：<text class='blue'>未领取</text></view>
+    </view>
+  </view>
+  
+  <view class='list-item'>
+    <view class='first'>
+      <view>京东-100元京东e卡<text>2个</text></view>
+      <view>花费：<text>600积分</text></view>
+    </view>
+    <view class='footer'>
+      <view>兑换日期：2019.02.10</view>
+      <view>兑换状态：<text class='blue'>未领取</text></view>
+    </view>
+  </view>
+
+  <view class='list-item'>
+    <view class='first'>
+      <view>京东-100元京东e卡<text>2个</text></view>
+      <view>花费：<text>600积分</text></view>
+    </view>
+    <view class='footer'>
+      <view>兑换日期：2019.02.10</view>
+      <view>兑换状态：<text class='blue'>未领取</text></view>
+    </view>
+  </view>
+</scroll-view>

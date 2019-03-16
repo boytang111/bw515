@@ -1,0 +1,109 @@
+<view class="personal">
+  <image src='../../img/default-avatar.png' class='avatar'></image>
+  <text class='nick-name'>微信昵称</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>888</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+
+<view class='brand'>
+  <view class='brand-title'>
+    <image src='../../img/star.png' class='star'></image>
+    <text>美食·音乐</text>
+  </view>
+  <navigator url='../goods/goods'>全部>></navigator>
+</view>
+<view class='good-row'>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+</view>
+
+<view class='brand'>
+  <view class='brand-title'>
+    <image src='../../img/star.png' class='star'></image>
+    <text>美食·音乐</text>
+  </view>
+  <navigator url='../goods/goods'>全部>></navigator>
+</view>
+<view class='good-row'>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+</view>
+
+<view class='brand'>
+  <view class='brand-title'>
+    <image src='../../img/star.png' class='star'></image>
+    <text>美食·音乐</text>
+  </view>
+  <navigator url='../goods/goods'>全部>></navigator>
+</view>
+<view class='good-row'>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+</view>
+
+<view class='brand'>
+  <view class='brand-title'>
+    <image src='../../img/star.png' class='star'></image>
+    <text>美食·音乐</text>
+  </view>
+  <navigator url='../goods/goods'>全部>></navigator>
+</view>
+<view class='good-row'>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+  <navigator class='good'>
+    <image src='../../img/good-picture.png'></image>
+    <view>商品名字</view>
+    <view class='price'>500积分</view>
+  </navigator>
+</view>
