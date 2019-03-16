@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    shopdata:[],
+    url: app.globalData.url
   },
 
   /**
@@ -67,6 +68,7 @@ Page({
   },
   //获取数据
   shopajax(){
+    let that=this;
     let data={};
     let str = app.signature(data, app.globalData.key)
     wx.request({
@@ -76,7 +78,10 @@ Page({
         'absign': str,
       },
       success(res) {
-        console.log(res)
+        console.log(res.data);
+        that.setData({
+          shopdata: res.data
+        })
       }
     })
   },

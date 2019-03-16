@@ -1,4 +1,5 @@
 // pages/index/index.js
+const app = getApp();
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.daily_login();
   },
 
   /**
@@ -62,5 +63,27 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //每日登陆检测
+  daily_login:function(){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    wx.request({
+      url: app.globalData.url + '/index/daily_login', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'time': time,
+      },
+      success(res) {
+        console.log(res.data);
+      }
+    })
   }
 })
