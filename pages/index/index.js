@@ -14,7 +14,7 @@ Page({
     headimg:app.globalData.headimg,
     //用户积分
     integral:app.globalData.integral,
-    userinfo:false,
+    userinfo:true,
   },
 
   /**
@@ -26,9 +26,9 @@ Page({
       headimg: app.globalData.headimg,
       integral: app.globalData.integral
     });
-    if (app.globalData.nickname!=""){
+    if (this.data.nickname==""){
       this.setData({
-        userinfo:true,
+        userinfo:false,
       });
     }
     if (app.globalData.getLocation == false){

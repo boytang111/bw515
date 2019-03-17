@@ -319,3 +319,50 @@
   height: 54rpx;
   margin-right: 20rpx;
 }
+
+.new{
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  right: 20%;
+  font-size: 0;
+  background: #eee;
+  border-radius: 10rpx;
+}
+.new image{
+  width: 120%;
+  height: 130rpx;
+  margin-left: -10%;
+  margin-top: -10%;
+  margin-bottom: 20rpx;
+}
+.new .title{
+  font-size: 30rpx;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+.new .gift{
+  color: #6D6D6D;
+  font-size: 28rpx;
+  text-align: center;
+}
+.new .confirm{
+  background: white;
+  font-size: 30rpx;
+  color: black;
+  margin-top: 40rpx;
+  line-height: 2;
+  border-radius: 0 0 10rpx 10rpx;
+  padding: 20rpx 0;
+  text-align: center;
+  display: flex;
+}
+.new .confirm text{
+  flex: 1;
+  border-right: solid 1rpx #BFBFBF;
+  color: #BFBFBF;
+}
+.new .confirm navigator{
+  flex: 1;
+}

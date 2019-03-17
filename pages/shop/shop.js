@@ -1,6 +1,7 @@
 // pages/shop/shop.js
 //获取应用实例
 const app = getApp()
+
 Page({
 
   /**
@@ -8,14 +9,30 @@ Page({
    */
   data: {
     shopdata:[],
-    url: app.globalData.url
+    url: app.globalData.url,
+    //用户名字
+    nickname: app.globalData.nickname,
+    //用户头像
+    headimg: app.globalData.headimg,
+    //用户积分
+    integral: app.globalData.integral,
+    userinfo: true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      nickname: app.globalData.nickname,
+      headimg: app.globalData.headimg,
+      integral: app.globalData.integral
+    });
+    if (this.data.nickname == "") {
+      this.setData({
+        userinfo: false,
+      });
+    }
   },
 
   /**
@@ -69,16 +86,20 @@ Page({
   //获取数据
   shopajax(){
     let that=this;
-    let data={};
-    let str = app.signature(data, app.globalData.key)
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key);
     wx.request({
       url: app.globalData.url + '/Product/index', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
+        'openid': app.globalData.openid,
         'absign': str,
+        'time': time,
       },
       success(res) {
-        console.log(res.data);
         that.setData({
           shopdata: res.data
         })
