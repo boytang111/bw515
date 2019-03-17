@@ -16,6 +16,8 @@ Page({
     type:"",
     //优惠券数量
     coupon_count:"",
+    //classid,优惠券判断提交
+    class_id:"",
   },
 
   /**
@@ -102,6 +104,7 @@ Page({
           detail_integral: res.data.integral,
           detail_src: res.data.src,
           type: res.data.type,
+          class_id: res.data.class_id,
         });
       }
     })
@@ -127,6 +130,30 @@ Page({
         that.setData({
           coupon_count: res.data
         })
+      }
+    })
+  },
+  //立即兑换
+  btn:function(){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key);
+    wx.request({
+      url: app.globalData.url + '/Member/exchange', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'openid': app.globalData.openid,
+        'absign': str,
+        'member_id': app.globalData.member_id,
+        'product_sku_id': that.data.detailid,
+        'type': that.data.type,
+        'time': time,
+      },
+      success(res) {
+        
       }
     })
   }

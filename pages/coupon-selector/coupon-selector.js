@@ -8,6 +8,7 @@ Page({
    */
   data: {
     url: app.globalData.url,
+    coupondata:[],
   },
 
   /**
@@ -80,11 +81,13 @@ Page({
         'openid': app.globalData.openid,
         'absign': str,
         'time': time,
-        'product_sku_id': that.data.detailid,
+        'member_id': app.globalData.member_id,
       },
       success(res) {
         console.log(res.data);
-        
+        that.setData({
+          coupondata: res.data
+        })
       }
     })
   }
