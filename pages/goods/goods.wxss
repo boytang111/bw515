@@ -184,6 +184,7 @@ page{
   width: 320rpx;
   height: 208rpx;
   margin-right: 30rpx;
+  object-fit: cover;
 }
 .good-item .info{
   flex: 1;
