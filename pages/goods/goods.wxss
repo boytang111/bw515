@@ -120,7 +120,7 @@ page{
   position: relative;
   overflow: hidden;
 }
-.good-item.sold-out::after{
+.good-item.sold-out::before{
   content: '已抢完';
   display: block;
   padding: 0 80rpx;

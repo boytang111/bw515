@@ -21,9 +21,9 @@
   <navigator><text>其他获取方式</text></navigator>
 </view>
 
-<view class='black'>
+<view class='black' wx:if="{{false}}">
 
- <view class='more-container' wx:if="{{true}}">
+ <view class='more-container' wx:if="{{false}}">
   <image src='../../img/close.png' class='close'></image>
   <view class='get-title'>你可以通过以下方式获取</view>
   <view class='get-button'>30积分赢回家</view>

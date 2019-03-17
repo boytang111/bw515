@@ -9,6 +9,7 @@ Page({
    */
   data: {
     goodsid: "",
+    goodsname: "",
     url: app.globalData.url,
     //用户名字
     nickname: app.globalData.nickname,
@@ -17,6 +18,8 @@ Page({
     //用户积分
     integral: app.globalData.integral,
     userinfo: true,
+    //页面数据
+    goodsdata:[],
   },
 
   /**
@@ -36,6 +39,11 @@ Page({
     if (options.id){
       this.setData({
         goodsid: options.id,
+      });
+    }
+    if (options.name) {
+      this.setData({
+        goodsname: options.name,
       });
     }
   },
@@ -107,8 +115,16 @@ Page({
       },
       success(res) {
         console.log(res.data);
-        
+        that.setData({
+          goodsdata:res.data.data
+        })
       }
+    })
+  },
+  //跳转详情页
+  goodsjump:function(e){
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.currentTarget.dataset.id
     })
   }
 })
