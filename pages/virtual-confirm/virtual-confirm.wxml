@@ -42,12 +42,12 @@
 <view class='exchange'>
   <navigator class='coupon' url='../coupon-selector/coupon-selector'>
     <text>优惠券</text>
-    <!-- <view class='none'>0个可用</view> -->
-    <view class='none one'>积分90%折扣</view>
-    <!-- <view class='use'>
+    <view class='none' wx:if="{{coupon_count==0}}">0个可用</view>
+    <!-- <view class='none one'>积分90%折扣</view> -->
+    <view class='use' wx:if="{{coupon_count!=0}}">
       <image src='../../img/coupon.png'></image>
-      <text>2个可用</text>
-    </view> -->
+      <text>{{coupon_count}}个可用</text>
+    </view>
   </navigator>
   <view class='cost'>总额：<text>600积分</text></view>
   <view class='button'>立即兑换</view>

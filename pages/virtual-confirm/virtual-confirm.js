@@ -14,6 +14,8 @@ Page({
     detailid:"",
     //判断实物还是虚拟
     type:"",
+    //优惠券数量
+    coupon_count:"",
   },
 
   /**
@@ -32,7 +34,7 @@ Page({
    */
   onReady: function () {
     this.couponajax();
-    this.coupon();
+    this.coupon_count();
   },
 
   /**
@@ -105,7 +107,7 @@ Page({
     })
   },
   //查询优惠券可用
-  coupon:function(){
+  coupon_count:function(){
     let that = this;
     let time = app.time();
     let data = {
@@ -118,11 +120,13 @@ Page({
       data: {
         'openid': app.globalData.openid,
         'absign': str,
+        'member_id': app.globalData.member_id,
         'time': time,
       },
       success(res) {
-        console.log(res.data);
-        
+        that.setData({
+          coupon_count: res.data
+        })
       }
     })
   }

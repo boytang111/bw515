@@ -1,11 +1,13 @@
 // pages/coupon-selector/coupon-selector.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    url: app.globalData.url,
   },
 
   /**
@@ -19,7 +21,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.couponajax();
   },
 
   /**
@@ -62,5 +64,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //获取优惠券列表
+  couponajax:function(){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key);
+    wx.request({
+      url: app.globalData.url + '/Member/coupon', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'openid': app.globalData.openid,
+        'absign': str,
+        'time': time,
+        'product_sku_id': that.data.detailid,
+      },
+      success(res) {
+        console.log(res.data);
+        
+      }
+    })
   }
 })
