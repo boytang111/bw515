@@ -85,13 +85,17 @@ page{
 
 .good-row{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0 15rpx;
 }
 .good{
   width: 224rpx;
   font-size: 0;
   text-align: center;
+  margin-right: 25rpx;
+}
+.good-row .good:nth-child(3){
+  margin-right: 0;
 }
 .good image{
   width: 100%;

@@ -124,7 +124,7 @@ page{
   justify-content: space-between;
   font-size: 30rpx;
   color: #7E7E7E;
-  padding: 20rpx 40rpx;
+  padding: 40rpx;
   border-bottom: solid 1rpx #e1e1e1;
   margin-bottom: 40rpx;
 }

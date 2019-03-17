@@ -10,7 +10,20 @@ Page({
     url: app.globalData.url,
     detailid:"",
     userinfo: true,
-    detaildata:[],
+    detail_name: "",
+    detail_number: "",
+    detail_src: "",
+    detail_integral:"",
+    content:[],
+    integral:"",
+    //是否能兑换
+    exchange: true,
+    black:false,
+    container:false,
+    more:false,
+    no_more:false,
+    ye_more:false,
+    yes_more:false,
   },
 
   /**
@@ -29,6 +42,7 @@ Page({
    */
   onReady: function () {
     this.detailajax();
+    
   },
 
   /**
@@ -92,9 +106,66 @@ Page({
       success(res) {
         console.log(res.data);
         that.setData({
-          detaildata: res.data.data
-        })
+          content: res.data.content,
+          detail_name: res.data.name,
+          detail_number: res.data.number,
+          detail_integral: res.data.integral,
+          detail_src: res.data.src,
+        });
+        that.member();
       }
+    })
+  },
+  //积分兑换判断是否积分充足
+  detailaadd: function (integral){
+    if (this.data.detail_integral > integral){
+      this.setData({
+        exchange:false
+      })
+    }
+  },
+  //获取用户信息.积分
+  member: function () {
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    var memberdata;
+    wx.request({
+      url: app.globalData.url + '/Member/index', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'time': time,
+      },
+      success(res) {
+        that.detailaadd(res.data.integral);
+      }
+    })
+  },
+  //点击立即兑换
+  exchange:function(){
+    wx.navigateTo({
+      url: '../virtual-confirm/virtual-confirm?id=' + this.data.detailid
+    })
+  },
+  //点击弹出其他获取方式
+  qita:function(){
+    if (this.data.black == false){
+      this.setData({
+        black:true,
+        container:true,
+      })
+    } 
+  },
+  //关闭弹窗
+  close_black:function(){
+    this.setData({
+      black: false,
     })
   }
 })

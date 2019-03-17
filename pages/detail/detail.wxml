@@ -1,36 +1,37 @@
-<view class="product-photo">
-  <image src='../../img/good-picture.png'></image>
-</view>
+<view class='page'>
+  <view class="product-photo">
+    <image src='{{url}}{{detail_src}}'></image>
+  </view>
 
-<view class='cost'>320积分</view>
-<view class='original-price'>人民币：￥100</view>
-<view class='title'>这里是商品名称</view>
+  <view class='cost'>{{detail_integral}}积分</view>
+  <view class='original-price'>
+    剩余商品量：
+    <progress percent="{{detail_number}}" activeColor="red" show-info />
+  </view>
+  <view class='title'>{{detail_name}}</view>
 
-<view class='description'>
-  <text>商品描述：
-1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
-1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
-1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
-1.使用说明：京东E卡面值100元只能购买京东自营的商品（部分特殊商品除外），可以通过京东自营标志识别京东自营商品。有效期为收到卡密之后一年内有效
-  </text>
+  <view class='description'>
+    <text>商品描述：</text>
+    <image wx:for="{{content}}" wx:key="itemx" wx:for-item="itemx" src='{{url}}{{itemx}}'></image>
+  </view>
 </view>
 
 <view class='exchange'>
   <!-- <view class='button'>立即兑换</view> -->
-  <view class='button refuse'>积分不足</view>
-  <navigator><text>其他获取方式</text></navigator>
+  <view class='button {{exchange==false?"refuse":""}}' catchtap='{{exchange==false?"":"exchange"}}'>{{exchange==false?"积分不足":"立即兑换"}}</view>
+  <view catchtap='qita'><text>其他获取方式</text></view>
 </view>
 
-<view class='black' wx:if="{{false}}">
+<view class='black' wx:if="{{black}}">
 
- <view class='more-container' wx:if="{{false}}">
-  <image src='../../img/close.png' class='close'></image>
+ <view class='more-container' wx:if="{{container}}">
+  <image src='../../img/close.png' class='close' catchtap='close_black'></image>
   <view class='get-title'>你可以通过以下方式获取</view>
   <view class='get-button'>30积分赢回家</view>
   <navigator url='../score-rule/score-rule'><text>如何获得更多积分</text></navigator>
  </view>
 
-  <view class='more-container' wx:if="{{false}}">
+  <view class='more-container' wx:if="{{more}}">
     <view class='content'>您确认要花费30积分来赢礼品？</view>
     <view class='buttons'>
       <text>否</text>
@@ -38,14 +39,14 @@
     </view>
   </view>
 
-  <view class='more-container' wx:if="{{false}}">
+  <view class='more-container' wx:if="{{no_more}}">
     <image src='../../img/close.png' class='close'></image>
     <view class='get-title'>很遗憾，未能博取该礼品</view>
     <view class='comfort'>作为安慰，小创为您准备了 一张优惠券</view>
     <view class='get-button lose'>立即领取</view>
   </view>
 
-  <view class='more-container' wx:if="{{false}}">
+  <view class='more-container' wx:if="{{ye_more}}">
     <image src='../../img/close.png' class='close'></image>
     <view class='coupon'>
       <view class='text'>
@@ -58,7 +59,7 @@
     <view class='get-button lose'>再来一次</view>
   </view>
 
-  <view class='gift-container' wx:if="{{false}}">
+  <view class='gift-container' wx:if="{{yes_more}}">
     <image class='congratulation' src='../../img/congratulation.png'></image>
     <view class='gift-title'>恭喜你博取到了本件礼品:</view>
     <view class='prize'>

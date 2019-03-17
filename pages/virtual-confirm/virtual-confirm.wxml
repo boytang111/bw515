@@ -1,17 +1,17 @@
 <view class='good-container'>
-  <image src='../../img/good-picture.png'></image>
+  <image src='{{url}}{{detail_src}}'></image>
   <view class='info'>
-    <view class='name'>商品名称</view>
-    <view class='price'>300 积分</view>
+    <view class='name'>{{detail_name}}</view>
+    <view class='price'>{{detail_integral}} 积分</view>
   </view>
-  <view class='counter'>
+  <!-- <view class='counter'>
     <view>+</view>
     <text>2</text>
     <view class='disable'>-</view>
-  </view>
+  </view> -->
 </view>
 
-<view class='intrduce'>
+<view class='intrduce' wx:if="{{type==1}}">
   <text class='brand'>兑换说明</text>
   <view class='input-item'>
     <text space="emsp">姓  名：</text>
@@ -26,6 +26,16 @@
     <view>上海市徐汇区XXX路xxx号xxx弄xxx栋xxx室</view>
   </view>
   <navigator><text>选择其他收货地址</text></navigator>
+</view>
+<view class='intrduce' wx:if="{{type==2}}">
+  <text class='brand'>兑换说明</text>
+  <view class='input-item top'>
+    <view>1. 兑换成功后，复制序列码到指定地址即可领取。</view>
+  </view>
+  <view class='input-item top'>
+    <view>2. 序列码也可以通过个人中心的“兑换记录”查看，若有更多疑问请咨询客服。</view>
+  </view>
+  
 </view>
 
 
