@@ -81,7 +81,7 @@ Page({
     }
     let str = app.signature(data, app.globalData.key);
     wx.request({
-      url: app.globalData.url + '/Product/lists', // 仅为示例，并非真实的接口地址
+      url: app.globalData.url + '/Product/find', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
         'openid': app.globalData.openid,
