@@ -1,4 +1,13 @@
-<view class="personal">
+<view class="personal" wx:if="{{userinfo==true}}">
+  <image src='{{headimg}}' class='avatar'></image>
+  <text class='nick-name'>{{nickname}}</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>{{integral}}</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class="personal" wx:if="{{userinfo==false}}">
   <image src='{{headimg}}' class='avatar'></image>
   <text class='nick-name'>{{nickname}}</text>
   <view class='score'>

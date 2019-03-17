@@ -14,6 +14,7 @@ Page({
     headimg:app.globalData.headimg,
     //用户积分
     integral:app.globalData.integral,
+    userinfo:false,
   },
 
   /**
@@ -25,7 +26,11 @@ Page({
       headimg: app.globalData.headimg,
       integral: app.globalData.integral
     });
-    console.log(app.globalData.getLocation)
+    if (app.globalData.nickname!=""){
+      this.setData({
+        userinfo:true,
+      });
+    }
     if (app.globalData.getLocation == false){
       this.getAddress()
     }

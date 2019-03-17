@@ -145,7 +145,8 @@ Page({
                         gift: true,
                       });
                     }else {
-                      that.member(res.data.member_id)
+                      that.member(res.data.member_id);
+                      that.indextap();
                     }
                   }
                 }
