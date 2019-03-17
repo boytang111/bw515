@@ -7,6 +7,20 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     user:false,
     phone:false,
+    //同意协议
+    imgstatu:false,
+    //隐私条款
+    clause:false,
+    //定制喜好
+    gift:false,
+    //是否授权信息
+    ufer:false,
+    //是否完成定制喜好
+    like:false,
+    //啤酒
+    beer:"",
+    //奖品
+    item:"",
   },
   //事件处理函数
   onLoad: function () {
@@ -79,17 +93,12 @@ Page({
             'absign': str,
           },
           success(res) {
-            that.setData({
-              user: false,
-            })
 
-            if (res.data.phone == "") {
-              that.setData({
-                phone: true,
-              });
-            }
           }
         })
+      }, fail: function () {
+        //进入首页，显示未授权地理位置，首页重新调用
+        app.globalData.getLocation=false;
       }
     })
   },
@@ -125,15 +134,18 @@ Page({
                     that.setData({
                       user: false,
                     });
-                    if (res.data.phone == "") {
+                    app.globalData.member_id = res.data.member_id;
+                    if (res.data.phone == null||"") {
                       that.setData({
+                        ufer: true,
                         phone: true,
                       });
-                    } else {
-                      app.globalData.member_id = res.data.member_id
-                      wx.switchTab({
-                        url: '../index/index'
-                      })
+                    } else if (res.data.like == null || ""){
+                      that.setData({
+                        gift: true,
+                      });
+                    }else {
+                      that.member(res.data.member_id)
                     }
                   }
                 }
@@ -148,17 +160,50 @@ Page({
       }
     })
   },
+  //获取用户信息
+  member: function (member_id) {
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    var memberdata;
+    wx.request({
+      url: app.globalData.url + '/Member/index', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': member_id,
+        'time': time,
+      },
+      success(res) {
+        app.globalData.nickname = res.data.nickname;
+        app.globalData.headimg = res.data.headimg;
+        app.globalData.integral = res.data.integral;
+      }
+    })
+  },
+  //是否确认协议
+  gotuser:function(){
+    wx.showToast({
+      title: "请先确认协议",
+      icon: 'none',
+      duration: 2000
+    })
+  },
   onGotUserInfo(e) {
     var that = this;
     wx.getUserInfo({
-      success: function (res) { 
+      success: function (res) {
         let time = app.time();
-        let data={
+        let data = {
           'time': time
-        }   
+        }
         let str = app.signature(data, app.globalData.key);
         wx.request({
-          url: app.globalData.url+'/index/authorized_login', // 仅为示例，并非真实的接口地址
+          url: app.globalData.url + '/index/authorized_login', // 仅为示例，并非真实的接口地址
           method: 'post',
           data: {
             'openid': app.globalData.openid,
@@ -172,26 +217,23 @@ Page({
           success(res) {
             that.setData({
               user: false,
+              ufer: true,
+              member_id: res.data.member_id
             })
-            wx.switchTab({
-              url: '../index/index'
-            })
-            if (res.data.phone == ""||null) {
+            that.member(res.data.member_id);
+            app.globalData.member_id = res.data.member_id;
+
+            if (res.data.phone == null ||"" ) {
               that.setData({
                 phone: true,
               });
             }
           }
-        })      
-      }, fail: function () {
-        //进入首页，显示未登录
-        wx.switchTab({
-          url: '../index/index'
         })
+      }, fail: function () {
+        that.indextap();
       }
     }) 
-    console.log(e.detail.userInfo)
-    console.log(e.detail.rawData)
   },
   getPhoneNumber(e){
     var that=this;
@@ -212,25 +254,107 @@ Page({
           'absign': str,
         },
         success(res) {
-          wx.switchTab({
-            url: '../index/index'
-          })
+          //是否授权信息
+          if(that.data.ufer==false){
+            that.indextap();
+          }else{
+            //打开定制
+            that.setData({
+              gift: true,
+              phone:false,
+            })
+          }
          
         }
       })
     }else{ 
-      //进入首页，显示未登录
-      wx.switchTab({
-        url: '../index/index'
+      that.indextap();
+    }
+  },
+  //点击同意协议
+  imgbap:function(){
+    if (this.data.imgstatu==false){
+      this.setData({
+        imgstatu:true
+      })
+    }else{
+      this.setData({
+        imgstatu: false
       })
     }
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
+  },
+  //点击查看隐私条款
+  clausebap:function(){
+    this.setData({
+      clause:true,
+    })
+  },
+  close_clause:function(){
+    this.setData({
+      clause: false,
+    })
   },
   showToast: function (title){
     wx.showToast({
       title: title,
       duration: 2000
+    })
+  },
+  //跳转首页
+  indextap:function(){
+    //进入首页，显示未登录
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },
+  //点击选择啤酒
+  beerbap:function(e){
+    if(this.data.beer==e.currentTarget.dataset.title){
+      this.setData({
+        beer:""
+      })
+    }else{
+      this.setData({
+        beer: e.currentTarget.dataset.title,
+      })
+    }
+  },
+  //点击选择奖品
+  itembap: function (e) {
+    if (this.data.item == e.currentTarget.dataset.title) {
+      this.setData({
+        item: ""
+      })
+    } else {
+      this.setData({
+        item: e.currentTarget.dataset.title,
+      })
+    }
+  },
+  //点击提交喜好
+  like:function(){
+    let that=this;
+    let time = app.time();
+    let data = {
+      'time': time,
+    }
+    let str = app.signature(data, app.globalData.key)
+    wx.request({
+      url: app.globalData.url + '/Member/like_add', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'ans1': that.data.beer,
+        'ans2': that.data.item,
+        'time': time,
+        'absign': str,
+      },
+      success(res) {
+        //是否授权信息
+        that.showToast("提交成功");
+        setTimeout(that.indextap(), 2000);
+      }
     })
   },
 })
