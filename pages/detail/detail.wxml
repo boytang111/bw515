@@ -21,7 +21,8 @@
 
 <view class='exchange'>
   <!-- <view class='button'>立即兑换</view> -->
-  <view class='button {{exchange==false?"refuse":""}}' catchtap='{{exchange==false?"":"exchange"}}'>{{exchange==false?"积分不足":"立即兑换"}}</view>
+  <view wx:if="{{detail_number!=0}}" class='button {{exchange==false?"refuse":""}}' catchtap='{{exchange==false?"":"exchange"}}'>{{exchange==false?"积分不足":"立即兑换"}}</view>
+  <view class='button refuse' wx:if="{{detail_number==0}}">已抢完</view>
   <view catchtap='qita'><text>其他获取方式</text></view>
 </view>
 

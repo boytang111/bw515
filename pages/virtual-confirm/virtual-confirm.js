@@ -47,7 +47,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log(this.data.mydata)
+   
   },
 
   /**
@@ -155,7 +155,7 @@ Page({
         'member_id': app.globalData.member_id,
         'product_sku_id': that.data.detailid,
         'type': that.data.type,
-        'coupon_id': mydata,
+        'coupon_id': that.data.mydata,
         'time': time,
       },
       success(res) {
