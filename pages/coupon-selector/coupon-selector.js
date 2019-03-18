@@ -10,6 +10,7 @@ Page({
     url: app.globalData.url,
     coupondata:[],
     class_id:"",
+    count:"",
   },
 
   /**
@@ -19,6 +20,11 @@ Page({
     if (options.class_id){
       this.setData({
         class_id: options.class_id
+      })
+    }
+    if (options.count) {
+      this.setData({
+        count: options.count
       })
     }
   },
@@ -94,6 +100,28 @@ Page({
           coupondata: res.data
         })
       }
+    })
+  },
+  //点击选择优惠券
+  btn:function(e){
+    let myintegral;
+    if (e.currentTarget.dataset.rules=="折扣"){
+      myintegral = parseInt(this.data.count)*parseInt(e.currentTarget.dataset.number)/100
+    }else{
+      myintegral = parseInt(this.data.count) - parseInt(e.currentTarget.dataset.number)
+    }
+    if (e.currentTarget.dataset.id==""){
+      myintegral = this.data.count
+    }
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];
+    prevPage.setData({
+      mydata: e.currentTarget.dataset.id,
+      myname: e.currentTarget.dataset.name,
+      myintegral: myintegral,
+    });
+    wx.navigateBack({
+      delta: 1
     })
   }
 })

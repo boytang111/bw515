@@ -1,7 +1,7 @@
-<view class='unwanted'>不使用优惠券</view>
+<view class='unwanted' catchtap='btn' data-id="" data-name="">不使用优惠券</view>
 
 <scroll-view class='content' scroll-y>
-  <view wx:for="{{coupondata}}" wx:key="item" wx:for-item="item" class='{{item.status==0?"coupon":"refuse"}}'>
+  <view wx:for="{{coupondata}}" wx:key="item" wx:for-item="item" class='{{item.status==0?"coupon":"refuse"}}' data-id="{{item.id}}" data-name="{{item.name}}" data-rules="{{item.rules}}" data-number="{{item.number}}" catchtap='btn'>
     <view class='coupon'>
       <view class='over-view'>
         <image src='{{url}}{{item.img}}'></image>

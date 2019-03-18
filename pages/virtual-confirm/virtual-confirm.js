@@ -18,6 +18,10 @@ Page({
     coupon_count:"",
     //classid,优惠券判断提交
     class_id:"",
+    //优惠券id
+    mydata:"",
+    myname:"",
+    myintegral:"",
   },
 
   /**
@@ -43,7 +47,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(this.data.mydata)
   },
 
   /**
@@ -105,6 +109,7 @@ Page({
           detail_src: res.data.src,
           type: res.data.type,
           class_id: res.data.class_id,
+          myintegral: res.data.integral,
         });
       }
     })
@@ -150,6 +155,7 @@ Page({
         'member_id': app.globalData.member_id,
         'product_sku_id': that.data.detailid,
         'type': that.data.type,
+        'coupon_id': mydata,
         'time': time,
       },
       success(res) {
