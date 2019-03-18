@@ -24,6 +24,8 @@ Page({
     myintegral:"",
     //是否有地址
     save:false,
+    //添加地址返回
+    address_save:"",
   },
 
   /**
@@ -49,7 +51,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-   
+    if (this.data.address_save!=""){
+      this.address();
+    }
   },
 
   /**
@@ -187,8 +191,8 @@ Page({
     }
     let str = app.signature(data, app.globalData.key);
     wx.request({
-      url: app.globalData.url + '/Member/address', // 仅为示例，并非真实的接口地址
-      method: 'get',
+      url: app.globalData.url + '/Member/address_find', // 仅为示例，并非真实的接口地址
+      method: 'post',
       data: {
         'openid': app.globalData.openid,
         'absign': str,

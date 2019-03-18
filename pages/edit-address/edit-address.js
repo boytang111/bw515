@@ -159,23 +159,32 @@ Page({
       let str = app.signature(data, app.globalData.key)
       var memberdata;
       wx.request({
-        url: app.globalData.url + '/address_save', // 仅为示例，并非真实的接口地址
+        url: app.globalData.url + '/Member/address_save', // 仅为示例，并非真实的接口地址
         method: 'post',
         data: {
           'absign': str,
           'openid': app.globalData.openid,
           'member_id': app.globalData.member_id,
           'time': time,
-          'userName': that.data.userName,
+          'user_name': that.data.userName,
           'tel_number': that.data.tel_number,
-          'detailInfo': that.data.detailInfo,
+          'detail_info': that.data.detailInfo,
           'gender': that.data.gender,
-          'provinceName': that.data.region[0],
-          'cityName': that.data.region[1],
-          'countyName': that.data.region[2],
+          'province_name': that.data.region[0],
+          'city_name': that.data.region[1], 
+          'county_name': that.data.region[2],
         },
         success(res) {
-
+          if (res.data.code==200){
+            var pages = getCurrentPages();
+            var prevPage = pages[pages.length - 2];
+            prevPage.setData({
+              address_save: 1,
+            });
+            wx.navigateBack({
+              delta: 1
+            })
+          }
         }
       })
     }
