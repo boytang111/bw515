@@ -65,12 +65,12 @@
   border-radius: 8rpx;
   margin-left: 30rpx;
 }
-.info navigator{
+.info .navigator{
   font-size: 28rpx;
   text-align: center;
   margin-top: 20rpx;
 }
-.info navigator text{
+.info .navigator text{
   border-bottom: solid 1rpx #363636;
 }
 

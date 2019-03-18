@@ -12,6 +12,7 @@ page{
   width: 82rpx;
   height: 82rpx;
   flex-shrink: 0;
+  border-radius: 50%;
 }
 .logo{
   height: 54rpx;
@@ -21,6 +22,10 @@ page{
   margin-left: 20rpx;
   color: white;
   font-size: 30rpx;
+  flex:.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .score{
   flex: 1;
@@ -28,6 +33,7 @@ page{
   font-size: 32rpx;
   color: white;
 }
+
 .score text{
   vertical-align: middle;
   line-height: 40rpx;
@@ -114,9 +120,16 @@ page{
 .list-item .footer .red{
   color: #F86261;
 }
+.list-item .footer .green{
+  color: green;
+}
 .list-item .footer .blue{
   color: #4796D2;
 }
+.list-item .footer .yellow{
+  color: yellow;
+}
+
 
 .list-item .detail{
   padding: 20rpx 30rpx;

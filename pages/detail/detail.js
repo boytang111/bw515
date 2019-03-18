@@ -25,6 +25,8 @@ Page({
     no_more:false,
     ye_more:false,
     yes_more:false,
+    requirement_level:"",
+    my_level:"",
   },
 
   /**
@@ -36,6 +38,9 @@ Page({
         detailid: options.id,
       });
     }
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
@@ -43,7 +48,7 @@ Page({
    */
   onReady: function () {
     this.detailajax();
-    
+    wx.hideLoading()
   },
 
   /**
@@ -113,6 +118,7 @@ Page({
           detail_integral: res.data.integral,
           detail_src: res.data.src,
           detail_type: res.data.type,
+          requirement_level: res.data.requirement_level,
         });
         that.member();
       }
@@ -146,14 +152,33 @@ Page({
       },
       success(res) {
         that.detailaadd(res.data.integral);
+        //用户会员等级
+        that.setData({
+          my_level: res.data.requirement_level
+        })
       }
     })
   },
   //点击立即兑换
   exchange:function(){
-    wx.navigateTo({
-      url: '../virtual-confirm/virtual-confirm?id=' + this.data.detailid
-    })
+    if (this.data.requirement_level <= this.data.my_level){
+      wx.navigateTo({
+        url: '../virtual-confirm/virtual-confirm?id=' + this.data.detailid
+      })
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '请升级您的会员级别',
+        success(res) {
+          if (res.confirm) {
+            
+          } else if (res.cancel) {
+            
+          }
+        }
+      })
+    }
+    
   },
   //点击弹出其他获取方式
   qita:function(){
@@ -168,6 +193,55 @@ Page({
   close_black:function(){
     this.setData({
       black: false,
+      container: false,
+      more: false,
+      no_more: false,
+      ye_more: false,
+      yes_more: false,
+    })
+  },
+  //点击确定
+  luck:function(){
+    this.setData({
+      container:false,
+      ye_more:false,
+      more:true,
+    })
+  }, 
+  //点击赢取
+  luck_draw_three:function(){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    var memberdata;
+    wx.request({
+      url: app.globalData.url + '/Game/luck_draw_three', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'time': time,
+      },
+      success(res) {
+        console.log(res.data.id)
+        if (res.data.id==0){
+          that.setData({
+            more: false,
+            no_more:true,
+          })
+        }
+      }
+    })
+  },
+  //点击立即领取
+  upbtn:function(){
+    this.setData({
+      no_more:false,
+      ye_more:true,
     })
   }
 })

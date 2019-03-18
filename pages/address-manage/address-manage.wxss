@@ -36,6 +36,9 @@ page{
 }
 .address .info{
   flex: 1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .info view:nth-child(1){
   display: flex;
@@ -54,6 +57,14 @@ page{
   font-size: 30rpx;
   color: #7E7E7E;
 }
+.info text{
+  display: block;
+  flex: 1;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
 .info .brand{
   padding: 4rpx 28rpx;
   color: black;

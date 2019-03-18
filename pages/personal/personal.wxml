@@ -1,15 +1,33 @@
+<view class='flexos' wx:if="{{userinfo==false}}" catchtap='shouquan'></view>
 <view class='top-bg'>
-  <view class='user-status'>
+  <view class='user-status' wx:if="{{userinfo==false}}">
     <navigator>
       <image src='../../img/setting.png' class='icon'></image>
       <view>设置</view>
     </navigator>
-    <view>微信昵称</view>
+    <view class='name'>未登录</view>
+    <view class='name'></view>
     <view class='avatar'>
       <image src='../../img/default-avatar.png'></image>
     </view>
     <view>积分：888</view>
     <navigator>
+      <image src='../../img/breadcrumb.png' class='icon'></image>
+      <view>积分规则</view>
+    </navigator>
+  </view>
+  <view class='user-status' wx:if="{{userinfo==true}}">
+    <navigator url='../info/info'>
+      <image src='../../img/setting.png' class='icon'></image>
+      <view>设置</view>
+    </navigator>
+    <view class='name'>{{indexdata.nickname}}</view>
+    <view class='name'></view>
+    <view class='avatar'>
+      <image src='{{indexdata.headimg}}'></image>
+    </view>
+    <view>积分：{{indexdata.integral>999?"999+":indexdata.integral}}</view>
+    <navigator url='../score-rule/score-rule'>
       <image src='../../img/breadcrumb.png' class='icon'></image>
       <view>积分规则</view>
     </navigator>
@@ -42,7 +60,7 @@
     <image src='../../img/personal3.png'></image>
     <view>兑换记录</view>
   </navigator>
-  <navigator class='nav-item'>
+  <navigator class='nav-item' url='../myorder/myorder'>
     <image src='../../img/personal4.png'></image>
     <view>我的订单</view>
   </navigator>
@@ -54,4 +72,4 @@
   <image src='../../img/position.png'></image>
 </view>
 
-<image class='personal-img' src='../../img/personal-img.png'></image>
+<image class='personal-img' src='{{url}}/budweiser/personal-img.png'></image>

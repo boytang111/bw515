@@ -1,11 +1,12 @@
 // pages/score-rule/score-rule.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    url: app.globalData.url,
   },
 
   /**

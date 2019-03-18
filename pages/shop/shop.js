@@ -33,6 +33,9 @@ Page({
         userinfo: false,
       });
     }
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
@@ -40,6 +43,7 @@ Page({
    */
   onReady: function () {
     this.shopajax();
+    wx.hideLoading()
   },
 
   /**
@@ -82,6 +86,16 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //拒绝授权后的操作
+  shouquan: function () {
+    wx.showModal({
+      title: '提示',
+      content: '请重新进入小程序授权',
+      success(res) {
+
+      }
+    })
   },
   //获取数据
   shopajax(){

@@ -23,6 +23,7 @@ page{
 .info-item image{
   width: 82rpx;
   height: 82rpx;
+  border-radius: 50%
 }
 .info-item text{
   font-size: 34rpx;
@@ -57,15 +58,13 @@ page{
 .input-item picker{
   width: 400rpx;
   height: 64rpx;
+  line-height: 64rpx;
   border: solid 1rpx #e1e1e1;
   border-radius: 8rpx;
   background: white;
   margin-left: 10rpx;
   box-sizing: border-box;
   color: #787575;
-  display: flex;
-  align-items: center;
-  padding: 0 10rpx;
 }
 .detail-content .btn{
   width: 402rpx;

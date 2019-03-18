@@ -28,7 +28,7 @@
 
 <navigator class='rule'><text>查看活动规则及条款</text></navigator>
 
-<view class='black' wx:if="{{false}}">
+<view class='black' wx:if="{{black}}">
 
   <view class='more-container' wx:if="{{false}}">
     <view class='content'>
@@ -41,7 +41,7 @@
     </view>
   </view>
 
-  <view class='gift-container' wx:if="{{false}}">
+  <view class='gift-container' wx:if="{{black}}">
     <image class='congratulation' src='../../img/congratulation.png'></image>
     <view class='gift-title'>本次翻牌您获得了：</view>
     <view class='prize'>
@@ -49,9 +49,12 @@
       <view class='name'>这里是奖品名字</view>
       <view class='explain'>（已经放入了您的卡券中心）</view>
     </view>
-    <view class='buttons'>
+    <!-- <view class='buttons'>
       <text>知道了</text>
       <text>去看看</text>
+    </view> -->
+    <view class='buttons'>
+      <text catchtap='back'>确定</text>
     </view>
   </view>
 

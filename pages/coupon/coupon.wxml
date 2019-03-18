@@ -1,18 +1,18 @@
 <view class="personal">
-  <image src='../../img/default-avatar.png' class='avatar'></image>
-  <text class='nick-name'>微信昵称</text>
+  <image src='{{headimg}}' class='avatar'></image>
+  <text class='nick-name'>{{nickname}}</text>
   <view class='score'>
     <text>积分: </text>
-    <text>888</text>
+    <text>{{integral}}</text>
   </view>
   <image src='../../img/logo2.png' class='logo'></image>
 </view>
 <view class='title'>卡券中心</view>
 
 <view class='nav'>
-  <navigator class='nav-item active'>优惠券</navigator>
-  <navigator class='nav-item'>活动券</navigator>
-  <navigator class='nav-item'>会员卡</navigator>
+  <view class='nav-item active'>优惠券</view>
+  <view class='nav-item'>活动券</view>
+  <view class='nav-item'>会员卡</view>
 </view>
 
 <view class='sub-nav'>

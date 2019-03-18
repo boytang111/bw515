@@ -1,0 +1,14 @@
+<view class="personal">
+  <image src='{{headimg}}' class='avatar'></image>
+  <text class='nick-name'>{{nickname}}</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>{{integral}}</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class='title'>订单中心</view>
+
+<view class='view'>
+  敬请期待
+</view>

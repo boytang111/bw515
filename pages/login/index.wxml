@@ -5,12 +5,12 @@
 
   <view class='dialog-check' wx:if="{{user}}">
     <view class='dialog-title'>
-      <image src='../../img/beer-dialog.png'></image>
+      <image src='{{url}}/budweiser/beer-dialog.png'></image>
       <view>
         <text class='age-title'>你已经年满18周岁了吗？</text>
         <view class='agree-container'>
           <view class='box' catchtap='imgbap'>
-            <image src='{{imgstatu==true?"../../img/black-tick.png":""}}'></image>
+            <image src='{{imgstatu==true?"https://applet.qm-vip.com/budweiser/black-tick.png":""}}'></image>
           </view>
           <view class='text'>已年满18周岁，并同意百威英博<text catchtap='clausebap'>隐私条款</text></view>
         </view>
@@ -18,12 +18,12 @@
     </view>
     <view class='des'>获取你的昵称、头像、地区及性别</view>
     <view class='user-info'>
-      <image src='../../img/login-bg.png' class='avatar'></image>
+      <image src='{{url}}/budweiser/default-avatar.png' class='avatar'></image>
       <view>
         <view>微信个人信息</view>
         <view>个人ID</view>
       </view>
-      <image src='../../img/tick.png' class='tick'></image>
+      <image src='{{url}}/budweiser/tick.png' class='tick'></image>
     </view>
     <view class='apply-btn'>
       <button catchtap='indextap'>取消</button>
@@ -33,7 +33,7 @@
   </view>
 
   <view class='clause' wx:if="{{clause}}">
-    <image class='close' src='../../img/close.png' catchtap='close_clause'></image>
+    <image class='close' src='{{url}}/budweiser/close.png' catchtap='close_clause'></image>
     <text class='title'>隐私条款</text>
     <text class='term'>
 与使用本网站有关的数据保护信息
@@ -53,7 +53,7 @@ Protecting your privacy is very important to us. Therefore, our internet presenc
   </view>
 
   <view class='gift-dialog' wx:if="{{gift}}">
-    <image class='close' src='../../img/close.png' ></image>
+    <image class='close' src='{{url}}/budweiser/close.png' ></image>
     <view class='title'>定制您的喜好</view>
     <view class='sub-title'>为了进行更好的专属服务，请先选择您的喜好。提交后将获得一份新人礼。</view>
     <view class='title'>以下啤酒中你最爱喝的是？</view>
@@ -61,38 +61,38 @@ Protecting your privacy is very important to us. Therefore, our internet presenc
     <view class='choose'>
       <view class='beer {{beer=="米凯罗"?"active":""}}' data-title="米凯罗" catchtap='beerbap'>
         <view>米凯罗</view>
-        <image src='../../img/beer5.png'></image>
+        <image src='{{url}}/budweiser/beer5.png'></image>
       </view> 
       <view class='beer {{beer=="金尊"?"active":""}}' data-title="金尊" catchtap='beerbap'>
         <view>金尊</view>
-        <image src='../../img/beer2.png'></image>
+        <image src='{{url}}/budweiser/beer2.png'></image>
       </view>
       <view class='beer {{beer=="百威"?"active":""}}' data-title="百威" catchtap='beerbap'>
         <view>百威</view>
-        <image src='../../img/beer1.png'></image>
+        <image src='{{url}}/budweiser/beer1.png'></image>
       </view>
       <view class='beer {{beer=="哈尔滨冰萃"?"active":""}}' data-title="哈尔滨冰萃" catchtap='beerbap'>
         <view>哈尔滨冰萃</view>
-        <image src='../../img/beer3.png'></image>
+        <image src='{{url}}/budweiser/beer3.png'></image>
       </view>
       <view class='beer {{beer=="哈尔滨白啤"?"active":""}}' data-title="哈尔滨白啤" catchtap='beerbap'>
         <view>哈尔滨白啤</view>
-        <image src='../../img/beer4.png'></image>
+        <image src='{{url}}/budweiser/beer4.png'></image>
       </view>
     </view>
     
     <view class='title'>以下奖品中你最喜欢的是？</view>
     <view class='flex-box'>
       <view class='item gift {{item=="美食"?"active":""}}' data-title="美食" catchtap='itembap'>
-        <image src='../../img/gift1.png'></image>
+        <image src='{{url}}/budweiser/gift1.png'></image>
         <view>美食</view>
       </view>
       <view class='item gift {{item=="潮牌"?"active":""}}' data-title="潮牌" catchtap='itembap'>
-        <image src='../../img/gift2.png'></image>
+        <image src='{{url}}/budweiser/gift2.png'></image>
         <view>潮牌</view>
       </view>
       <view class='item gift {{item=="电音"?"active":""}}' data-title="电音" catchtap='itembap'>
-        <image src='../../img/gift3.png'></image>
+        <image src='{{url}}/budweiser/gift3.png'></image>
         <view>电音</view>
       </view>
     </view>
@@ -102,7 +102,7 @@ Protecting your privacy is very important to us. Therefore, our internet presenc
 
   <view class='dialog-check' wx:if="{{phone}}">
     <view class='logo-box'>
-      <image src='../../img/logo1.png'></image>
+      <image src='{{url}}/budweiser/logo1.png'></image>
       <text>申请使用</text>
     </view>
     <view class='des'>你的手机号码</view>

@@ -14,6 +14,7 @@
   width: 82rpx;
   height: 82rpx;
   flex-shrink: 0;
+  border-radius:50%;
 }
 .logo{
   height: 54rpx;
@@ -23,12 +24,17 @@
   margin-left: 20rpx;
   color: white;
   font-size: 30rpx;
+  flex: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .score{
-  flex: 1;
-  text-align: center;
+  flex: 2.5;
   font-size: 32rpx;
   color: white;
+  padding-left: 10rpx;
+  box-sizing:border-box;
 }
 .score text{
   vertical-align: middle;

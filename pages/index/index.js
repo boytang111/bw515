@@ -15,6 +15,7 @@ Page({
     //用户积分
     integral:app.globalData.integral,
     userinfo:true,
+    black:true,
   },
 
   /**
@@ -34,6 +35,9 @@ Page({
     if (app.globalData.getLocation == false){
       this.getAddress()
     }
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
@@ -42,7 +46,7 @@ Page({
   onReady: function () {
     this.daily_login();
     this.slide_list();
-    
+    wx.hideLoading()
   },
 
   /**
@@ -89,6 +93,16 @@ Page({
   getAddress: function () {
     var that = this;
     app.getPermission(that);    //传入that值可以在app.js页面直接设置内容    
+  },
+  //拒绝授权后的操作
+  shouquan:function(){
+    wx.showModal({
+      title: '提示',
+      content: '请重新进入小程序授权',
+      success(res) {
+        
+      }
+    })
   },
   //每日登陆检测
   daily_login:function(){
@@ -138,5 +152,19 @@ Page({
         })
       }
     })
+  },
+  //品牌联名跳转
+  btnpin:function(){
+    wx.navigateTo({
+      url: '../goods/goods?ping_type=1'
+    })
+  },
+  //点击取消
+  black:function(){
+    this.setData({
+      black:false,
+    })
   }
+  //点击弹出新人奖
+
 })

@@ -20,7 +20,7 @@
 </view>
 
 <view class='exchange'>
-  <!-- <view class='button'>立即兑换</view> -->
+  <view>{{requirement_level==0?"仅限银级会员专享":requirement_level==1?"仅限黄金会员专享":requirement_level==2?"仅限铂金会员专享":""}}</view>
   <view wx:if="{{detail_number!=0}}" class='button {{exchange==false?"refuse":""}}' catchtap='{{exchange==false?"":"exchange"}}'>{{exchange==false?"积分不足":"立即兑换"}}</view>
   <view class='button refuse' wx:if="{{detail_number==0}}">已抢完</view>
   <view catchtap='qita'><text>其他获取方式</text></view>
@@ -31,27 +31,27 @@
  <view class='more-container' wx:if="{{container}}">
   <image src='../../img/close.png' class='close' catchtap='close_black'></image>
   <view class='get-title'>你可以通过以下方式获取</view>
-  <view class='get-button'>30积分赢回家</view>
+  <view class='get-button' catchtap='luck'>30积分赢回家</view>
   <navigator url='../score-rule/score-rule'><text>如何获得更多积分</text></navigator>
  </view>
 
   <view class='more-container' wx:if="{{more}}">
     <view class='content'>您确认要花费30积分来赢礼品？</view>
     <view class='buttons'>
-      <text>否</text>
-      <text>是</text>
+      <text catchtap='close_black'>否</text>
+      <text catchtap='luck_draw_three'>是</text>
     </view>
   </view>
 
   <view class='more-container' wx:if="{{no_more}}">
-    <image src='../../img/close.png' class='close'></image>
+    <image src='../../img/close.png' class='close' catchtap='close_black'></image>
     <view class='get-title'>很遗憾，未能博取该礼品</view>
     <view class='comfort'>作为安慰，小创为您准备了 一张优惠券</view>
-    <view class='get-button lose'>立即领取</view>
+    <view class='get-button lose' catchtap='upbtn'>立即领取</view>
   </view>
 
   <view class='more-container' wx:if="{{ye_more}}">
-    <image src='../../img/close.png' class='close'></image>
+    <image src='../../img/close.png' class='close' catchtap='close_black'></image>
     <view class='coupon'>
       <view class='text'>
         <view>积分99折扣</view>
@@ -59,8 +59,8 @@
       <image src='../../img/good-picture.png'></image>
     </view>
     <view class='prize-name'>无线蓝牙音箱 积分80%折扣优惠券</view>
-    <navigator><text>进入我的优惠券查看</text></navigator>
-    <view class='get-button lose'>再来一次</view>
+    <navigator url='../coupon/coupon'><text>进入我的优惠券查看</text></navigator>
+    <view class='get-button lose' catchtap='luck'>再来一次</view>
   </view>
 
   <view class='gift-container' wx:if="{{yes_more}}">

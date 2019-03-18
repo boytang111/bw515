@@ -1,27 +1,28 @@
 <view class='title'>百威创新新人礼</view>
 
 <view class='content'>
-  <image src='../../img/good-picture.png' class='active'></image>
-  <image src='../../img/good-picture.png'></image>
-  <image src='../../img/good-picture.png'></image>
-  <image src='../../img/good-picture.png'></image>
-  <image src='../../img/good-picture.png'></image>
-  <image src='../../img/good-picture.png'></image>
+  <!-- class='active' -->
+  <image src='{{url}}/budweiser/good-picture1.png' ></image>
+  <image src='{{url}}/budweiser/good-picture2.png'></image>
+  <image src='{{url}}/budweiser/good-picture3.png'></image>
+  <image src='{{url}}/budweiser/good-picture4.png'></image>
+  <image src='{{url}}/budweiser/good-picture5.png'></image>
+  <image src='{{url}}/budweiser/good-picture6.png'></image>
 </view>
 
 
-<navigator class='rule'><text>查看活动规则及条款</text></navigator>
+<view class='rule'><text>查看活动规则及条款</text></view>
 
-<view class='btn'>开始抽奖</view>
+<view class='btn' catchtap='luck'>开始抽奖</view>
 
-<view class='black' wx:if="{{false}}">
+<view class='black' wx:if="{{black}}">
   <view class='gift-container'>
     <image class='congratulation' src='../../img/congratulation.png'></image>
     <view class='gift-title'>恭喜你获得</view>
     <view class='prize'>
-      <image src='../../img/good-picture.png'></image>
+      <image src='{{url}}/budweiser/xinren.png'></image>
     </view>
-    <view class='gift'>奖品名字</view>
-    <view class='look-for'>确定</view>
+    <view class='gift'>{{luckdata.name}}</view>
+    <view class='look-for' catchtap='back'>去首页看看</view>
   </view>
 </view>

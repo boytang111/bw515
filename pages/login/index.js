@@ -21,10 +21,14 @@ Page({
     beer:"",
     //奖品
     item:"",
+    url:app.globalData.url,
+
   },
   //事件处理函数
   onLoad: function () {
-    console.log(app.globalData.openid)
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -46,6 +50,7 @@ Page({
             if (app.globalData.openid!=""){
               that.map();
               that.getSetting();
+              wx.hideLoading()
             }
           }
         })

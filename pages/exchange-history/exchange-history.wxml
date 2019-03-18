@@ -1,69 +1,41 @@
 <view class="personal">
-  <image src='../../img/default-avatar.png' class='avatar'></image>
-  <text class='nick-name'>微信昵称</text>
+  <image src='{{headimg}}' class='avatar'></image>
+  <text class='nick-name'>{{nickname}}</text>
   <view class='score'>
     <text>积分: </text>
-    <text>888</text>
+    <text>{{integral}}</text>
   </view>
   <image src='../../img/logo2.png' class='logo'></image>
 </view>
 <view class='title'>卡券中心</view>
 
 <view class='nav'>
-  <navigator class='nav-item active'>虚拟物品</navigator>
-  <navigator class='nav-item'>实际商品</navigator>
+  <view class='nav-item {{btnindex==2?"active":""}}' data-index="2" catchtap='navbtn'>虚拟物品</view>
+  <view class='nav-item {{btnindex==1?"active":""}}' data-index="1" catchtap='navbtn'>实际商品</view>
 </view>
 
 <scroll-view class='content' scroll-y>
-  <view class='list-item'>
-    <view class='first'>
-      <view>京东-100元京东e卡<text>2个</text></view>
-      <view>花费：<text>600积分</text></view>
+  <view class='list-item' wx:for="{{listdata}}" wx:key="index" wx:for-item="item" >
+    <view class='first' data-index="{{index}}" catchtap='index'>
+      <view>{{item.product_name}}</view>
+      <view>花费：<text>{{item.product_integral}}积分</text></view>
     </view>
-    <view class='detail'>
-      <image src='../../img/good-picture.png'></image>
-      <view class='code'>
-        <text>序列码：FD24897SFD</text>
+    <view class='detail' wx:if="{{myindex==index}}">
+      <image src='{{url}}{{item.src}}'></image>
+      <view class='code' wx:if="{{btnindex==2}}">
+        <text>序列码：{{item.virtual_number}}</text>
+        <view catchtap='setcli' data-id="{{item.virtual_number}}">复制</view>
+      </view>
+      <view class='code' wx:if="{{btnindex==1}}">
+        <text>物流单号:请耐心等待</text>
         <view>复制</view>
       </view>
-      <view class='link'>兑换地址：<text>https://0x9.me/Iay9n</text></view>
+      <view class='link'><text>物流公司：将于七个工作日内寄出</text></view>
     </view>
     <view class='footer'>
-      <view>兑换日期：2019.02.10</view>
-      <view>兑换状态：<text class='red'>未领取</text></view>
-    </view>
-  </view>
-
-  <view class='list-item'>
-    <view class='first'>
-      <view>京东-100元京东e卡<text>2个</text></view>
-      <view>花费：<text>600积分</text></view>
-    </view>
-    <view class='footer'>
-      <view>兑换日期：2019.02.10</view>
-      <view>兑换状态：<text class='blue'>未领取</text></view>
-    </view>
-  </view>
-  
-  <view class='list-item'>
-    <view class='first'>
-      <view>京东-100元京东e卡<text>2个</text></view>
-      <view>花费：<text>600积分</text></view>
-    </view>
-    <view class='footer'>
-      <view>兑换日期：2019.02.10</view>
-      <view>兑换状态：<text class='blue'>未领取</text></view>
-    </view>
-  </view>
-
-  <view class='list-item'>
-    <view class='first'>
-      <view>京东-100元京东e卡<text>2个</text></view>
-      <view>花费：<text>600积分</text></view>
-    </view>
-    <view class='footer'>
-      <view>兑换日期：2019.02.10</view>
-      <view>兑换状态：<text class='blue'>未领取</text></view>
+      <view>兑换日期：{{item.add_time}}</view>
+      <view wx:if="{{btnindex==1}}">兑换状态：<text class='{{item.status==9?"green":"red"}}'>{{item.status==9?"已领取":"未领取"}}</text></view>
+      <view wx:if="{{btnindex==2}}">兑换状态：<text class='{{item.status==0?"red":item.status==3?"yellow":item.status==9?"green":""}}'>{{item.status==9?"已完成":item.status==3?"已发货":item.status==0?"未发货":""}}</text></view>
     </view>
   </view>
 </scroll-view>

@@ -10,10 +10,12 @@
 
 <view class='info'>
   <view class='code'>
-    <text>序列码：{{number}}</text>
+    <text wx:if="{{type==1}}">物流单号：请耐心等待</text>
+    <text wx:if="{{type==2}}">序列码：{{number}}</text>
     <view catchtap='setcli'>复制</view>
   </view>
-  <navigator>兑换地址：<text>{{htttpurl}}</text></navigator>
+  <view class='navigator' wx:if="{{type==2}}">兑换地址：<text>{{htttpurl}}</text></view>
+  <view class='navigator' wx:if="{{type==1}}">物流公司：<text>将于七个工作日内寄出</text></view>
 </view>
 
 <navigator class='more'>

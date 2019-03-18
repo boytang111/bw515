@@ -4,82 +4,18 @@
     <text>新增收货地址</text>
   </navigator>
 
-  <view class='address'>
-    <view class='info'>
+  <view class='address' wx:for="{{addressdata}}" wx:key="item" wx:for-item="item">
+    <view class='info' data-id="{{item.id}}" catchtap='{{choice==1?"choiceajax":""}}'>
       <view>
-        <text>XX先生</text>
-        <text>132106xxxxx</text>
+        <text>{{item.user_name}}{{item.gender==1?"先生":"女士"}}</text>
+        <text>{{item.tel_number}}</text>
       </view>
       <view>
-        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
-        <text class='brand'>家</text>
-      </view>
-    </view>
-    <navigator url='../edit-address/edit-address'>
-      <image src='../../img/edit.png'></image>
-    </navigator>
-  </view>
-
-  <view class='address'>
-    <view class='info'>
-      <view>
-        <text>XX先生</text>
-        <text>132106xxxxx</text>
-      </view>
-      <view>
-        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
-        <text class='brand'>家</text>
+        <text>{{item.province_name}}{{item.city_name}}{{item.county_name}}{{item.detail_info}}</text>
+        <!-- <text class='brand'>家</text> -->
       </view>
     </view>
-    <navigator url='../edit-address/edit-address'>
-      <image src='../../img/edit.png'></image>
-    </navigator>
-  </view>
-
-  <view class='address'>
-    <view class='info'>
-      <view>
-        <text>XX先生</text>
-        <text>132106xxxxx</text>
-      </view>
-      <view>
-        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
-        <text class='brand'>家</text>
-      </view>
-    </view>
-    <navigator url='../edit-address/edit-address'>
-      <image src='../../img/edit.png'></image>
-    </navigator>
-  </view>
-
-  <view class='address'>
-    <view class='info'>
-      <view>
-        <text>XX先生</text>
-        <text>132106xxxxx</text>
-      </view>
-      <view>
-        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
-        <text class='brand'>家</text>
-      </view>
-    </view>
-    <navigator url='../edit-address/edit-address'>
-      <image src='../../img/edit.png'></image>
-    </navigator>
-  </view>
-
-  <view class='address'>
-    <view class='info'>
-      <view>
-        <text>XX先生</text>
-        <text>132106xxxxx</text>
-      </view>
-      <view>
-        <text>徐汇区XXX路xxx弄xxx号xxx室</text>
-        <text class='brand'>家</text>
-      </view>
-    </view>
-    <navigator url='../edit-address/edit-address'>
+    <navigator url='../edit-address/edit-address?id={{item.id}}'>
       <image src='../../img/edit.png'></image>
     </navigator>
   </view>

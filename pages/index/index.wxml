@@ -1,3 +1,4 @@
+<view class='flexos' wx:if="{{userinfo==false}}" catchtap='shouquan'></view>
 <view class="personal" wx:if="{{userinfo==true}}">
   <image src='{{headimg}}' class='avatar'></image>
   <text class='nick-name'>{{nickname}}</text>
@@ -19,7 +20,7 @@
       <image src='../../img/pai1.png'></image>
       <view>醉爱翻牌</view>
     </navigator>
-    <navigator class='btn'>
+    <navigator class='btn' catchtap='btnpin'>
       <image src='../../img/pai2.png'></image>
       <view>品牌联名</view>
     </navigator>
@@ -31,15 +32,15 @@
 
 </view>
 
-<view class='black' wx:if="{{false}}">
+<view class='black' wx:if="{{black}}">
 
-  <view class='new' wx:if="{{false}}">
+  <view class='new' wx:if="{{black}}">
     <image src='../../img/congratulation.png'></image>
     <view class='title'>欢迎加入百威创新大家庭</view>
     <view class='gift'>抽奖机会x1次</view>
     <view class='gift'>已经放入您的卡券中心</view>
     <view class='confirm'>
-      <text>知道了</text>
+      <text catchtap='black'>知道了</text>
       <navigator url='../luck/luck'>去抽奖</navigator>
     </view>
   </view>

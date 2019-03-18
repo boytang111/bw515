@@ -1,7 +1,7 @@
 <view class='container'>
   <view class='input-item'>
     <text>联系人</text>
-    <input type='text' bindinput ="userName"></input>
+    <input type='text' bindinput ="userName" value='{{user_name}}'></input>
   </view>
   <view class='input-item'>
     <text></text>
@@ -12,7 +12,7 @@
   </view>
   <view class='input-item'>
     <text>电话</text>
-    <input type='number' bindinput ="tel_number"></input>
+    <input type='number' bindinput ="tel_number" value='{{tel_number}}'></input>
   </view>
   <view class='input-item'>
     <text>选择地区</text>
@@ -25,7 +25,7 @@
   </view>
   <view class='input-item textarea'>
     <text>详细地址</text>
-    <textarea bindinput ="detailInfo"></textarea>
+    <textarea bindinput ="detailInfo" value='{{detail_info}}'></textarea>
   </view>
   <!-- <view class='input-item'>
     <text>标签</text>
@@ -36,7 +36,7 @@
     </view>
   </view> -->
 
-  <!-- <view class='delete'><text>删除地址</text></view> -->
+  <view class='delete' wx:if="{{id!=''}}" catchtap='delete_id'><text>删除地址</text></view>
   <view class='save' catchtap='addades'>保存</view>
 </view>
 
@@ -44,8 +44,8 @@
   <view class='more-container'>
     <view class='content'>您确认要删除这个收货地址？</view>
     <view class='buttons'>
-      <text>否</text>
-      <text>是</text>
+      <text catchtap='close'>否</text>
+      <text catchtap='yes_delete'>是</text>
     </view>
   </view>
 </view>

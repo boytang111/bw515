@@ -1,43 +1,43 @@
 <view class='container'>
   <view class='info-item'>
     <text>头像</text>
-    <image src='../../img/default-avatar.png'></image>
+    <image src='{{infodata.headimg}}'></image>
   </view>
   <view class='info-item'>
     <text>昵称</text>
-    <view>微信昵称</view>
+    <view>{{infodata.nickname}}</view>
   </view>
   <view class='info-item'>
     <text>手机号</text>
-    <view>130*****023</view>
+    <view>{{infodata.phone}}</view>
   </view>
-  <view class='info-item'>
+  <view class='info-item' catchtap='birthday_up'>
     <text>生日</text>
-    <view class='arrow active'>请选择</view>
+    <view class='arrow {{birthday==true?"active":""}}' >{{infodata.birthday||'请选择'}}</view>
   </view>
 
-  <view class='detail-content'>
+  <view class='detail-content' wx:if='{{birthday==true}}'>
     <view class='input-item'>
       <text>生日：</text>
-      <picker mode='date'>xxxx-xx-xx</picker>
+      <picker mode='date' value="{{date}}" bindchange="bindDateChange">{{date||'请选择'}}</picker>
     </view>
-    <view class='btn'>保存</view>
+    <view class='btn' catchtap='infoadd'>保存</view>
   </view>
 
-  <view class='info-item'>
+  <view class='info-item' catchtap='gender_up'>
     <text>性别</text>
-    <view class='arrow active'>男</view>
+    <view class='arrow {{gender==true?"active":""}}' >{{ingender==1?"男":"女"}}</view>
   </view>
 
-  <view class='detail-content'>
+  <view class='detail-content' wx:if='{{gender==true}}'>
     <view class='selector'>
-      <text class='active'>男</text>
-      <text>女</text>
+      <text class='{{infogender==1?"active":""}}' catchtap='genders' data-id="1">男</text>
+      <text class='{{infogender==2?"active":""}}' catchtap='genders' data-id="2">女</text>
     </view>
-    <view class='btn'>保存</view>
+    <view class='btn' catchtap='infoadd'>保存</view>
   </view>
   
-  <navigator class='info-item' url='../addres-manage/address-manage'>
+  <navigator class='info-item' url='../address-manage/address-manage'>
     <text>收货地址</text>
     <view class='arrow'> </view>
   </navigator>
@@ -45,7 +45,7 @@
     <text>百威创新会员手册</text>
     <view class='arrow'> </view>
   </navigator>
-  <view class='info-item'>
+  <!-- <view class='info-item'>
     <text>退出登录</text>
-  </view>
+  </view> -->
 </view>

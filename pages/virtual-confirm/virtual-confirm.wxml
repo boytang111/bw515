@@ -15,15 +15,15 @@
   <text class='brand'>兑换说明</text>
   <view class='input-item' wx:if="{{save==false}}">
     <text space="emsp">姓  名：</text>
-    <view>我的</view>
+    <view>{{user_name}}</view>
   </view>
   <view class='input-item' wx:if="{{save==false}}">
     <text space="emsp">联系电话：</text>
-    <view>17752710563</view>
+    <view>{{tel_number}}</view>
   </view>
   <view class='input-item top' wx:if="{{save==false}}">
     <text space="emsp">收货地址：</text>
-    <view>上海市徐汇区XXX路xxx号xxx弄xxx栋xxx室</view>
+    <view>{{province_name}}{{city_name}}{{county_name}}{{detail_info}}</view>
   </view>
   <view class='navigator' catchtap='jumparres'><text>{{save==true?"新增地址":"选择其他收货地址"}}</text></view>
 </view>

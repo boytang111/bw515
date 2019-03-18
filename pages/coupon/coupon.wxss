@@ -12,6 +12,7 @@ page{
   width: 82rpx;
   height: 82rpx;
   flex-shrink: 0;
+  border-radius: 50%;
 }
 .logo{
   height: 54rpx;
@@ -21,6 +22,10 @@ page{
   margin-left: 20rpx;
   color: white;
   font-size: 30rpx;
+  flex:.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .score{
   flex: 1;

@@ -16,6 +16,7 @@ Page({
     detail_name:"",
     detail_src:"",
     detailid:"",
+    type:"",
   },
 
   /**
@@ -47,7 +48,9 @@ Page({
         detailid: options.detailid
       })
     }
-
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
@@ -55,6 +58,7 @@ Page({
    */
   onReady: function () {
     this.couponajax();
+    wx.hideLoading()
   },
 
   /**
@@ -120,6 +124,7 @@ Page({
         that.setData({
           detail_name: res.data.name,
           detail_src: res.data.src,
+          type: res.data.type,
         });
       }
     })

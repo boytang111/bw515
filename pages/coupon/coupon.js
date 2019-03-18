@@ -1,18 +1,39 @@
-// pages/coupon/coupon.js
+// pages/score-detail/score-detail.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    url: app.globalData.url,
+    //用户名字
+    nickname: app.globalData.nickname,
+    //用户头像
+    headimg: app.globalData.headimg,
+    //用户积分
+    integral: app.globalData.integral,
+    listdata: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      nickname: app.globalData.nickname,
+      headimg: app.globalData.headimg,
+      integral: app.globalData.integral
+    });
+    if (this.data.nickname == "") {
+      this.setData({
+        userinfo: false,
+      });
+    }
+    if (app.globalData.getLocation == false) {
+      this.getAddress()
+    }
   },
 
   /**

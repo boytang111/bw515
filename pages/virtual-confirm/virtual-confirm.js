@@ -26,6 +26,14 @@ Page({
     save:false,
     //添加地址返回
     address_save:"",
+    user_name: "",
+    tel_number: "",
+    province_name: "",
+    city_name: "",
+    county_name: "",
+    detail_info: "",
+    //地址id
+    addressid:"",
   },
 
   /**
@@ -37,6 +45,9 @@ Page({
         detailid: options.id,
       })
     }
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
@@ -45,15 +56,20 @@ Page({
   onReady: function () {
     this.couponajax();
     this.coupon_count();
+    wx.hideLoading()
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.data.address_save!=""){
-      this.address();
-    }
+    // if (this.data.address_save!=""){
+    //   this.address();
+    // }
+    // if (this.data.addressid != "") {
+    //   this.address(this.data.addressid);
+    // }
+    this.address(this.data.addressid);
   },
 
   /**
@@ -166,6 +182,12 @@ Page({
         'type': that.data.type,
         'coupon_id': that.data.mydata,
         'time': time,
+        'user_name': that.data.user_name,
+        'tel_number': that.data.tel_number,
+        'province_name': that.data.province_name,
+        'city_name': that.data.city_name,
+        'county_name': that.data.county_name,
+        'detail_info': that.data.detail_info,
       },
       success(res) {
         if (res.data.code==200){
@@ -202,7 +224,14 @@ Page({
       },
       success(res) {
         if(res.data.code==200){
-
+          that.setData({
+            user_name: res.data.address.user_name,
+            tel_number: res.data.address.tel_number,
+            province_name: res.data.address.province_name,
+            city_name: res.data.address.city_name,
+            county_name: res.data.address.county_name,
+            detail_info: res.data.address.detail_info,
+          })
         } else if (res.data.code == 100){
           that.setData({
             save:true,
@@ -217,6 +246,11 @@ Page({
       wx.navigateTo({
         url: '../edit-address/edit-address'
       })
+    }else{
+      wx.navigateTo({
+        url: '../address-manage/address-manage?choice=1'
+      })
+      
     }
   }
 })

@@ -23,7 +23,8 @@
     "pages/score-rule/score-rule",
     "pages/detail/detail",
     "pages/receive/receive",
-    "pages/shop/shop"
+    "pages/shop/shop",
+    "pages/myorder/myorder"
   ],
   "window":{
     "backgroundTextStyle":"light",

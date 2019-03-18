@@ -1,3 +1,11 @@
+.flexos{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 11111
+}
 .top-bg{
   height: 470rpx;
   background-color: black;
@@ -16,14 +24,16 @@
 .user-status{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   color: white;
   font-size: 28rpx;
   padding: 20rpx 0;
+  box-sizing: border-box
 }
 .user-status navigator{
   font-size: 18rpx;
   text-align: center;
+  flex: 0.5
 }
 .user-status .icon{
   width: 32rpx;
@@ -31,7 +41,8 @@
 }
 .user-status .avatar{
   width: 120rpx;
-  position: relative;
+  position: absolute;
+  left: 40%;
 }
 .user-status .avatar image{
   width: 180rpx;
@@ -133,4 +144,10 @@
   height: 250rpx;
   display: block;
   margin: 40rpx auto;
+}
+.name{
+  flex: 0.5;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }

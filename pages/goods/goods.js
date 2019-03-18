@@ -20,6 +20,7 @@ Page({
     userinfo: true,
     //页面数据
     goodsdata:[],
+    ping_type:"",
   },
 
   /**
@@ -46,6 +47,14 @@ Page({
         goodsname: options.name,
       });
     }
+    if (options.ping_type) {
+      this.setData({
+        ping_type: options.ping_type,
+      });
+    }
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
@@ -53,6 +62,7 @@ Page({
    */
   onReady: function () {
     this.goodsajax();
+    wx.hideLoading()
   },
 
   /**
@@ -112,6 +122,7 @@ Page({
         'absign': str,
         'time': time,
         'class_id':that.data.goodsid,
+        'type': that.data.ping_type,
       },
       success(res) {
         console.log(res.data);
