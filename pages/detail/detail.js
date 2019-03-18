@@ -14,6 +14,7 @@ Page({
     detail_number: "",
     detail_src: "",
     detail_integral:"",
+    detail_type:"",
     content:[],
     integral:"",
     //是否能兑换
@@ -111,6 +112,7 @@ Page({
           detail_number: res.data.number,
           detail_integral: res.data.integral,
           detail_src: res.data.src,
+          detail_type: res.data.type,
         });
         that.member();
       }

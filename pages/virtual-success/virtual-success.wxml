@@ -2,18 +2,18 @@
   <image src='../../img/red-tick.png'></image>
   <text>恭喜，兑换成功</text>
 </view>
-<image class='product' src='../../img/good-picture.png'></image>
+<image class='product' src='{{url}}{{detail_src}}'></image>
 
-<view class='name'>手机无线蓝牙音箱迷你低音炮 1个</view>
-<view class='cost'>花费：<text>180积分</text></view>
-<view class='balance'>积分余额：8200积分</view>
+<view class='name'>{{detail_name}} 1个</view>
+<view class='cost'>花费：<text>{{integral}}积分</text></view>
+<view class='balance'>积分余额：{{member_integral}}积分</view>
 
 <view class='info'>
   <view class='code'>
-    <text>序列码：FD24897SFD</text>
-    <view>复制</view>
+    <text>序列码：{{number}}</text>
+    <view catchtap='setcli'>复制</view>
   </view>
-  <navigator>兑换地址：<text>https://0x9.me/Iay9n</text></navigator>
+  <navigator>兑换地址：<text>{{htttpurl}}</text></navigator>
 </view>
 
 <navigator class='more'>

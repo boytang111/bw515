@@ -4,9 +4,12 @@
   </view>
 
   <view class='cost'>{{detail_integral}}积分</view>
-  <view class='original-price'>
+  <view class='original-price' wx:if="{{detail_type==2}}">
     剩余商品量：
     <progress percent="{{detail_number}}" activeColor="red" show-info />
+  </view>
+  <view class='original-price' wx:if="{{detail_type==1}}">
+    剩余商品量：{{detail_number}}个
   </view>
   <view class='title'>{{detail_name}}</view>
 

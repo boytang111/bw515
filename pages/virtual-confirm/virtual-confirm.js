@@ -153,7 +153,17 @@ Page({
         'time': time,
       },
       success(res) {
-        
+        if (res.data.code==200){
+          wx.redirectTo({
+            url: '../virtual-success/virtual-success?integral=' + res.data.integral + '&member_integral=' + res.data.member_integral + '&number=' + res.data.number + '&htttpurl=' + res.data.url + "&detailid=" + that.data.detailid,
+          })
+        }else{
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        }
       }
     })
   }
