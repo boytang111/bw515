@@ -19,10 +19,23 @@ page{
   font-size: 31rpx;
   text-align: right;
   flex-shrink: 0;
-  width: 20%;
+  width: 21%;
   margin-right: 20rpx;
 }
 .input-item input{
+  flex: 1;
+  border: solid 1rpx #d7d7d7;
+  line-height: 64rpx;
+  height: 64rpx;
+  border-radius: 8rpx;
+  font-size: 34rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+.input-item picker{
+  flex: 1;
+}
+.input-item picker input{
   flex: 1;
   border: solid 1rpx #d7d7d7;
   line-height: 64rpx;

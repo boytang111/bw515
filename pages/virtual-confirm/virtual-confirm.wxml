@@ -13,19 +13,19 @@
 
 <view class='intrduce' wx:if="{{type==1}}">
   <text class='brand'>兑换说明</text>
-  <view class='input-item'>
+  <view class='input-item' wx:if="{{save==false}}">
     <text space="emsp">姓  名：</text>
-    <input></input>
+    <view>我的</view>
   </view>
-  <view class='input-item'>
+  <view class='input-item' wx:if="{{save==false}}">
     <text space="emsp">联系电话：</text>
-    <input></input>
+    <view>17752710563</view>
   </view>
-  <view class='input-item top'>
+  <view class='input-item top' wx:if="{{save==false}}">
     <text space="emsp">收货地址：</text>
     <view>上海市徐汇区XXX路xxx号xxx弄xxx栋xxx室</view>
   </view>
-  <navigator><text>选择其他收货地址</text></navigator>
+  <view class='navigator' catchtap='jumparres'><text>{{save==true?"新增地址":"选择其他收货地址"}}</text></view>
 </view>
 <view class='intrduce' wx:if="{{type==2}}">
   <text class='brand'>兑换说明</text>

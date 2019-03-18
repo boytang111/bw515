@@ -1,38 +1,47 @@
 <view class='container'>
   <view class='input-item'>
     <text>联系人</text>
-    <input></input>
+    <input type='text' bindinput ="userName"></input>
   </view>
   <view class='input-item'>
     <text></text>
     <view class='selector'>
-      <view class='active'>先生</view>
-      <view>女士</view>
+      <view class='{{gender==1?"active":""}}' data-id="1" catchtap='gender'>先生</view>
+      <view class='{{gender==2?"active":""}}' data-id="2" catchtap='gender'>女士</view>
     </view>
   </view>
   <view class='input-item'>
     <text>电话</text>
-    <input></input>
-  </view>
-  <view class='input-item textarea'>
-    <text>地址</text>
-    <textarea></textarea>
+    <input type='number' bindinput ="tel_number"></input>
   </view>
   <view class='input-item'>
+    <text>选择地区</text>
+    <picker
+      mode="region"
+      bindchange="bindRegionChange"
+    > 
+      <input value='{{region[0]}}{{region[1]}}{{region[2]}}' disabled></input>
+    </picker>
+  </view>
+  <view class='input-item textarea'>
+    <text>详细地址</text>
+    <textarea bindinput ="detailInfo"></textarea>
+  </view>
+  <!-- <view class='input-item'>
     <text>标签</text>
     <view class='brands'>
       <view class='brand active'>家</view>
       <view class='brand'>公司</view>
       <view class='brand'>学校</view>
     </view>
-  </view>
+  </view> -->
 
-  <view class='delete'><text>删除地址</text></view>
-  <view class='save'>保存</view>
+  <!-- <view class='delete'><text>删除地址</text></view> -->
+  <view class='save' catchtap='addades'>保存</view>
 </view>
 
-<view class='black'>
-  <view class='more-container' wx:if="{{true}}">
+<view class='black' wx:if="{{black}}">
+  <view class='more-container'>
     <view class='content'>您确认要删除这个收货地址？</view>
     <view class='buttons'>
       <text>否</text>

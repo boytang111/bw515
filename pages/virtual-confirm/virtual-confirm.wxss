@@ -80,13 +80,13 @@ page{
   background: white;
   flex: 1;
 }
-.intrduce navigator{
+.intrduce .navigator{
   font-size: 26rpx;
   text-align: center;
   margin-top: 60rpx;
   color: #363636;
 }
-.intrduce navigator text{
+.intrduce .navigator text{
   border-bottom: solid 1rpx #363636;
 }
 

@@ -22,6 +22,8 @@ Page({
     mydata:"",
     myname:"",
     myintegral:"",
+    //是否有地址
+    save:false,
   },
 
   /**
@@ -111,6 +113,9 @@ Page({
           class_id: res.data.class_id,
           myintegral: res.data.integral,
         });
+        if (res.data.type==1){
+          that.address();
+        }
       }
     })
   },
@@ -172,5 +177,42 @@ Page({
         }
       }
     })
+  },
+  //查询默认地址
+  address: function (id){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key);
+    wx.request({
+      url: app.globalData.url + '/Member/address', // 仅为示例，并非真实的接口地址
+      method: 'get',
+      data: {
+        'openid': app.globalData.openid,
+        'absign': str,
+        'member_id': app.globalData.member_id,
+        'id': id,
+        'time': time,
+      },
+      success(res) {
+        if(res.data.code==200){
+
+        } else if (res.data.code == 100){
+          that.setData({
+            save:true,
+          })
+        }
+      }
+    })
+  },
+  //跳转选择地址页面
+  jumparres:function(){
+    if (this.data.save==true){
+      wx.navigateTo({
+        url: '../edit-address/edit-address'
+      })
+    }
   }
 })
