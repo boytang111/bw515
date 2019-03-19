@@ -21,6 +21,7 @@ App({
     getLocation:true,
   },
   getPermission: function (obj) {
+    let that = this;
     wx.chooseLocation({
       success: function (res) {
         obj.setData({
@@ -28,6 +29,8 @@ App({
         })
       },
       fail: function () {
+        
+        
         wx.getSetting({
           success: function (res) {
             var statu = res.authSetting;
@@ -39,12 +42,13 @@ App({
                   if (tip.confirm) {
                     wx.openSetting({
                       success: function (data) {
+                        
                         if (data.authSetting["scope.userLocation"] === true) {
-                          let time = app.time();
+                          let time = that.time();
                           let data = {
                             'time': time,
                           }
-                          let str = app.signature(data, app.globalData.key)
+                          let str = that.signature(data, that.globalData.key)
                           const latitude = res.latitude
                           const longitude = res.longitude
                           const speed = res.speed
@@ -53,10 +57,10 @@ App({
                           const verticalAccuracy = res.verticalAccuracy
                           const horizontalAccuracy = res.horizontalAccuracy
                           wx.request({
-                            url: app.globalData.url + '/Index/address_authorization', // 仅为示例，并非真实的接口地址
+                            url: that.globalData.url + '/Index/address_authorization', // 仅为示例，并非真实的接口地址
                             method: 'post',
                             data: {
-                              'openid': app.globalData.openid,
+                              'openid': that.globalData.openid,
                               'latitude': latitude,
                               'longitude': longitude,
                               'speed': speed,

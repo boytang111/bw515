@@ -164,7 +164,7 @@
 }
 .gift-container .prize image{
   width: 100%;
-  height: 230rpx;
+  height: 290rpx;
 }
 .gift-container .prize .name{
   font-size: 34rpx;

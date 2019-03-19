@@ -10,6 +10,8 @@ Page({
     url: app.globalData.url,
     luckdata:[],
     black:false,
+    time:"",
+    activeindex:"1"
   },
 
   /**
@@ -25,6 +27,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.sevie()
     wx.hideLoading()
   },
 
@@ -46,7 +49,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    clearInterval(this.data.time)
   },
 
   /**
@@ -95,8 +98,34 @@ Page({
     })
   },
   back:function(){
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];
+    prevPage.setData({
+      mylogin: 1,
+    });
     wx.navigateBack({
       delta: 1
+    })
+  },
+  //走马灯效果
+  sevie:function(){
+    let that = this;
+    let activeindex = that.data.activeindex;//获取初始值
+    //如果将定时器设置在外面，那么用户就看不到countDownNum的数值动态变化，所以要把定时器存进data里面
+    that.setData({
+      time: setInterval(function () {//这里把setInterval赋值给变量名为timer的变量
+        if (activeindex==6){
+          activeindex=1
+          that.setData({
+            activeindex: activeindex
+          })
+        }else{
+          activeindex++
+          that.setData({
+            activeindex: activeindex
+          })
+        }
+      }, 500)
     })
   }
 })

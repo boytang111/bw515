@@ -7,7 +7,7 @@
   </view>
   <image src='../../img/logo2.png' class='logo'></image>
 </view>
-<view class='title'>卡券中心</view>
+<view class='title'>兑换记录</view>
 
 <view class='nav'>
   <view class='nav-item {{btnindex==2?"active":""}}' data-index="2" catchtap='navbtn'>虚拟物品</view>

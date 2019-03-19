@@ -110,6 +110,7 @@ Page({
         console.log(res.data);
         that.setData({
           indexdata: res.data,
+          
         })
       }
     })

@@ -29,7 +29,7 @@
 <view class='black' wx:if="{{black}}">
 
  <view class='more-container' wx:if="{{container}}">
-  <image src='../../img/close.png' class='close' catchtap='close_black'></image>
+  <image src='{{url}}/budweiser/close.png' class='close' catchtap='close_black'></image>
   <view class='get-title'>你可以通过以下方式获取</view>
   <view class='get-button' catchtap='luck'>30积分赢回家</view>
   <navigator url='../score-rule/score-rule'><text>如何获得更多积分</text></navigator>
@@ -44,21 +44,22 @@
   </view>
 
   <view class='more-container' wx:if="{{no_more}}">
-    <image src='../../img/close.png' class='close' catchtap='close_black'></image>
+    <image src='{{url}}/budweiser/close.png' class='close' catchtap='close_black'></image>
     <view class='get-title'>很遗憾，未能博取该礼品</view>
-    <view class='comfort'>作为安慰，小创为您准备了 一张优惠券</view>
-    <view class='get-button lose' catchtap='upbtn'>立即领取</view>
+    <view class='comfort' wx:if="{{id==0}}"></view>
+    <view class='comfort' wx:if="{{id!=0}}">作为安慰，小创为您准备了{{type=="integral"?name:type=="coupon"?"一张优惠券":type=="experience"?name:""}}</view>
+    <view class='get-button lose' catchtap='{{type=="coupon"?"upbtn":"luck"}}'>{{type=="coupon"?"立即领取":"再来一次"}}</view>
   </view>
 
   <view class='more-container' wx:if="{{ye_more}}">
-    <image src='../../img/close.png' class='close' catchtap='close_black'></image>
+    <image src='{{url}}/budweiser/close.png' class='close' catchtap='close_black'></image>
     <view class='coupon'>
       <view class='text'>
-        <view>积分99折扣</view>
+        <view></view>
       </view>
-      <image src='../../img/good-picture.png'></image>
+      <image src='{{url}}{{prize_img}}'></image>
     </view>
-    <view class='prize-name'>无线蓝牙音箱 积分80%折扣优惠券</view>
+    <view class='prize-name'>{{prize_name}}</view>
     <navigator url='../coupon/coupon'><text>进入我的优惠券查看</text></navigator>
     <view class='get-button lose' catchtap='luck'>再来一次</view>
   </view>

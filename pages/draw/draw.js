@@ -10,6 +10,13 @@ Page({
     selectIndex: null,
     url: app.globalData.url,
     black:false,
+    container:false,
+    //次数
+    two_find:"",
+    id:"",
+    prize_img:"",
+    prize_name:"",
+    type:"",
   },
 
   /**
@@ -25,7 +32,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    wx.hideLoading()
+    this.two_find();
+    wx.hideLoading();
   },
 
   /**
@@ -95,17 +103,59 @@ Page({
         'time': time,
       },
       success(res) {
-        that.setData({
-          selectIndex:null,
-          black:true,
-        })
+        if (res.data.code==191){
+          that.setData({
+            bax: true,
+            container:true,
+            selectIndex: null,
+          })
+        } else if(res.data.code == 200){
+          that.two_find();
+          let img = that.data.url + res.data.prize_img
+          that.setData({
+            bax: true,
+            selectIndex: null,
+            black: true,
+            id:res.data.id,
+            prize_img: img,
+            prize_name: res.data.prize_name,
+            type: res.data.type
+          })
+        }
+        
       }
     })
   },
   //取消
   back:function(){
     this.setData({
+      bax: false,
       black:false,
+      container:false,
+    })
+  },
+  //查询翻牌次数
+  two_find:function(){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    wx.request({
+      url: app.globalData.url + '/Game/luck_draw_two_find', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'time': time,
+      },
+      success(res) {
+        that.setData({
+          two_find:res.data
+        })
+      }
     })
   }
 })

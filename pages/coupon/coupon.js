@@ -18,6 +18,7 @@ Page({
     btnindex:"0",
     listdata2:[],
     listdata3:[],
+    zhanindex:null,
   },
 
   /**
@@ -117,8 +118,21 @@ Page({
             listdata2: res.data,
           })
         }else{
+          let data=[];
+          let myintegral;
+          for(let i=0; i<res.data.length; i++){
+            if (res.data[i].rules == "折扣") {
+              myintegral = parseInt(res.data[i].integral) * parseInt(res.data[i].number) / 100
+            } else {
+              myintegral = parseInt(res.data[i].integral) - parseInt(res.data[i].number)
+            }
+            data.push({
+              'integr': myintegral,
+              'data':res.data[i]
+            })
+          }
           that.setData({
-            listdata3: res.data,
+            listdata3: data
           })
         }
         
@@ -132,5 +146,18 @@ Page({
       btnindex: e.currentTarget.dataset.index
     })
     this.couponajax(e.currentTarget.dataset.index)
+  },
+  //点击展开收缩已使用优惠券
+  zhan:function(e){
+    let index = e.currentTarget.dataset.index;
+    if (index==this.data.zhanindex){
+      this.setData({
+        zhanindex:null
+      })
+    }else{
+      this.setData({
+        zhanindex: index
+      })
+    }
   }
 })

@@ -53,7 +53,7 @@ Protecting your privacy is very important to us. Therefore, our internet presenc
   </view>
 
   <view class='gift-dialog' wx:if="{{gift}}">
-    <image class='close' src='{{url}}/budweiser/close.png' ></image>
+    <image class='close' src='{{url}}/budweiser/close.png' catchtap='indextap'></image>
     <view class='title'>定制您的喜好</view>
     <view class='sub-title'>为了进行更好的专属服务，请先选择您的喜好。提交后将获得一份新人礼。</view>
     <view class='title'>以下啤酒中你最爱喝的是？</view>

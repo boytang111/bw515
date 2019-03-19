@@ -1,4 +1,4 @@
-// pages/actual-confirm/actual-confirm.js
+ // pages/actual-confirm/actual-confirm.js
 //获取应用实例
 const app = getApp()
 Page({

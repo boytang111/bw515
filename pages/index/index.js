@@ -16,6 +16,11 @@ Page({
     integral:app.globalData.integral,
     userinfo:true,
     black:true,
+    luck_draw:false,
+    newday:false,
+    newdaydata:"",
+    newdaycode:"",
+    mylogin:"",
   },
 
   /**
@@ -27,6 +32,7 @@ Page({
       headimg: app.globalData.headimg,
       integral: app.globalData.integral
     });
+    console.log(this.data.nickname)
     if (this.data.nickname==""){
       this.setData({
         userinfo:false,
@@ -53,7 +59,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.mylogin==1){
+      this.daily_login();
+    }
   },
 
   /**
@@ -98,9 +106,15 @@ Page({
   shouquan:function(){
     wx.showModal({
       title: '提示',
-      content: '请重新进入小程序授权',
+      content: '授权登录后才能进行更多操作',
       success(res) {
-        
+        if (res.confirm) {
+          wx.reLaunch({
+            url: '../login/index'
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
   },
@@ -122,10 +136,34 @@ Page({
         'time': time,
       },
       success(res) {
-        if(res.data.code==210){
-          console.log("123")
+        that.setData({
+          newdaycode: res.data.code
+        })
+        if(res.data.code==201){
+          if (res.data.luck_draw_one.code == 200) {
+            that.setData({
+              luck_draw: true,
+              newday: false,
+            })
+          }else{
+            that.setData({
+              black: false,
+            })
+          }
+        } else if (res.data.code == 200){
+          //判断是否抽过奖
+          if (res.data.luck_draw_one.code == 200) {
+            that.setData({
+              luck_draw: true,
+              newdaydata:res.data.msg,
+            })
+          }else{
+            that.setData({
+              newday: true,
+              newdaydata: res.data.msg,
+            })
+          }
         }
-        
       }
     })
   },
@@ -164,7 +202,21 @@ Page({
     this.setData({
       black:false,
     })
+  },
+  //点击弹出经验框
+  newday:function(){
+    if (this.data.newdaycode==201){
+      this.setData({
+        luck_draw: false,
+        newday: false,
+        black:false,
+      })
+    }else{
+      this.setData({
+        luck_draw: false,
+        newday: true,
+      })
+    }
+    
   }
-  //点击弹出新人奖
-
 })

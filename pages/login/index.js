@@ -140,6 +140,7 @@ Page({
                       user: false,
                     });
                     app.globalData.member_id = res.data.member_id;
+                    that.member(res.data.member_id);
                     if (res.data.phone == null||"") {
                       that.setData({
                         ufer: true,
@@ -150,7 +151,6 @@ Page({
                         gift: true,
                       });
                     }else {
-                      that.member(res.data.member_id);
                       that.indextap();
                     }
                   }
@@ -230,6 +230,10 @@ Page({
             app.globalData.member_id = res.data.member_id;
 
             if (res.data.phone == null ||"" ) {
+              that.setData({
+                phone: true,
+              });
+            }else{
               that.setData({
                 phone: true,
               });
@@ -359,7 +363,7 @@ Page({
       success(res) {
         //是否授权信息
         that.showToast("提交成功");
-        setTimeout(that.indextap(), 2000);
+        that.indextap();
       }
     })
   },

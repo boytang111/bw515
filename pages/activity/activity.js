@@ -1,11 +1,13 @@
 // pages/activity/activity.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    url: app.globalData.url,
   },
 
   /**

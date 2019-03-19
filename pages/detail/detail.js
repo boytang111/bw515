@@ -27,6 +27,10 @@ Page({
     yes_more:false,
     requirement_level:"",
     my_level:"",
+    type:"",
+    prize_name:"",
+    prize_img:"",
+    name:"",
   },
 
   /**
@@ -206,6 +210,7 @@ Page({
       container:false,
       ye_more:false,
       more:true,
+      no_more: false,
     })
   }, 
   //点击赢取
@@ -233,6 +238,24 @@ Page({
             more: false,
             no_more:true,
           })
+        }else{
+          if (res.data.type !="coupon"){
+            that.setData({
+              more: false,
+              no_more: true,
+              type: res.data.type,
+              name: res.data.name,
+            })
+          }else{
+            that.setData({
+              more: false,
+              no_more: true,
+              type: res.data.type,
+              prize_img: res.data.prize_img,
+              prize_name: res.data.prize_name,
+            })
+          }
+          
         }
       }
     })

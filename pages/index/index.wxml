@@ -34,17 +34,24 @@
 
 <view class='black' wx:if="{{black}}">
 
-  <view class='new' wx:if="{{black}}">
+  <view class='new' wx:if="{{luck_draw}}">
     <image src='../../img/congratulation.png'></image>
     <view class='title'>恭喜您获得一次新人抽奖机会</view>
     <view class='gift'>抽奖机会x1次</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
-      <text catchtap='black'>知道了</text>
+      <text catchtap='newday'>知道了</text>
       <navigator url='../luck/luck'>去抽奖</navigator>
     </view>
   </view>
-
+  <view class='new' wx:if="{{newday}}" style='padding:30rpx 30rpx 0 30rpx;'>
+    <view class='title'>{{newdaydata}}</view>
+    <!-- <view class='gift'>抽奖机会x1次</view> -->
+    <!-- <view class='gift'>已经放入您的卡券中心</view> -->
+    <view class='confirm'>
+      <text catchtap='black'>确定</text>
+    </view>
+  </view>
   <view class='dialog-container' wx:if="{{false}}">
     <image src='../../img/close.png' class='close'></image>
     <view class='title'>你有一张百威创新会员卡待领取！</view>

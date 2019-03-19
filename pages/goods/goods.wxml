@@ -25,7 +25,7 @@
 </view>
 
 <view class='container'>
-  <view wx:for="{{goodsdata}}" wx:key="item" wx:for-item="item" class='good-item sold-out {{item.requirement_level==0?"silver":item.requirement_level==1?"gold":item.requirement_level==2?"gold":"platinum"}}' data-id="{{item.id}}" catchtap='goodsjump' >
+  <view wx:for="{{goodsdata}}" wx:key="item" wx:for-item="item" class='good-item sold-out {{item.requirement_level==0?"silver":item.requirement_level==1?"gold":item.requirement_level==2?"gold":"platinum"}}' data-id="{{item.product_sku_id}}" catchtap='goodsjump' >
     <image src='{{url}}{{item.src}}'></image>
     <view class='info'>
       <view class='title'>{{item.name}}</view>

@@ -35,7 +35,7 @@
   </view>
 </scroll-view>
 <scroll-view class='content' scroll-y wx:if="{{btnindex==7}}">
-  <view class='coupon expire' wx:for="{{listdata1}}" wx:key="index">
+  <view class='coupon expire' wx:for="{{listdata2}}" wx:key="index">
     <view class='over-view'>
       <!-- <text>折扣90%</text> -->
       <image src='{{url}}{{item.img}}'></image>
@@ -48,20 +48,22 @@
   </view>
 </scroll-view>
 <scroll-view class='content' scroll-y wx:if="{{btnindex==9}}">
-  <view class='coupon used detail' wx:for="{{listdata2}}" wx:key="index">
-    <view class='name'>{{item.name}}</view>
-    <view class='coupon1'>
-      <view class='text'>
-        <image src='{{url}}{{item.src}}'></image>
+  <view class='coupon used detail' wx:for="{{listdata3}}" wx:key="index">
+    <view class='name'>{{item.data.name}}</view>
+    <view wx:if="{{zhanindex==index}}">
+      <view class='coupon1'>
+        <view class='text'>
+          <!-- <image class='flex' src='{{url}}{{item.data.img}}'></image> -->
+        </view>
+        <image class='image' src='{{url}}{{item.data.product_src}}'></image>
       </view>
-      <image src='../../img/good-picture.png'></image>
+      <view class='name1'>{{item.data.product_name}} <text>1个</text></view>
+      <view class='cost'>使用积分：{{item.integr}}积分</view>
+      <view class='original-price'>原需积分：<text>{{item.data.integral}}积分</text></view>
     </view>
-    <view class='name1'>手机无线蓝牙音箱迷你低音炮 <text>1个</text></view>
-    <view class='cost'>使用积分：162积分</view>
-    <view class='original-price'>原需积分：<text>180积分</text></view>
     <view class='time-footer'>
-      <text>使用日期：{{item.period_time}}</text>
-      <text>收起详情</text>
+      <text>使用日期：{{item.data.period_time}}</text>
+      <text catchtap='zhan' data-index="{{index}}">{{zhanindex==index?"收起详情":"详情"}}</text>
     </view>
   </view>
 

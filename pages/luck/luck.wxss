@@ -18,7 +18,11 @@
   margin-top: 20rpx;
 }
 .content image.active{
-  border: solid 6rpx rgba(230,23,29,.6);
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+  background: yellow;
+  opacity: .9;
 }
 
 .rule{
@@ -74,7 +78,6 @@
 .gift-container .prize{
   background: white;
   width: 242rpx;
-  padding: 12rpx;
   box-sizing: border-box;
   margin: auto;
   margin-top: 20rpx;
@@ -83,7 +86,7 @@
 }
 .gift-container .prize image{
   width: 100%;
-  height: 130rpx;
+  height: 150rpx;
 }
 .gift{
   width: 242rpx;
