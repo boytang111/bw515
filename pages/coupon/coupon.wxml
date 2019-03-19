@@ -11,55 +11,48 @@
 
 <view class='nav'>
   <view class='nav-item active'>优惠券</view>
-  <view class='nav-item'>活动券</view>
-  <view class='nav-item'>会员卡</view>
+  <!-- <view class='nav-item'>活动券</view>
+  <view class='nav-item'>会员卡</view> -->
 </view>
 
 <view class='sub-nav'>
-  <view class='active'>未使用优惠券</view>
-  <view>过期优惠券</view>
-  <view>已使用优惠券</view>
+  <view class='{{btnindex==0?"active":""}}' data-index="0" catchtap='btn'>未使用优惠券</view>
+  <view class='{{btnindex==7?"active":""}}' data-index="7" catchtap='btn'>过期优惠券</view>
+  <view class='{{btnindex==9?"active":""}}' data-index="9" catchtap='btn'>已使用优惠券</view>
 </view>
 
-<scroll-view class='content' scroll-y>
-  <view class='coupon'>
+<scroll-view class='content' scroll-y wx:if="{{btnindex==0}}">
+  <view class='coupon' wx:for="{{listdata}}" wx:key="index">
     <view class='over-view'>
-      <text>折扣90%</text>
+      <!-- <text>折扣90%</text> -->
+      <image src='{{url}}{{item.img}}'></image>
     </view>
     <view class='info'>
-      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
-      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
-      <navigator>去使用>></navigator>
-    </view>
-  </view>
-
-  <view class='coupon expire'>
-    <view class='over-view'>
-      <text>折扣90%</text>
-    </view>
-    <view class='info'>
-      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
-      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
+      <view class='coupon-title'>{{item.name}}</view>
+      <view class='coupon-time'>到期时间：{{item.period_time}}</view>
       <!-- <navigator>去使用>></navigator> -->
     </view>
   </view>
-
-  <view class='coupon used'>
+</scroll-view>
+<scroll-view class='content' scroll-y wx:if="{{btnindex==7}}">
+  <view class='coupon expire' wx:for="{{listdata1}}" wx:key="index">
     <view class='over-view'>
-      <text>折扣90%</text>
+      <!-- <text>折扣90%</text> -->
+      <image src='{{url}}{{item.img}}'></image>
     </view>
     <view class='info'>
-      <view class='coupon-title'>优惠券名称优惠券名称优惠券名称</view>
-      <view class='coupon-time'>有效日期：2019.02.10 - 2019.08.10</view>
-      <navigator>详情>></navigator>
+      <view class='coupon-title'>{{item.name}}</view>
+      <view class='coupon-time'>到期时间：{{item.period_time}}</view>
+      <!-- <navigator>去使用>></navigator> -->
     </view>
   </view>
-
-  <view class='coupon used detail'>
-    <view class='name'>无线蓝牙音箱 积分90%折扣优惠券</view>
+</scroll-view>
+<scroll-view class='content' scroll-y wx:if="{{btnindex==9}}">
+  <view class='coupon used detail' wx:for="{{listdata2}}" wx:key="index">
+    <view class='name'>{{item.name}}</view>
     <view class='coupon1'>
       <view class='text'>
-        <view>积分99折扣</view>
+        <image src='{{url}}{{item.src}}'></image>
       </view>
       <image src='../../img/good-picture.png'></image>
     </view>
@@ -67,7 +60,7 @@
     <view class='cost'>使用积分：162积分</view>
     <view class='original-price'>原需积分：<text>180积分</text></view>
     <view class='time-footer'>
-      <text>使用日期：2019.02.20  15:33</text>
+      <text>使用日期：{{item.period_time}}</text>
       <text>收起详情</text>
     </view>
   </view>

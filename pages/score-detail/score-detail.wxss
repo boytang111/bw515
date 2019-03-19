@@ -155,12 +155,12 @@ page{
 .add{
   color: #98000B;
 }
-/* .add::before{
+.exper::before{
   content: '+';
   display: inline;
   margin-right: 10rpx;
   color: #454545;
-} */
+}
 .take{
   color: #888;
 }

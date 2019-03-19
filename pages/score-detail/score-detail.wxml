@@ -25,7 +25,8 @@
     <view class='line'></view>
     <view class='info'>
       <view class='detail'>{{item.txt}}</view>
-      <text class='add'>{{item.integral}}积分</text>
+      <text class='add exper' wx:if="{{btnindex==2}}">{{item.experience}}经验</text>
+      <text class='add' wx:if="{{btnindex==1}}">{{item.integral}}积分</text>
     </view>
   </view>
 
