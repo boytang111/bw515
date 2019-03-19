@@ -33,6 +33,7 @@
     <view class='content'>
       <view class='teach'>抽奖次数用完啦</view>
       <view class='reason'>升级会员可每天抽一次</view>
+      <navigator url='../guide/guide' class='reason more'><text>升级指南</text></navigator>
     </view>
     <view class='buttons'>
       <!-- <text></text> -->

@@ -14,7 +14,32 @@
   <image src='../../img/logo2.png' class='logo'></image>
 </view>
 <view class='container'>
-  <image src='{{url}}{{index_img}}'></image>
+  <!-- <image src='../../img/index-bg.png'></image> -->
+  <swiper class='banner' autoplay circular interval="{{2000}}">
+    <swiper-item wx:for="{{index_img}}" wx:key="index">
+      <image src='{{url}}{{item.img}}'></image>
+    </swiper-item>
+  </swiper>
+
+  <view class='title'>百威精彩·上海</view>
+
+  <view class='section-box'>
+    <view class='section positive'>
+      <image src='{{url}}/budweiser/gourder.jpg'></image>
+      <view class='text-box'>
+        <view class='bold-text'>识厨解味|刀光剑影里的味觉武林</view>
+        <view class='regular-text'>厨艺武林大会，是味觉体验也是艺术盛宴</view>
+      </view>
+    </view>
+    <!-- <view class='section negative'>
+      <image src='../../img/good-picture.png'></image>
+      <view class='text-box'>
+        <view class='bold-text'>识厨解味|刀光剑影里的味觉武林</view>
+        <view class='regular-text'>厨艺武林大会，是味觉体验也是艺术盛宴</view>
+      </view>
+    </view> -->
+  </view>
+
   <view class='pans'>
     <navigator class='btn' url='../draw/draw'>
       <image src='../../img/pai1.png'></image>
@@ -31,7 +56,6 @@
   </view>
 
 </view>
-
 <view class='black' wx:if="{{black}}">
 
   <view class='new' wx:if="{{luck_draw}}">
@@ -44,8 +68,9 @@
       <navigator url='../luck/luck'>去抽奖</navigator>
     </view>
   </view>
-  <view class='new' wx:if="{{newday}}" style='padding:30rpx 30rpx 0 30rpx;'>
-    <view class='title'>{{newdaydata}}</view>
+  <!--  -->
+  <view class='new' wx:if="{{newday}}" >
+    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>{{newdaydata}}</view>
     <!-- <view class='gift'>抽奖机会x1次</view> -->
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>

@@ -31,6 +31,7 @@ Page({
     prize_name:"",
     prize_img:"",
     name:"",
+    gouy:false,
   },
 
   /**
@@ -170,16 +171,9 @@ Page({
         url: '../virtual-confirm/virtual-confirm?id=' + this.data.detailid
       })
     }else{
-      wx.showModal({
-        title: '提示',
-        content: '请升级您的会员级别',
-        success(res) {
-          if (res.confirm) {
-            
-          } else if (res.cancel) {
-            
-          }
-        }
+      this.setData({
+        black:true,
+        gouy:true,
       })
     }
     
@@ -266,5 +260,12 @@ Page({
       no_more:false,
       ye_more:true,
     })
-  }
+  },
+  //点击关闭升级
+  gouy:function(){
+    this.setData({
+      gouy: false,
+      black: false,
+    })
+  },
 })

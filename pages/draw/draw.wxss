@@ -18,6 +18,9 @@
 .more text{
   border-bottom: solid 1rpx #8C8C8C;
 }
+.content .text{
+  border-bottom: solid 1rpx #8C8C8C;
+}
 
 .draw-container{
   height: 700rpx;
@@ -101,7 +104,7 @@
 }
 .more-container .content{
   background: #eee;
-  height: 180rpx;
+  height: 225rpx;
   font-size: 30rpx;
   color: #3d3d3d;
   text-align: center;

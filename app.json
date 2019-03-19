@@ -24,7 +24,8 @@
     "pages/detail/detail",
     "pages/receive/receive",
     "pages/shop/shop",
-    "pages/myorder/myorder"
+    "pages/myorder/myorder",
+    "pages/guide/guide"
   ],
   "window":{
     "backgroundTextStyle":"light",

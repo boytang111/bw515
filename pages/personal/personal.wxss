@@ -63,6 +63,8 @@
   margin: auto;
   border: solid 1rpx #e1e1e1;
   border-radius: 16rpx;
+  padding: 15rpx;
+  box-sizing: border-box;
 }
 .card .ps{
   font-size: 24rpx;
@@ -70,21 +72,22 @@
   color: #888;
 }
 .card image{
+  display: block;
   width: 100%;
-  height: 260rpx;
-  margin-top: 20rpx;
+  height: 100%
 }
 .progress{
-  height: 16rpx;
-  width: 580rpx;
-  border: solid 1rpx rgb(182, 182, 182);
-  border-radius: 8rpx;
-  background: #D6D6D6;
-  margin: auto;
-  position: relative;
-  margin-top: 10rpx;
+  position: absolute;
+  width: 40%;
+  right: 30rpx;
+  bottom: 77rpx;
 }
-.progress .text{
+.progr{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.progress .progr text{
   color: white;
   font-size: 16rpx;
   line-height: 18rpx;
@@ -97,9 +100,13 @@
 .card .privilege{
   display: flex;
   font-size: 26rpx;
-  color: #252525;
+  color: #fff;
   justify-content: space-around;
   padding: 10rpx 40rpx;
+  position: absolute;
+  bottom: 15rpx;
+  width:100%;
+  box-sizing:border-box;
 }
 
 .nav-icons{

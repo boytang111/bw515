@@ -93,7 +93,13 @@ Page({
       title: '提示',
       content: '请重新进入小程序授权',
       success(res) {
-
+        if (res.confirm) {
+          wx.reLaunch({
+            url: '../login/index'
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
   },

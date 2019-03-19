@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    index_img:"",
+    index_img:[],
     url:app.globalData.url,
     //用户名字
     nickname:app.globalData.nickname,
@@ -186,7 +186,7 @@ Page({
       },
       success(res) {
         that.setData({
-          index_img: res.data[0].img
+          index_img: res.data
         })
       }
     })

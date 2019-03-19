@@ -43,6 +43,16 @@
     </view>
   </view>
 
+  <view class='more-container' wx:if="{{gouy}}">
+    <view class='contentteac'>
+      <view class='teach'>请升级您的会员级别</view>
+      <navigator class='more' url='../guide/guide' style='margin-top:25rpx'><text>升级指南</text></navigator>
+    </view>
+    <view class='buttons'>
+      <text catchtap='gouy'>确定</text>
+    </view>
+  </view>
+
   <view class='more-container' wx:if="{{no_more}}">
     <image src='{{url}}/budweiser/close.png' class='close' catchtap='close_black'></image>
     <view class='get-title'>很遗憾，未能博取该礼品</view>

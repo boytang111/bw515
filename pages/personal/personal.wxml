@@ -33,11 +33,14 @@
     </navigator>
   </view>
   <view class='card'>
-    <image src='../../img/card.png'></image>
-    <view class='ps'>（经验值等同于用户所获积分总数）</view>
+    <image src='{{url}}/budweiser/silver.png'></image>
+    <view class='ps'></view>
     <view class='progress'>
-      <view style='height:100%;width:50%;background:#818181;border-radius: 8rpx;'></view>
-      <view class='text'>456/1000</view>
+      <view class='progr'>
+        <progress percent="{{progress}}" stroke-width="12rpx" border-radius="15rpx" activeColor="rgb(105,105,105)" backgroundColor="rgb(61,60,61)" />
+        <text>{{indexdata.experience||"0"}}/750</text>
+      </view>
+      
     </view>
     <view class='privilege'>
       <view>特权1:xxxx</view>

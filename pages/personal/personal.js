@@ -11,6 +11,7 @@ Page({
     indexdata:[],
     nickname:"",
     userinfo:true,
+    progress:"",
   },
 
   /**
@@ -85,8 +86,21 @@ Page({
       title: '提示',
       content: '请重新进入小程序授权',
       success(res) {
-
+        if (res.confirm) {
+          wx.reLaunch({
+            url: '../login/index'
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
+    })
+  },
+  //查询经验值百分比
+  progress:function(){
+    let data = parseInt(this.data.indexdata.experience)/750*100
+    this.setData({
+      progress: data
     })
   },
   //查询数据
@@ -112,6 +126,7 @@ Page({
           indexdata: res.data,
           
         })
+        that.progress();
       }
     })
   },
