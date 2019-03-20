@@ -58,6 +58,7 @@ Page({
    */
   onReady: function () {
     this.couponajax();
+    app.action_member_log("virtual-confirm", this.data.detailid);
     wx.hideLoading()
   },
 

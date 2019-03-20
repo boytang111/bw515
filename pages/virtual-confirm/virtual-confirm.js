@@ -167,6 +167,23 @@ Page({
   //立即兑换
   btn:function(e){
     console.log(e.detail.formId);
+    if (this.data.type==1){
+      if (this.data.user_name==""){
+        wx.showToast({
+          title: '请新增地址',
+          icon: 'none',
+          duration: 2000
+        })
+      }else{
+        this.ajax(e.detail.formId)
+      }
+    }else{
+      this.ajax(e.detail.formId)
+    }
+    
+  },
+  //tijiao
+  ajax: function (formId){
     let that = this;
     let time = app.time();
     let data = {
@@ -190,13 +207,14 @@ Page({
         'city_name': that.data.city_name,
         'county_name': that.data.county_name,
         'detail_info': that.data.detail_info,
+        'formid': formId,
       },
       success(res) {
-        if (res.data.code==200){
+        if (res.data.code == 200) {
           wx.redirectTo({
             url: '../virtual-success/virtual-success?integral=' + res.data.integral + '&member_integral=' + res.data.member_integral + '&number=' + res.data.number + '&htttpurl=' + res.data.url + "&detailid=" + that.data.detailid,
           })
-        }else{
+        } else {
           wx.showToast({
             title: res.data.msg,
             icon: 'none',

@@ -124,25 +124,26 @@ page{
   overflow: hidden;
 }
 .more-container .content{
-  background: #eee;
-  height: 180rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30rpx;
-  color: #3d3d3d;
+  background:#eee;
+  height:180rpx;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:20px;
+  color:#3d3d3d;
+  padding:15px;
 }
 .more-container .buttons{
-  display: flex;
-  font-size: 30rpx;
-  line-height: 74rpx;
-  padding: 20rpx 0;
-  text-align: center;
+  display:flex;
+  font-size:20px;
+  line-height:74rpx;
+  padding:15px 0;
+  text-align:center;
 }
-.more-container .buttons text{
+.more-container .buttons cover-view{
   flex: 1;
 }
-.more-container .buttons text:nth-child(1){
+.more-container .buttons cover-vie:nth-child(1){
   color: #7a7a7a;
   border-right: solid 1rpx #bfbfbf;
 }

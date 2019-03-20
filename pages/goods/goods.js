@@ -62,7 +62,7 @@ Page({
    */
   onReady: function () {
     this.goodsajax();
-    app.action_member_log("goods");
+    app.action_member_log("goods", this.data.goodsid);
     wx.hideLoading()
   },
 

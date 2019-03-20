@@ -1,5 +1,5 @@
 <view class='title'>当季促销</view>
-<image class='banner' src='{{url}}/budweiser/index-bg.png' mode='top'></image>
+<image mode='aspectFill' class='banner' src='{{url}}/budweiser/index-bg.jpg' mode='top'></image>
 
 <view class='des'>程序员正在努力开发中，敬请期待</view>
 

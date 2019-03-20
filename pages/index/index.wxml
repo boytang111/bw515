@@ -25,7 +25,7 @@
 
   <view class='section-box'>
     <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{item.src}}" data-id="gghwz" catchtap='view'>
-      <image src='{{url}}{{item.img}}'></image>
+      <image mode='aspectFill' src='{{url}}{{item.img}}'></image>
       <view class='text-box'>
         <view class='bold-text'>{{item.name}}</view>
         <view class='regular-text'>{{item.info}}</view>

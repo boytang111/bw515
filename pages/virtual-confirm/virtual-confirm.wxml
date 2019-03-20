@@ -50,7 +50,7 @@
     </view>
   </navigator>
   <view class='cost'>总额：<text>{{myintegral}}积分</text></view>
-  <form>
-    <button report-submit="true" form-type="submit" class='button' catchtap='btn'>立即兑换</button>
+  <form bindsubmit="btn" report-submit="true">
+    <button  form-type="submit" class='button'>立即兑换</button>
   </form>
 </view>

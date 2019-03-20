@@ -114,7 +114,7 @@ App({
     }
     let str = that.signature(data, that.globalData.key)
     wx.request({
-      url: that.globalData.url + '/Index/address_authorization', // 仅为示例，并非真实的接口地址
+      url: that.globalData.url + '/Index/action_member_log', // 仅为示例，并非真实的接口地址
       method: 'post',
       data: {
         'openid': that.globalData.openid,

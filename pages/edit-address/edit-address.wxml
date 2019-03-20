@@ -40,12 +40,12 @@
   <view class='save' catchtap='addades'>保存</view>
 </view>
 
-<view class='black' wx:if="{{black}}">
-  <view class='more-container'>
-    <view class='content'>您确认要删除这个收货地址？</view>
-    <view class='buttons'>
-      <text catchtap='close'>否</text>
-      <text catchtap='yes_delete'>是</text>
-    </view>
-  </view>
-</view>
+<cover-view aria-role aria-label class='black' wx:if="{{black}}">
+  <cover-view aria-role aria-label class='more-container'>
+    <cover-view aria-role aria-label class='content'>您确认要删除这个收货地址？</cover-view>
+    <cover-view aria-role aria-label class='buttons'>
+      <cover-view aria-role aria-label catchtap='close'>否</cover-view>
+      <cover-view aria-role aria-label catchtap='yes_delete'>是</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
