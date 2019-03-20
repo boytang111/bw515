@@ -1,0 +1,51 @@
+<view class='container'>
+  <view class='info-item'>
+    <text>头像</text>
+    <image src='{{infodata.headimg}}'></image>
+  </view>
+  <view class='info-item'>
+    <text>昵称</text>
+    <view>{{infodata.nickname}}</view>
+  </view>
+  <view class='info-item'>
+    <text>手机号</text>
+    <view>{{infodata.phone}}</view>
+  </view>
+  <view class='info-item' catchtap='birthday_up'>
+    <text>生日</text>
+    <view class='arrow {{birthday==true?"active":""}}' >{{infodata.birthday||'请选择'}}</view>
+  </view>
+
+  <view class='detail-content' wx:if='{{birthday==true}}'>
+    <view class='input-item'>
+      <text>生日：</text>
+      <picker mode='date' value="{{date}}" bindchange="bindDateChange">{{date||'请选择'}}</picker>
+    </view>
+    <view class='btn' catchtap='infoadd'>保存</view>
+  </view>
+
+  <view class='info-item' catchtap='gender_up'>
+    <text>性别</text>
+    <view class='arrow {{gender==true?"active":""}}' >{{ingender==1?"男":"女"}}</view>
+  </view>
+
+  <view class='detail-content' wx:if='{{gender==true}}'>
+    <view class='selector'>
+      <text class='{{infogender==1?"active":""}}' catchtap='genders' data-id="1">男</text>
+      <text class='{{infogender==2?"active":""}}' catchtap='genders' data-id="2">女</text>
+    </view>
+    <view class='btn' catchtap='infoadd'>保存</view>
+  </view>
+  
+  <navigator class='info-item' url='../address-manage/address-manage'>
+    <text>收货地址</text>
+    <view class='arrow'> </view>
+  </navigator>
+  <navigator class='info-item'>
+    <text>百威创新会员手册</text>
+    <view class='arrow'> </view>
+  </navigator>
+  <!-- <view class='info-item'>
+    <text>退出登录</text>
+  </view> -->
+</view>

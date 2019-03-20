@@ -1,0 +1,10 @@
+<view class="rule-title">升级说明</view>
+<view class='rule-item'>随着经验值的累加会员将升级并解锁更多特权，平台目前分为普通、银级、金级和铂金</view>
+
+<view class="rule-title">经验值的有效期</view>
+<view class='rule-item'>金级自获得积分起，一年后扣除1500经验值</view>
+<view class='rule-item'>铂金自激活特权起，一年后扣除3500经验值</view>
+<view class='rule-item'>普通与银级暂不扣除经验值</view>
+
+<view class="rule-title">经验值获取方式</view>
+<image src='{{url}}/budweiser/rule2.png' class='rule-image'></image>

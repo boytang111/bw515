@@ -1,0 +1,128 @@
+<view class='flexos' wx:if="{{userinfo==false}}" catchtap='shouquan'></view>
+<view class="personal" wx:if="{{userinfo==true}}">
+  <image src='{{headimg}}' class='avatar'></image>
+  <text class='nick-name'>{{nickname}}</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>{{integral}}</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class="personal" wx:if="{{userinfo==false}}">
+  <image src='../../img/default-avatar.png' class='avatar'></image>
+  <text class='nick-name'>未登录</text>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class='container'>
+  <!-- <image src='../../img/index-bg.png'></image> -->
+  <swiper class='banner' autoplay circular interval="{{2000}}">
+    <swiper-item wx:for="{{index_img}}" wx:key="index">
+      <image src='{{url}}{{item.img}}'></image>
+    </swiper-item>
+  </swiper>
+
+  <view class='title'>百威精彩·上海</view>
+
+  <view class='section-box'>
+    <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{index_img2.src}}" catchtap='view'>
+      <image src='{{url}}{{index_img2.img}}'></image>
+      <view class='text-box'>
+        <view class='bold-text'>{{index_img2.name}}</view>
+        <view class='regular-text'>{{index_img2.info}}</view>
+      </view>
+    </view>
+    <!-- <view class='section negative'>
+      <image src='../../img/good-picture.png'></image>
+      <view class='text-box'>
+        <view class='bold-text'>识厨解味|刀光剑影里的味觉武林</view>
+        <view class='regular-text'>厨艺武林大会，是味觉体验也是艺术盛宴</view>
+      </view>
+    </view> -->
+  </view>
+
+  <view class='pans'>
+    <navigator class='btn' url='../draw/draw'>
+      <image src='../../img/pai1.png'></image>
+      <view>醉爱翻牌</view>
+    </navigator>
+    <navigator class='btn' catchtap='btnpin'>
+      <image src='../../img/pai2.png'></image>
+      <view>品牌联名</view>
+    </navigator>
+    <navigator class='btn' url='../activity/activity'>
+      <image src='../../img/pai3.png'></image>
+      <view>当季促销</view>
+    </navigator>
+  </view>
+
+</view>
+<view class='black' wx:if="{{black}}">
+
+  <view class='new' wx:if="{{luck_draw}}">
+    <image src='../../img/congratulation.png'></image>
+    <view class='title'>恭喜您获得一次新人抽奖机会</view>
+    <view class='gift'>抽奖机会x1次</view>
+    <!-- <view class='gift'>已经放入您的卡券中心</view> -->
+    <view class='confirm'>
+      <text catchtap='newday'>知道了</text>
+      <navigator url='../luck/luck'>去抽奖</navigator>
+    </view>
+  </view>
+  <!--  -->
+  <view class='new' wx:if="{{newday}}" >
+    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>{{newdaydata}}</view>
+    <!-- <view class='gift'>抽奖机会x1次</view> -->
+    <!-- <view class='gift'>已经放入您的卡券中心</view> -->
+    <view class='confirm'>
+      <text catchtap='black'>确定</text>
+    </view>
+  </view>
+  <view class='dialog-container' wx:if="{{false}}">
+    <image src='../../img/close.png' class='close'></image>
+    <view class='title'>你有一张百威创新会员卡待领取！</view>
+    <view class='sub-title'>你有一张百威创新会员卡待领取！</view>
+    <image class='card' src='../../img/get-card.png'></image>
+    <view class='agree-container'>
+      <view class='box'>
+        <image src='../../img/black-tick.png'></image>
+      </view>
+      <view class='text'>本人已充分阅读、理解并接受<text>百威创新会员手册及隐私条款</text>的约定和约束，并且明确同意百威创新出于想本人提供服务的必要。收集、使用兵种必要时向第三方共享本人自愿提供的信息。</view>
+    </view>
+    <view class='btnon'>马上领取</view>
+  </view>
+
+  <view class='dialog-container' wx:if="{{false}}">
+    <image src='../../img/close.png' class='close'></image>
+    <view class='title'>请完善会员信息</view>
+    <view class='sub-title'>会员精选啤酒、会员专属大礼包等着你</view>
+    <view class='input-item'>
+      <text>真实姓名</text>
+      <input></input>
+    </view>
+    <view class='input-item'>
+      <text>生日</text>
+      <input></input>
+    </view>
+    <view class='input-item'>
+      <text>性别</text>
+      <view class='sex'>
+        <view class='male active'>
+          <view></view>
+        </view>
+        <view class='female'>
+          <view></view>
+        </view>
+      </view>
+    </view>
+    <view class='input-item'>
+      <text>电子邮箱</text>
+      <input></input>
+    </view>
+    <view class='input-item textarea'>
+      <text>收货地址</text>
+      <textarea></textarea>
+    </view>
+    <view class='btnon'>提交</view>
+  </view>
+
+</view>

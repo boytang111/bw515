@@ -1,0 +1,22 @@
+<view class='unwanted' catchtap='btn' data-id="" data-name="">不使用优惠券</view>
+
+<scroll-view class='content' scroll-y>
+  <view wx:for="{{coupondata}}" wx:key="item" wx:for-item="item" class='{{item.status==0?"coupon":"refuse"}}' data-id="{{item.id}}" data-name="{{item.name}}" data-rules="{{item.rules}}" data-number="{{item.number}}" catchtap='btn'>
+    <view class='coupon'>
+      <view class='over-view'>
+        <image src='{{url}}{{item.img}}'></image>
+      </view>
+      <view class='info'>
+        <view class='coupon-title'>{{item.name}}</view>
+        <!-- <view class='coupon-time'>到期时间：{{item.add_time}} - {{item.up_time}}</view> -->
+        <view class='coupon-time'>到期时间：{{item.period_time}}</view>
+      </view>
+    </view>
+    <view class='reason' wx:if="{{item.status!=0}}">
+      <image src='../../img/reason.png'></image>
+      <text>不可用原因：</text>
+      <!-- classid判断 -->
+      <text>{{item.class_id!=class_id?"限联名品牌商品使用":item.status==9?"已使用":"过期"}}</text>
+    </view>
+  </view>
+</scroll-view>

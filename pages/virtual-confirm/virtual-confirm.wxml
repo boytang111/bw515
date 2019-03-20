@@ -1,0 +1,54 @@
+<view class='good-container'>
+  <image src='{{url}}{{detail_src}}'></image>
+  <view class='info'>
+    <view class='name'>{{detail_name}}</view>
+    <view class='price'>{{detail_integral}} 积分</view>
+  </view>
+  <!-- <view class='counter'>
+    <view>+</view>
+    <text>2</text>
+    <view class='disable'>-</view>
+  </view> -->
+</view>
+
+<view class='intrduce' wx:if="{{type==1}}">
+  <text class='brand'>兑换说明</text>
+  <view class='input-item' wx:if="{{save==false}}">
+    <text space="emsp">姓  名：</text>
+    <view>{{user_name}}</view>
+  </view>
+  <view class='input-item' wx:if="{{save==false}}">
+    <text space="emsp">联系电话：</text>
+    <view>{{tel_number}}</view>
+  </view>
+  <view class='input-item top' wx:if="{{save==false}}">
+    <text space="emsp">收货地址：</text>
+    <view>{{province_name}}{{city_name}}{{county_name}}{{detail_info}}</view>
+  </view>
+  <view class='navigator' catchtap='jumparres'><text>{{save==true?"新增地址":"选择其他收货地址"}}</text></view>
+</view>
+<view class='intrduce' wx:if="{{type==2}}">
+  <text class='brand'>兑换说明</text>
+  <view class='input-item top'>
+    <view>1. 兑换成功后，复制序列码到指定地址即可领取。</view>
+  </view>
+  <view class='input-item top'>
+    <view>2. 序列码也可以通过个人中心的“兑换记录”查看，若有更多疑问请咨询客服。</view>
+  </view>
+  
+</view>
+
+
+<view class='exchange'>
+  <navigator class='coupon' url='../coupon-selector/coupon-selector?class_id={{class_id}}&count={{detail_integral}}'>
+    <text>优惠券</text>
+    <view class='none' wx:if="{{coupon_count==0}}">0个可用</view>
+    <view class='none one' wx:if="{{mydata!=''}}">{{myname}}</view>
+    <view class='use' wx:if="{{coupon_count!=0&&mydata==''}}">
+      <image src='../../img/coupon.png'></image>
+      <text>{{coupon_count}}个可用</text>
+    </view>
+  </navigator>
+  <view class='cost'>总额：<text>{{myintegral}}积分</text></view>
+  <view class='button' catchtap='btn'>立即兑换</view>
+</view>

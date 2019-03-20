@@ -1,0 +1,31 @@
+<view class='title'>
+  <image src='../../img/red-tick.png'></image>
+  <text>恭喜，兑换成功</text>
+</view>
+<image class='product' src='../../img/good-picture.png'></image>
+
+<view class='name'>手机无线蓝牙音箱迷你低音炮 1个</view>
+<view class='cost'>花费：<text>180积分</text></view>
+<view class='balance'>积分余额：8200积分</view>
+
+<view class='info'>
+  <view class='input-item'>
+    <text space="emsp">姓  名：</text>
+    <view>xxx</view>
+  </view>
+  <view class='input-item'>
+    <text space="emsp">电  话：</text>
+    <view>12343342523</view>
+  </view>
+  <view class='input-item'>
+    <text space="emsp">收货地址：</text>
+    <view>上海市徐汇区XXX路xxx号xxx弄xxx栋xxx室</view>
+  </view>
+</view>
+
+<view class='tips'>
+  <text>我们将于7个工作日内寄出礼品，
+    请留意手机上的短信通知。
+
+    您也可以在“个人中心”的 “兑换记录” 查看</text>
+</view>

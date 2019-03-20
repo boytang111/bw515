@@ -1,0 +1,59 @@
+.title{
+  font-size: 34rpx;
+  text-align: center;
+  color: #45000b;
+  margin-top: 50rpx;
+}
+.card{
+  display: block;
+  margin: auto;
+  margin-top: 20rpx;
+  width: 674rpx;
+  height: 402rpx;
+}
+
+.agree-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 60rpx;
+}
+.agree-container .box{
+  width: 30rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+  border: solid 4rpx black;
+  font-size: 0;
+  border-radius: 4rpx;
+}
+.agree-container .box image{
+  width: 80%;
+  height: 80%;
+  margin: 0;
+}
+.agree-container .text{
+  font-size: 24rpx;
+  color: #888;
+}
+
+.more{
+  font-size: 28rpx;
+  color: #707070;
+  text-align: center;
+  margin-top: 100rpx;
+}
+.more text{
+  border-bottom: solid 1rpx #707070;
+}
+
+.btn{
+  width: 402rpx;
+  line-height: 76rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  color: white;
+  font-size: 34rpx;
+  background: black;
+  margin: auto;
+  margin-top: 100rpx;
+}

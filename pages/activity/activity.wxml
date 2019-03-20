@@ -1,0 +1,21 @@
+<view class='title'>当季促销</view>
+<image class='banner' src='{{url}}/budweiser/index-bg.png' mode='top'></image>
+
+<view class='des'>程序员正在努力开发中，敬请期待</view>
+
+<view class='address'>您当前的位置：上海</view>
+<view class='position'>
+  <text>更换地址</text>
+  <image src='../../img/position.png'></image>
+</view>
+
+<map class='map' show-location></map>
+<!-- 
+<view class='near'>您附近没有参与以上活动的门店。参与以上活动的地区有：</view>
+
+<view class='city'><text>北京</text></view>
+<view class='city'><text>北京</text></view>
+<view class='city'><text>北京</text></view>
+<view class='city'><text>北京</text></view>
+<view class='city'><text>北京</text></view>
+<view class='city'><text>北京</text></view> -->

@@ -1,0 +1,45 @@
+<view class="personal">
+  <image src='{{headimg}}' class='avatar'></image>
+  <text class='nick-name'>{{nickname}}</text>
+  <view class='score'>
+    <text>积分: </text>
+    <text>{{integral}}</text>
+  </view>
+  <image src='../../img/logo2.png' class='logo'></image>
+</view>
+<view class='title'>获得统计</view>
+
+<view class='time-selector'>
+  <picker mode='date' fields='month' bindchange="bindDateChange">{{date}}<text>></text></picker>
+  <!-- <view>收入1200积分  使用300积分</view> -->
+</view>
+
+<view class='nav'>
+  <navigator class='nav-item {{btnindex==2?"active":""}}' data-index="2" catchtap='navbtn'>已获得经验</navigator>
+  <navigator class='nav-item {{btnindex==1?"active":""}}' data-index="1" catchtap='navbtn'>已使用积分</navigator>
+</view>
+
+<scroll-view class='content' scroll-y>
+  <view class='item' wx:for="{{logdata}}" wx:key="index">
+    <text>{{item.add_time}}</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>{{item.txt}}</view>
+      <text class='add exper' wx:if="{{btnindex==2}}">{{item.experience}}经验</text>
+      <text class='add' wx:if="{{btnindex==1}}">{{item.integral}}积分</text>
+    </view>
+  </view>
+
+  <!-- <view class='item'>
+    <text>2019.02.22</text>
+    <view class='line'></view>
+    <view class='info'>
+      <view class='detail'>
+        <text>兑换虚拟物品</text>
+        <navigator>详情>></navigator>
+      </view>
+      <text class='take'>10积分</text>
+    </view>
+  </view> -->
+  
+</scroll-view>

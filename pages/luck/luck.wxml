@@ -1,0 +1,28 @@
+<view class='title'>百威创新新人礼</view>
+
+<view class='content'>
+  <!-- class='active' -->
+  <image class='{{activeindex==1?"active":""}}' src='{{url}}/budweiser/good-picture1.png'></image>
+  <image class='{{activeindex==2?"active":""}}' src='{{url}}/budweiser/good-picture2.png'></image>
+  <image class='{{activeindex==3?"active":""}}' src='{{url}}/budweiser/good-picture3.png'></image>
+  <image class='{{activeindex==4?"active":""}}' src='{{url}}/budweiser/good-picture4.png'></image>
+  <image class='{{activeindex==5?"active":""}}' src='{{url}}/budweiser/good-picture5.png'></image>
+  <image class='{{activeindex==6?"active":""}}' src='{{url}}/budweiser/good-picture6.png'></image>
+</view>
+
+
+<view class='rule'><text>查看活动规则及条款</text></view>
+
+<view class='btn' catchtap='luck'>开始抽奖</view>
+
+<view class='black' wx:if="{{black}}">
+  <view class='gift-container'>
+    <image class='congratulation' src='../../img/congratulation.png'></image>
+    <view class='gift-title'>恭喜你获得</view>
+    <view class='prize'>
+      <image src='{{luckdata.type=="integral"?"../../img/jifen.png":luckdata.type=="experience"?"../../img/jinyan.png":luckdata.type=="coupon"?prize_img:""}}'></image>
+    </view>
+    <view class='gift' style='color:red'>{{luckdata.name}}</view>
+    <view class='look-for' catchtap='back'>去首页看看</view>
+  </view>
+</view>

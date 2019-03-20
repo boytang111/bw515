@@ -1,0 +1,22 @@
+<image src='../../img/card-bg.png' class='bg'></image>
+<view class='grade'>
+  <view>当前会员等级：<text>铂金卡会员</text></view>
+  <navigator>
+    <image src='../../img/setting.png'></image>
+  </navigator>
+</view>
+<view class='card'></view>
+<view class='operation'>
+  <view class='title'>自定义卡面</view>
+  <view class='des'>上传您喜爱的图片来替换默认的卡面</view>
+  <view class='ope'>
+    <image src='../../img/album.png'></image>
+    <text>相册选一张</text>
+  </view>
+  <view class='ope'>
+    <image src='../../img/shot.png'></image>
+    <text>拍一张照片</text>
+  </view>
+  <view class='default'><text>恢复默认卡面</text></view>
+  <view class='btn'>保存</view>
+</view>

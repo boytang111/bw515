@@ -1,0 +1,62 @@
+<view class="title">醉爱翻牌</view>
+<view class='count'>今日可翻牌次数：{{two_find}}</view>
+
+<navigator class='more'><text>如何获得更多翻牌次数</text></navigator>
+
+<view class='draw-container'>
+  <view class='draw-item {{selectIndex==0?"active":""}}' data-index='0' bindtap='onSelect'>
+    <image src='{{url}}/budweiser/pai_1.png'></image>
+  </view>
+  <view class='draw-item {{selectIndex==1?"active":""}}' data-index='1' bindtap='onSelect'>
+    <image src='{{url}}/budweiser/pai_2.png'></image>
+  </view>
+  <view class='draw-item {{selectIndex==2?"active":""}}' data-index='2' bindtap='onSelect'>
+    <image src='{{url}}/budweiser/pai_3.png'></image>
+  </view>
+  <view class='draw-item {{selectIndex==3?"active":""}}' data-index='3' bindtap='onSelect'>
+    <image src='{{url}}/budweiser/pai_4.png'></image>
+  </view>
+  <view class='draw-item {{selectIndex==4?"active":""}}' data-index='4' bindtap='onSelect'>
+    <image src='{{url}}/budweiser/pai_5.png'></image>
+  </view>
+</view>
+
+<view class='tips'>
+  <view>选择一张啤酒卡片，把精美礼品收入囊中</view>
+  <view>（温馨提示，据说选喜欢的啤酒中奖几率更高哦~）</view>
+</view>
+
+<navigator class='rule'><text>查看活动规则及条款</text></navigator>
+
+<view class='black' wx:if="{{bax}}">
+  <view class='more-container' wx:if="{{container}}">
+    <view class='content'>
+      <view class='teach'>抽奖次数用完啦</view>
+      <view class='reason'>升级会员可每天抽一次</view>
+      <navigator url='../guide/guide' class='reason more'><text>升级指南</text></navigator>
+    </view>
+    <view class='buttons'>
+      <!-- <text></text> -->
+      <text catchtap='back'>好的</text>
+    </view>
+  </view>
+
+  <view class='gift-container' wx:if="{{black}}">
+    <image class='congratulation' src='../../img/congratulation.png'></image>
+    <view class='gift-title'>本次翻牌您获得了：</view>
+    <view class='prize'>
+      <image wx:if="{{id==0}}" src='../../img/xiexie.png'></image>
+      <image wx:if="{{id!=0}}" src='{{type=="coupon"?prize_img:type=="integral"?"../../img/jifen.png":type=="experience"?"../../img/jinyan.png":""}}'></image>
+      <view class='name' wx:if="{{id!=0}}">{{prize_name}}</view>
+      <!-- <view class='explain'>（已经放入了您的卡券中心）</view> -->
+    </view>
+    <!-- <view class='buttons'>
+      <text>知道了</text>
+      <text>去看看</text>
+    </view> -->
+    <view class='buttons'>
+      <text catchtap='back'>确定</text>
+    </view>
+  </view>
+
+</view>

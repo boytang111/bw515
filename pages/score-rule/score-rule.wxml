@@ -1,0 +1,10 @@
+<view class="rule-title">积分积累</view>
+<view class='rule-item'>会员在俱乐部会员平台的使用行为，均可积累积分</view>
+
+<view class="rule-title">积分积累细则</view>
+<view class='rule-item'>通过互动、购买及分享会员可获取积分，具体分值，请参考会员平台的会员中心实时更新。以下仅供参考。</view>
+
+<image src='{{url}}/budweiser/rule.png' class='rule-image'></image>
+
+<view class="rule-title">积分有效期</view>
+<view class='rule-item'>每笔积分的有效期至次年当月月底，例：如2017年4月17日此笔积分生效，则2018年4月30日此笔积分到期。积分到期系统将自动清零。</view>

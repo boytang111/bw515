@@ -1,0 +1,67 @@
+<image src='{{url}}/budweiser/card-bg.png' class='bg'></image>
+<view class='grade'>
+  <view>当前会员等级：<text>银卡会员</text></view>
+  <navigator>
+    <image src='{{url}}/budweiser/setting.png'></image>
+  </navigator>
+</view>
+<swiper class='card-stage'
+indicator-dots
+indicator-dots='rgba(255,255,255,.5)'
+indicator-active-color='black'
+circular
+>
+  <swiper-item>
+    <image src='{{url}}/budweiser/silver.png' class='card'></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='{{url}}/budweiser/gold.png' class='card'></image>
+  </swiper-item>
+  <swiper-item>
+    <image src='{{url}}/budweiser/platinum.png' class='card'></image>
+  </swiper-item>
+</swiper>
+
+<view class='title'>已获得特权</view>
+<view class='got'>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+</view>
+
+<view class='title'>未获得特权</view>
+<view class='got grey'>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge-grey.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge-grey.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge-grey.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge-grey.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge-grey.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge-grey.png'></image>
+    <text>特权1：XXXXXX</text>
+  </view>
+</view>
