@@ -1,4 +1,0 @@
-/**app.wxss**/
-image{
-  object-fit: cover;
-}
