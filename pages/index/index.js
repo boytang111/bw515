@@ -242,6 +242,9 @@ Page({
       },
       success(res) {
         let index_img1 = [], index_img2 = [];
+        // for(let i=0; i<res.data.length; i++){
+        //   index_img2.push(res.data[i])
+        // }
         console.log(res.data)
         that.setData({
           index_img2: res.data

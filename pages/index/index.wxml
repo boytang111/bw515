@@ -24,11 +24,11 @@
   <view class='title'>百威精彩·上海</view>
 
   <view class='section-box'>
-    <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{index_img2.src}}" catchtap='view'>
-      <image src='{{url}}{{index_img2.img}}'></image>
+    <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{item.src}}" catchtap='view'>
+      <image src='{{url}}{{item.img}}'></image>
       <view class='text-box'>
-        <view class='bold-text'>{{index_img2.name}}</view>
-        <view class='regular-text'>{{index_img2.info}}</view>
+        <view class='bold-text'>{{item.name}}</view>
+        <view class='regular-text'>{{item.info}}</view>
       </view>
     </view>
     <!-- <view class='section negative'>
