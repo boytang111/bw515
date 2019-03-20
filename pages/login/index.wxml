@@ -1,6 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-  <image src='../../img/login-bg.png' class='bg'></image>
+  <view class='bgimg'>
+    <image src='../../img/login-bg.png' class='bg'></image>
+  </view>
   <view class='black'></view>
 
   <view class='dialog-check' wx:if="{{user}}">

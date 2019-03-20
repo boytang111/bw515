@@ -16,7 +16,7 @@
 <view class='container'>
   <!-- <image src='../../img/index-bg.png'></image> -->
   <swiper class='banner' autoplay circular interval="{{2000}}">
-    <swiper-item wx:for="{{index_img}}" wx:key="index">
+    <swiper-item wx:for="{{index_img}}" wx:key="index" data-src="{{item.url}}" catchtap="view">
       <image src='{{url}}{{item.img}}'></image>
     </swiper-item>
   </swiper>

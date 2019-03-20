@@ -53,7 +53,7 @@
 <view class='nav-icons'>
   <navigator class='nav-item' url='../score-detail/score-detail'>
     <image src='../../img/personal1.png'></image>
-    <view>积分明细</view>
+    <view>分值统计</view>
   </navigator>
   <navigator class='nav-item' url='../coupon/coupon'>
     <image src='../../img/personal2.png'></image>

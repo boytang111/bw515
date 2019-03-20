@@ -28,17 +28,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.member(app.globalData.member_id);
     this.setData({
       nickname: app.globalData.nickname,
       headimg: app.globalData.headimg,
       integral: app.globalData.integral
     });
-    console.log(this.data.nickname)
-    if (this.data.nickname==""){
-      this.setData({
-        userinfo:false,
-      });
-    }
     if (app.globalData.getLocation == false){
       this.getAddress()
     }
@@ -257,5 +252,41 @@ Page({
     wx.navigateTo({
       url: '../view/webview?src=' + e.currentTarget.dataset.src
     })
-  }
+  },
+  //获取用户信息
+  member: function (member_id) {
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    var memberdata;
+    wx.request({
+      url: app.globalData.url + '/Member/index', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': member_id,
+        'time': time,
+      },
+      success(res) {
+        if (res.data.code==105){
+          that.setData({
+            userinfo: false,
+          })
+        } else if (res.data.code == 200){
+          app.globalData.nickname = res.data.nickname;
+          app.globalData.headimg = res.data.headimg;
+          app.globalData.integral = res.data.integral;
+          that.setData({
+            nickname: res.data.nickname,
+            headimg: res.data.headimg,
+            integral: res.data.integral
+          });
+        }
+      }
+    })
+  },
 })
