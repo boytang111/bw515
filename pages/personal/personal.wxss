@@ -67,9 +67,19 @@
   box-sizing: border-box;
 }
 .card .ps{
-  font-size: 24rpx;
-  text-align: center;
-  color: #888;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18rpx;
+  color:#888;
+  margin-top:10rpx;
+  position:absolute;
+  right:45rpx;
+  bottom:99rpx;
+}
+.card .ps text{
+  border-bottom:solid 1rpx #888;
+
 }
 .card image{
   display: block;

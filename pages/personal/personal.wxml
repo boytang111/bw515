@@ -34,7 +34,7 @@
   </view>
   <view class='card'>
     <image src='{{url}}/budweiser/silver.png'></image>
-    <view class='ps'></view>
+    <navigator url='../guide/guide' class='ps'><text>升级指南</text></navigator>
     <view class='progress'>
       <view class='progr'>
         <progress percent="{{progress}}" stroke-width="12rpx" border-radius="15rpx" activeColor="rgb(105,105,105)" backgroundColor="rgb(61,60,61)" />
