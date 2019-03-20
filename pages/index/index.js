@@ -249,6 +249,11 @@ Page({
   },
   //跳转到公众号页面
   view:function(e){
+    if (e.currentTarget.dataset.id =="lbt"){
+      this.click_interaction("lbt")
+    }else{
+      this.click_interaction("gghwz")
+    }
     wx.navigateTo({
       url: '../view/webview?src=' + e.currentTarget.dataset.src
     })
@@ -289,4 +294,28 @@ Page({
       }
     })
   },
+  //点击跳转页面加分
+  click_interaction: function (action){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    var memberdata;
+    wx.request({
+      url: app.globalData.url + '/Rulebonus/click_interaction', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'time': time,
+        'action': action
+      },
+      success(res) {
+        
+      }
+    })
+  }
 })

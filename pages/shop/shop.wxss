@@ -85,7 +85,7 @@ page{
   border-top: solid 60rpx #3f3f3f;
   position: absolute;
   top: 0;
-  right: -40rpx;
+  right: -39rpx;
 }
 .brand-title .star{
   width: 36rpx;

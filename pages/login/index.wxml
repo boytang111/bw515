@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class='bgimg'>
-    <image src='../../img/login-bg.png' class='bg'></image>
+    <image mode='aspectFill' src='../../img/login-bg.jpg' class='bg'></image>
   </view>
   <view class='black'></view>
 

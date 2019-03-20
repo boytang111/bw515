@@ -17,7 +17,7 @@
 <view wx:for="{{shopdata}}" wx:key="item" wx:for-item="item">
   <view class='brand'>
     <view class='brand-title'>
-      <image src='../../img/star.png' class='star'></image>
+      <image src='{{url}}{{item.img}}' class='star'></image>
       <text>{{item.name}}</text>
     </view>
     <navigator url='../goods/goods?id={{item.id}}&name={{item.name}}'>全部>></navigator>

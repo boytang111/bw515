@@ -116,6 +116,8 @@ Page({
       method: 'post',
       data: {
         'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'key': app.globalData.key,
         'absign': str,
         'time': time,
       },
