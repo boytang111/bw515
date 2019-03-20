@@ -38,14 +38,18 @@ Page({
     if (app.globalData.getLocation == false) {
       this.getAddress()
     }
-    
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.couponajax(0)
+    this.couponajax(0);
+    app.action_member_log("coupon");
+    wx.hideLoading()
   },
 
   /**

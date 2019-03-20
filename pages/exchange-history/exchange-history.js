@@ -47,7 +47,8 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.order_list(2)
+    this.order_list(2);
+    app.action_member_log("exchange-history");
     wx.hideLoading()
   },
 

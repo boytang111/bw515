@@ -105,6 +105,31 @@ App({
     var timestamp = (new Date()).getTime();
     return timestamp
   },
+  //提交动作的
+  action_member_log: function (action, correlation_id){
+    let that=this;
+    let time = that.time();
+    let data = {
+      'time': time,
+    }
+    let str = that.signature(data, that.globalData.key)
+    wx.request({
+      url: that.globalData.url + '/Index/address_authorization', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'openid': that.globalData.openid,
+        'key': that.globalData.key,
+        'member_id': that.globalData.member_id,
+        'action': action,
+        'correlation_id': correlation_id,
+        'time': time,
+        'absign': str,
+      },
+      success(res) {
+
+      }
+    })
+  },
   //
   signature: function (data, key) {
     var n = null, d = {}, str = '', s = ''

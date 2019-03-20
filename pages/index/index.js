@@ -39,7 +39,7 @@ Page({
     }
     wx.showLoading({
       title: '拼命加载中',
-    })
+    });
   },
 
   /**
@@ -49,6 +49,7 @@ Page({
     this.daily_login();
     this.slide_list();
     this.slide();
+    app.action_member_log("index")
     wx.hideLoading()
   },
 

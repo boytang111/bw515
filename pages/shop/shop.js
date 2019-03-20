@@ -43,6 +43,7 @@ Page({
    */
   onReady: function () {
     this.shopajax();
+    app.action_member_log("shop");
     wx.hideLoading()
   },
 

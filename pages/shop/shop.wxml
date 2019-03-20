@@ -23,7 +23,7 @@
     <navigator url='../goods/goods?id={{item.id}}&name={{item.name}}'>全部>></navigator>
   </view>
   <view class='good-row'>
-    <navigator class='good' url='../goods/goods?id={{item.id}}&name={{item.name}}' wx:for="{{item.product.data}}" wx:key="itemx" wx:for-item="itemx">
+    <navigator class='good' url='../goods/goods?id={{item.id}}&name={{item.name}}' wx:for="{{item.product}}" wx:key="itemx" wx:for-item="itemx">
       <image src='{{url}}{{itemx.src}}'></image>
       <view>{{itemx.name}}</view>
       <view class='price'>{{itemx.integral}}积分</view>

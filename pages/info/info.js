@@ -28,6 +28,7 @@ Page({
    */
   onReady: function () {
     this.infoajax();
+    app.action_member_log("info");
   },
 
   /**

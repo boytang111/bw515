@@ -62,6 +62,7 @@ Page({
    */
   onReady: function () {
     this.goodsajax();
+    app.action_member_log("goods");
     wx.hideLoading()
   },
 

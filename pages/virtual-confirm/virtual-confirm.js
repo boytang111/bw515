@@ -56,6 +56,7 @@ Page({
   onReady: function () {
     this.couponajax();
     this.coupon_count();
+    app.action_member_log("virtual-confirm", this.data.detailid);
     wx.hideLoading()
   },
 
@@ -164,7 +165,8 @@ Page({
     })
   },
   //立即兑换
-  btn:function(){
+  btn:function(e){
+    console.log(e.detail.formId);
     let that = this;
     let time = app.time();
     let data = {

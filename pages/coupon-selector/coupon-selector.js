@@ -34,6 +34,7 @@ Page({
    */
   onReady: function () {
     this.couponajax();
+    app.action_member_log("coupon-selector");
   },
 
   /**

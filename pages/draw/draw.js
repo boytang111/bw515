@@ -33,6 +33,7 @@ Page({
    */
   onReady: function () {
     this.two_find();
+    app.action_member_log("draw")
     wx.hideLoading();
   },
 

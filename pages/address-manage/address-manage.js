@@ -32,6 +32,7 @@ Page({
    */
   onReady: function () {
     this.address();
+    app.action_member_log("address-manage");
   },
 
   /**

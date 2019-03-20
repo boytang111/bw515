@@ -39,6 +39,7 @@ Page({
    */
   onReady: function () {
     this.logdata();
+    app.action_member_log("score-detail");
     wx.hideLoading()
   },
 

@@ -53,6 +53,7 @@ Page({
    */
   onReady: function () {
     this.detailajax();
+    app.action_member_log("detail");
     wx.hideLoading()
   },
 
