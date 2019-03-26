@@ -1,6 +1,6 @@
 <view class='page'>
   <view class="product-photo">
-    <image src='{{url}}{{detail_src}}'></image>
+    <image mode='scaleToFill' src='{{url}}{{detail_src}}'></image>
   </view>
 
   <view class='cost'>{{detail_integral}}积分</view>
@@ -15,7 +15,7 @@
 
   <view class='description'>
     <text>商品描述：</text>
-    <image wx:for="{{content}}" wx:key="itemx" wx:for-item="itemx" src='{{url}}{{itemx}}'></image>
+    <image mode='widthFix' wx:for="{{content}}" wx:key="itemx" wx:for-item="itemx" src='{{url}}{{itemx}}'></image>
   </view>
 </view>
 

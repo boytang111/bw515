@@ -1,4 +1,5 @@
 // pages/edit-card/edit-card.js
+const app = getApp()
 Page({
 
   /**
@@ -19,7 +20,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -61,6 +62,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   }
 })

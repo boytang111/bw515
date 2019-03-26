@@ -105,7 +105,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //产品信息
   couponajax:function(){
@@ -251,6 +257,7 @@ Page({
             city_name: res.data.address.city_name,
             county_name: res.data.address.county_name,
             detail_info: res.data.address.detail_info,
+            save:false,
           })
         } else if (res.data.code == 100){
           that.setData({
@@ -262,15 +269,17 @@ Page({
   },
   //跳转选择地址页面
   jumparres:function(){
+    console.log(this.data.id)
     if (this.data.save==true){
       wx.navigateTo({
-        url: '../edit-address/edit-address'
+        url: '../edit-address/edit-address?classid=' + this.data.detailid
       })
     }else{
       wx.navigateTo({
-        url: '../address-manage/address-manage?choice=1'
+        url: '../address-manage/address-manage?choice=1&classid=' + this.data.detailid
       })
       
     }
-  }
+  },
+  
 })

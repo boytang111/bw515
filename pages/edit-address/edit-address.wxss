@@ -125,13 +125,14 @@ page{
 }
 .more-container .content{
   background:#eee;
-  height:180rpx;
   display:flex;
   justify-content:center;
   align-items:center;
   font-size:20px;
   color:#3d3d3d;
-  padding:15px;
+  padding:45px 0;
+  width:100%;
+  text-align:center;
 }
 .more-container .buttons{
   display:flex;

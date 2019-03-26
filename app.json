@@ -26,7 +26,8 @@
     "pages/shop/shop",
     "pages/myorder/myorder",
     "pages/guide/guide",
-    "pages/view/webview"
+    "pages/view/webview",
+    "pages/rule/rule"
   ],
   "window":{
     "backgroundTextStyle":"light",

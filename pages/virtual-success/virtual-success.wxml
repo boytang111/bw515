@@ -18,6 +18,6 @@
   <view class='navigator' wx:if="{{type==1}}">物流公司：<text>将于七个工作日内寄出</text></view>
 </view>
 
-<navigator class='more'>
+<navigator class='more' url='../exchange-history/exchange-history'>
   <text>查看更多兑换记录>></text>
 </navigator>

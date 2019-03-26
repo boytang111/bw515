@@ -62,23 +62,23 @@ Protecting your privacy is very important to us. Therefore, our internet presenc
     
     <view class='choose'>
       <view class='beer {{beer=="米凯罗"?"active":""}}' data-title="米凯罗" catchtap='beerbap'>
-        <view>米凯罗</view>
+        <view class='{{beer=="米凯罗"?"option1":"option"}}'>米凯罗</view>
         <image src='{{url}}/budweiser/beer5.png'></image>
       </view> 
       <view class='beer {{beer=="金尊"?"active":""}}' data-title="金尊" catchtap='beerbap'>
-        <view>金尊</view>
+        <view class='{{beer=="金尊"?"option1":"option"}}'>金尊</view>
         <image src='{{url}}/budweiser/beer2.png'></image>
       </view>
       <view class='beer {{beer=="百威"?"active":""}}' data-title="百威" catchtap='beerbap'>
-        <view>百威</view>
+        <view class='{{beer=="百威"?"option1":"option"}}'>百威</view>
         <image src='{{url}}/budweiser/beer1.png'></image>
       </view>
       <view class='beer {{beer=="哈尔滨冰萃"?"active":""}}' data-title="哈尔滨冰萃" catchtap='beerbap'>
-        <view>哈尔滨冰萃</view>
+        <view class='{{beer=="哈尔滨冰萃"?"option1":"option"}}'>哈尔滨冰萃</view>
         <image src='{{url}}/budweiser/beer3.png'></image>
       </view>
       <view class='beer {{beer=="哈尔滨白啤"?"active":""}}' data-title="哈尔滨白啤" catchtap='beerbap'>
-        <view>哈尔滨白啤</view>
+        <view class='{{beer=="哈尔滨白啤"?"option1":"option"}}'>哈尔滨白啤</view>
         <image src='{{url}}/budweiser/beer4.png'></image>
       </view>
     </view>
@@ -86,16 +86,16 @@ Protecting your privacy is very important to us. Therefore, our internet presenc
     <view class='title'>以下奖品中你最喜欢的是？</view>
     <view class='flex-box'>
       <view class='item gift {{item=="美食"?"active":""}}' data-title="美食" catchtap='itembap'>
-        <image src='{{url}}/budweiser/gift1.png'></image>
-        <view>美食</view>
+        <image mode='aspectFill' src='{{url}}/budweiser/gift1.png'></image>
+        <!-- <view>美食</view> -->
       </view>
       <view class='item gift {{item=="潮牌"?"active":""}}' data-title="潮牌" catchtap='itembap'>
-        <image src='{{url}}/budweiser/gift2.png'></image>
-        <view>潮牌</view>
+        <image mode='aspectFill' src='{{url}}/budweiser/gift2.png'></image>
+        <!-- <view>潮牌</view> -->
       </view>
       <view class='item gift {{item=="电音"?"active":""}}' data-title="电音" catchtap='itembap'>
-        <image src='{{url}}/budweiser/gift3.png'></image>
-        <view>电音</view>
+        <image mode='aspectFill' src='{{url}}/budweiser/gift3.png'></image>
+        <!-- <view>电音</view> -->
       </view>
     </view>
     <view class='submit' catchtap='like'>提交</view>

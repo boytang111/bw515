@@ -48,7 +48,7 @@ Page({
             app.globalData.key = res.data.key
             app.globalData.openid = res.data.openid;
             if (app.globalData.openid!=""){
-              that.map();
+              //that.map();
               that.getSetting();
               wx.hideLoading()
             }
@@ -344,27 +344,42 @@ Page({
   //点击提交喜好
   like:function(){
     let that=this;
-    let time = app.time();
-    let data = {
-      'time': time,
-    }
-    let str = app.signature(data, app.globalData.key)
-    wx.request({
-      url: app.globalData.url + '/Member/like_add', // 仅为示例，并非真实的接口地址
-      method: 'post',
-      data: {
-        'openid': app.globalData.openid,
-        'member_id': app.globalData.member_id,
-        'ans1': that.data.beer,
-        'ans2': that.data.item,
+    if (that.data.beer==""){
+      wx.showToast({
+        title: '为了提供更个性化的服务请选择以上喜好',
+        icon: 'none',
+        duration: 2000
+      })
+    } else if (that.data.item==""){
+      wx.showToast({
+        title: '为了提供更个性化的服务请选择以上喜好',
+        icon: 'none',
+        duration: 2000
+      })
+    }else{
+      let time = app.time();
+      let data = {
         'time': time,
-        'absign': str,
-      },
-      success(res) {
-        //是否授权信息
-        that.showToast("提交成功");
-        that.indextap();
       }
-    })
+      let str = app.signature(data, app.globalData.key)
+      wx.request({
+        url: app.globalData.url + '/Member/like_add', // 仅为示例，并非真实的接口地址
+        method: 'post',
+        data: {
+          'openid': app.globalData.openid,
+          'member_id': app.globalData.member_id,
+          'ans1': that.data.beer,
+          'ans2': that.data.item,
+          'time': time,
+          'absign': str,
+        },
+        success(res) {
+          //是否授权信息
+          that.showToast("提交成功");
+          that.indextap();
+        }
+      })
+    }
+    
   },
 })

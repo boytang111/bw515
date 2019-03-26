@@ -11,6 +11,7 @@ Page({
     goodsid: "",
     goodsname: "",
     url: app.globalData.url,
+    src:"",
     //用户名字
     nickname: app.globalData.nickname,
     //用户头像
@@ -45,6 +46,11 @@ Page({
     if (options.name) {
       this.setData({
         goodsname: options.name,
+      });
+    }
+    if (options.src) {
+      this.setData({
+        src: options.src,
       });
     }
     if (options.ping_type) {
@@ -105,7 +111,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //获取列表接口
   goodsajax:function(){

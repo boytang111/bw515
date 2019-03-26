@@ -15,13 +15,14 @@
 
 <view class='brand'>
   <view class='brand-title'>
-    <image src='../../img/star.png' class='star'></image>
+    <image wx:if="{{ping_type!=1}}" src='{{url}}{{src}}' class='star'></image>
+    <image wx:if="{{ping_type==1}}" src='../../img/pplm.png' class='star'></image>
     <text>{{goodsname}}</text>
   </view>
-  <view class='sort'>
+  <!-- <view class='sort'>
     <view class='desc'>最新上架</view>
     <view class='asc'>礼品价值</view>
-  </view>
+  </view> -->
 </view>
 
 <view class='container'>

@@ -16,6 +16,7 @@ Page({
     gender:1,
     //修改删除id
     id:"",
+    classid:"",
     user_name: "",
     detail_info: "",
   },
@@ -30,13 +31,22 @@ Page({
       })
       this.address(this.data.id)
     }
+    if (options.classid) {
+      this.setData({
+        classid: options.classid
+      })
+    }
+    wx.showLoading({
+      title: '拼命加载中',
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    app.action_member_log("edit-address");
+    app.action_member_log("edit-address", this.data.classid);
+    wx.hideLoading()
   },
 
   /**
@@ -78,7 +88,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //选择省市
   bindRegionChange(e) {

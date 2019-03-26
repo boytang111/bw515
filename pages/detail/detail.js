@@ -53,7 +53,7 @@ Page({
    */
   onReady: function () {
     this.detailajax();
-    app.action_member_log("detail");
+    app.action_member_log("detail",this.data.detailid);
     wx.hideLoading()
   },
 
@@ -96,7 +96,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //获取商品详情数据
   detailajax(){

@@ -7,16 +7,17 @@
   </view>
   <image src='../../img/logo2.png' class='logo'></image>
 </view>
-<view class='title'>获得统计</view>
+<view class='title'>分值明细</view>
 
 <view class='time-selector'>
   <picker mode='date' fields='month' bindchange="bindDateChange">{{date}}<text>></text></picker>
-  <!-- <view>收入1200积分  使用300积分</view> -->
+  <view wx:if="{{btnindex==2}}">获得{{experience}}积分</view>
+  <view wx:if="{{btnindex==1}}">获得{{experience}}积分</view>
 </view>
 
 <view class='nav'>
-  <navigator class='nav-item {{btnindex==2?"active":""}}' data-index="2" catchtap='navbtn'>已获得经验</navigator>
-  <navigator class='nav-item {{btnindex==1?"active":""}}' data-index="1" catchtap='navbtn'>已使用积分</navigator>
+  <view class='nav-item {{btnindex==2?"active":""}}' data-index="2" catchtap='navbtn'>已获得经验</view>
+  <view class='nav-item {{btnindex==1?"active":""}}' data-index="1" catchtap='navbtn'>已获得积分</view>
 </view>
 
 <scroll-view class='content' scroll-y>

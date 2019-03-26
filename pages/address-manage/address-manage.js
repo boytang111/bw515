@@ -9,6 +9,7 @@ Page({
   data: {
     url: app.globalData.url,
     addressdata: [],    
+    classid:"",
     //删除或者修改判断
     delete_id:"",
     //是否选择
@@ -25,14 +26,23 @@ Page({
         choice: options.choice
       })
     }
+    if (options.classid) {
+      this.setData({
+        classid: options.classid
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.showLoading({
+      title: '拼命加载中',
+    })
     this.address();
-    app.action_member_log("address-manage");
+    app.action_member_log("address-manage", this.data.classid);
+    wx.hideLoading()
   },
 
   /**
@@ -42,6 +52,7 @@ Page({
     if (this.data.delete_id!=""){
       this.address()
     }
+    
   },
 
   /**
@@ -76,7 +87,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //获取地址列表
   address:function(){
@@ -97,10 +114,15 @@ Page({
       },
       success(res) {
         console.log(res.data);
-        that.setData({
-          addressdata: res.data.address
-        })
-        
+        if(res.data.code==200){
+          that.setData({
+            addressdata: res.data.address
+          })
+        }else{
+          that.setData({
+            addressdata: []
+          })
+        }
       }
     })
   },

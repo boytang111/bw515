@@ -22,6 +22,8 @@ Page({
     newdaydata:"",
     newdaycode:"",
     mylogin:"",
+    //获取跳转回来的页面
+    back:"",
   },
 
   /**
@@ -59,7 +61,8 @@ Page({
   onShow: function () {
     if (this.data.mylogin==1){
       this.daily_login();
-    }
+    };
+    this.getdata();
   },
 
   /**
@@ -94,7 +97,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that=this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        that.click_interaction("zfxcx")
+      },
+    })
   },
   getAddress: function () {
     var that = this;
@@ -193,7 +202,7 @@ Page({
   //品牌联名跳转
   btnpin:function(){
     wx.navigateTo({
-      url: '../goods/goods?ping_type=1'
+      url: '../goods/goods?ping_type=1&name=品牌联名'
     })
   },
   //点击取消
@@ -241,7 +250,6 @@ Page({
         // for(let i=0; i<res.data.length; i++){
         //   index_img2.push(res.data[i])
         // }
-        console.log(res.data)
         that.setData({
           index_img2: res.data
         })
@@ -315,7 +323,51 @@ Page({
         'action': action
       },
       success(res) {
-        
+        if(res.data.code==100){
+          
+        } else if (res.data.code == 200){
+          if (action !="zfxcx"){
+            wx.setStorage({
+              key: 'key',
+              data: '1'
+            })
+            wx.setStorage({
+              key: 'newdaydata',
+              data: res.data.txt,
+            }) 
+          }
+        }
+      }
+    })
+  },
+  //点击轮播图或者公众号返回是否有数据
+  getdata:function(){
+    let that=this;
+    wx.getStorage({
+      key: 'key',
+      success(res) {
+        if(res.data==1){
+          wx.getStorage({
+            key: "newdaydata",
+            success(res) {
+              console.log("123")
+              console.log(res.data)
+              that.setData({
+                newdaydata: res.data,
+                black: true,
+                newday: true,
+              })
+              wx.setStorage({
+                key: 'key',
+                data: '2'
+              })
+              wx.setStorage({
+                key: 'newdaydata',
+                data: ''
+              })
+            }
+          })
+        }
       }
     })
   }

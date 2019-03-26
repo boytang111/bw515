@@ -24,7 +24,7 @@
   <view class='title'>百威精彩·上海</view>
 
   <view class='section-box'>
-    <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{item.src}}" data-id="gghwz" catchtap='view'>
+    <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{item.url}}" data-id="gghwz" catchtap='view'>
       <image mode='aspectFill' src='{{url}}{{item.img}}'></image>
       <view class='text-box'>
         <view class='bold-text'>{{item.name}}</view>
@@ -42,25 +42,26 @@
 
   <view class='pans'>
     <navigator class='btn' url='../draw/draw'>
-      <image src='../../img/pai1.png'></image>
+      <image aria-label src='../../img/pai1.png'></image>
       <view>醉爱翻牌</view>
     </navigator>
-    <navigator class='btn' catchtap='btnpin'>
-      <image src='../../img/pai2.png'></image>
+    <navigator url= '../goods/goods?ping_type=1&name=品牌联名' class='btn'>
+      <image aria-label src='../../img/pai2.png'></image>
       <view>品牌联名</view>
     </navigator>
     <navigator class='btn' url='../activity/activity'>
-      <image src='../../img/pai3.png'></image>
+      <image aria-label src='../../img/pai3.png'></image>
       <view>当季促销</view>
     </navigator>
   </view>
 
 </view>
+<!--  -->
 <view class='black' wx:if="{{black}}">
 
   <view class='new' wx:if="{{luck_draw}}">
-    <image src='../../img/congratulation.png'></image>
-    <view class='title'>恭喜您获得一次新人抽奖机会</view>
+    <!-- <image src='../../img/congratulation.png'></image> -->
+    <view class='title' style='padding:40rpx 0 0 0;'>欢迎加入百威大家庭</view>
     <view class='gift'>抽奖机会x1次</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
@@ -77,6 +78,14 @@
       <text catchtap='black'>确定</text>
     </view>
   </view>
+  <!-- <view class='new' wx:if="{{newday}}" >
+    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>{{newdaydata}}</view>
+    <view class='gift'>抽奖机会x1次</view>
+    <view class='gift'>已经放入您的卡券中心</view>
+    <view class='confirm'>
+      <text catchtap='black'>确定</text>
+    </view>
+  </view> -->
   <view class='dialog-container' wx:if="{{false}}">
     <image src='../../img/close.png' class='close'></image>
     <view class='title'>你有一张百威创新会员卡待领取！</view>

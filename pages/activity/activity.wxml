@@ -9,7 +9,11 @@
   <image src='../../img/position.png'></image>
 </view>
 
-<map class='map' show-location></map>
+<view class='map'>
+  <map class='map_map' show-location></map>
+  <cover-view class='map_mack'>开发中</cover-view>
+</view>
+
 <!-- 
 <view class='near'>您附近没有参与以上活动的门店。参与以上活动的地区有：</view>
 

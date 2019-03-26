@@ -214,6 +214,7 @@
   flex-shrink: 0;
   padding: 4rpx;
   border-radius: 8rpx;
+  box-sizing: border-box;
 }
 .item.active{
   opacity: 1;
@@ -221,7 +222,7 @@
 }
 .choose{
   height: 280rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 70rpx;
   position: relative;
   overflow: hidden;
 }
@@ -241,35 +242,42 @@
   transform-origin: 50% 100%;
 }
 .choose .beer:nth-child(1){
-  transform: rotate(-40deg);
+  transform:rotate(-20deg);
+  left:150rpx;
 }
 .choose .beer:nth-child(1).active{
-  transform: rotate(-40deg) scale(1.2);
+  transform: rotate(-20deg) scale(1.2);
   z-index: 9;
 }
 .choose .beer:nth-child(2){
-  transform: rotate(-20deg);
+  transform:rotate(-10deg);
+  left:195rpx;
 }
 .choose .beer:nth-child(2).active{
-  transform: rotate(-20deg) scale(1.2);
+  transform: rotate(-10deg) scale(1.2);
   z-index: 9;
+}
+.choose .beer:nth-child(3){
+  left:235rpx;
 }
 .choose .beer:nth-child(3).active{
   transform: scale(1.2);
   z-index: 9;
 }
 .choose .beer:nth-child(4){
-  transform: rotate(20deg);
+  transform:rotate(10deg);
+  left:275rpx;
 }
 .choose .beer:nth-child(4).active{
-  transform: rotate(20deg) scale(1.2);
+  transform: rotate(10deg) scale(1.2);
   z-index: 9;
 }
 .choose .beer:nth-child(5){
-  transform: rotate(40deg);
+  transform:rotate(25deg);
+  left:312rpx;
 }
 .choose .beer:nth-child(5).active{
-  transform: rotate(40deg) scale(1.2);
+  transform: rotate(25deg) scale(1.2);
   z-index: 9;
 }
 .item.gift{
@@ -369,4 +377,10 @@
 }
 .new .confirm navigator{
   flex: 1;
+}
+.option{
+  opacity: 0
+}
+.option1{
+  opacity: 1
 }

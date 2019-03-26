@@ -12,6 +12,7 @@ Page({
     nickname:"",
     userinfo:true,
     progress:"",
+    experience_lever:"",
   },
 
   /**
@@ -79,7 +80,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //拒绝授权后的操作
   shouquan: function () {
@@ -99,10 +106,22 @@ Page({
   },
   //查询经验值百分比
   progress:function(){
-    let data = parseInt(this.data.indexdata.experience)/750*100
-    this.setData({
-      progress: data
-    })
+    if (this.data.experience_lever==1){
+      let data = parseInt(this.data.indexdata.experience) / 1500 * 100
+      this.setData({
+        progress: data
+      })
+    } else if (this.data.experience_lever == 2){
+      let data = parseInt(this.data.indexdata.experience) / 3500 * 100
+      this.setData({
+        progress: data
+      })
+    } else if (this.data.experience_lever == 3) {
+      this.setData({
+        progress: 100
+      })
+    }
+    
   },
   //查询数据
   indexajax() {
@@ -125,10 +144,16 @@ Page({
         console.log(res.data);
         that.setData({
           indexdata: res.data,
-          
+          experience_lever: res.data.requirement_level
         })
         that.progress();
       }
+    })
+  },
+  //跳转会员卡详情
+  card:function(){
+    wx.navigateTo({
+      url: '../card-index/card-index'
     })
   },
 })

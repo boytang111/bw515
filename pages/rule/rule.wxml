@@ -1,0 +1,13 @@
+<view class="rule-title">游戏玩法</view>
+<view class='rule-item'>抽出喜欢的卡片并点击翻开，每次翻牌消耗一次翻牌机会</view>
+
+<view class="rule-title">抽奖机会获取</view>
+<view class='rule-item'>1、激活银卡获赠两次机会</view>
+<view class='rule-item'>2、升级金级每日抽取一次</view>
+<view class='rule-item'>3.关注平台不定期赠送</view>
+<view class="rule-title">奖品设置：</view>
+
+<view class='rule-item'>NPC潮牌帽子 一件</view>
+<view class='rule-item'>一个月腾讯视频会员</view>
+<view class='rule-item'>随机积5~100分</view>
+<view class='rule-item'>随机1~5经验值</view>

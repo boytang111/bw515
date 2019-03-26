@@ -1,44 +1,111 @@
 <image src='{{url}}/budweiser/card-bg.png' class='bg'></image>
 <view class='grade'>
-  <view>当前会员等级：<text>银卡会员</text></view>
-  <navigator>
+  <view>当前会员等级：<text>{{experience_lever==1?"银卡会员":experience_lever==1?"金卡会员":experience_lever==1?"铂金会员":""}}</text></view>
+  <!-- <navigator>
     <image src='{{url}}/budweiser/setting.png'></image>
-  </navigator>
+  </navigator> -->
 </view>
 <swiper class='card-stage'
+current="{{current}}" bindchange="change"
 indicator-dots
 indicator-dots='rgba(255,255,255,.5)'
 indicator-active-color='black'
 circular
 >
-  <swiper-item>
+  <swiper-item class="mackitem">
     <image src='{{url}}/budweiser/silver.png' class='card'></image>
   </swiper-item>
-  <swiper-item>
+  <swiper-item class="mackitem">
+    <view wx:if='{{experience_lever=="2"?"false":"true"}}' class='mack'>
+      <image mode="scaleToFill" src='../../img/suo.png'> </image>
+    </view>
     <image src='{{url}}/budweiser/gold.png' class='card'></image>
   </swiper-item>
-  <swiper-item>
+  <swiper-item class="mackitem">
+  <view wx:if='{{experience_lever=="3"?"false":"true"}}' class='mack'>
+    <image mode="scaleToFill" src='../../img/suo.png'> </image>
+  </view>
     <image src='{{url}}/budweiser/platinum.png' class='card'></image>
   </swiper-item>
 </swiper>
 
-<view class='title'>已获得特权</view>
-<view class='got'>
+<view class='title'>可获得特权</view>
+<view class='got' wx:if="{{current_item==0}}">
   <view class='got-item'>
     <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权1：XXXXXX</text>
+    <text>特权1：每日登陆可获得经验值</text>
   </view>
   <view class='got-item'>
     <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权1：XXXXXX</text>
+    <text>特权2：购买商品可获得积分</text>
   </view>
   <view class='got-item'>
     <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权1：XXXXXX</text>
+    <text>特权3：立即可获赠2张醉爱券</text>
+  </view>
+</view>
+<view class='got' wx:if="{{current_item==1}}">
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权1：每日登陆可获得经验值</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权2：购买商品可获得积分</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权3：立即获赠2张醉爱券</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权4：可对金级礼品进行兑换</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权5：每日获赠醉爱券一张</text>
+  </view>
+</view>
+<view class='got' wx:if="{{current_item==2}}">
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权1：每日登陆可获得经验值</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权2：购买商品可获得积分</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权3：立即获赠2张醉爱券</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权4：可对金级礼品进行兑换</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权5：每日获赠醉爱券一张</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权6：可对铂金礼品进行兑换</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权7：用户每年的生日惊喜</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权8：百威的盛典特邀</text>
+  </view>
+  <view class='got-item'>
+    <image src='{{url}}/budweiser/badge.png'></image>
+    <text>特权9：会员卡的封面可自定义</text>
   </view>
 </view>
 
-<view class='title'>未获得特权</view>
+<!-- <view class='title'>未获得特权</view>
 <view class='got grey'>
   <view class='got-item'>
     <image src='{{url}}/budweiser/badge-grey.png'></image>
@@ -64,4 +131,4 @@ circular
     <image src='{{url}}/budweiser/badge-grey.png'></image>
     <text>特权1：XXXXXX</text>
   </view>
-</view>
+</view> -->

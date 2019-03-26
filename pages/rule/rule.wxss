@@ -1,0 +1,20 @@
+page{
+  padding: 20rpx 30rpx;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+.rule-title{
+  font-size: 28rpx;
+  font-weight: bolder;
+  margin-top: 20rpx;
+}
+.rule-item{
+  font-size: 28rpx;
+}
+
+.rule-image{
+  display: block;
+  width: 640rpx;
+  height: 642rpx;
+  margin: 30rpx auto;
+}

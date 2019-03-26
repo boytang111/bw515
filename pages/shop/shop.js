@@ -79,15 +79,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+ 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (res) {
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
+  
   //拒绝授权后的操作
   shouquan: function () {
     wx.showModal({
@@ -129,4 +136,5 @@ Page({
       }
     })
   },
+  
 })

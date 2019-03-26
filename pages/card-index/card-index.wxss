@@ -66,10 +66,35 @@
   margin-right: 40rpx;
   margin-bottom: 10rpx;
   display: flex;
+  width: 100%;
   align-items: center;
 }
 .got-item image{
   width: 42rpx;
   height: 52rpx;
   margin-right: 10rpx;
+}
+.mackitem{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.mack{
+  width:100%;
+  height:430rpx;
+  margin:auto;
+  position: absolute;
+  top:15rpx;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 19% 0 0 0;
+}
+.mack image{
+  width:150rpx;
+  height:150rpx;
 }

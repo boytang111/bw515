@@ -1,4 +1,6 @@
 // pages/receive/receive.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -61,6 +63,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  }
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
+  },
 })

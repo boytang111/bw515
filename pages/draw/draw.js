@@ -17,6 +17,7 @@ Page({
     prize_img:"",
     prize_name:"",
     type:"",
+    clause:false,
   },
 
   /**
@@ -76,15 +77,26 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
 
   onSelect(event){
     var index = event.currentTarget.dataset.index;
-    this.setData({
-      selectIndex: index
-    });
-    this.draw();
+    if (this.data.selectIndex==index){
+      this.draw();
+    }else{
+      this.setData({
+        selectIndex: index
+      });
+    }
+    
+    //this.draw();
   },
   //点击翻牌
   draw:function(){
@@ -157,6 +169,19 @@ Page({
           two_find:res.data
         })
       }
+    })
+  },
+  //点击打开规则
+  rule:function(){
+    this.setData({
+      bax:true,
+      clause:true,
+    })
+  },
+  close_clause:function(){
+    this.setData({
+      bax: false,
+      clause: false,
     })
   }
 })

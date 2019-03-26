@@ -86,6 +86,9 @@ page{
   margin-top: 60rpx;
   color: #363636;
 }
+.intrduce .navigator.blod{
+  font-size: 35rpx;
+}
 .intrduce .navigator text{
   border-bottom: solid 1rpx #363636;
 }

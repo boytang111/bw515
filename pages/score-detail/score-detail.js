@@ -16,7 +16,8 @@ Page({
     integral: app.globalData.integral,
     logdata: [],
     date:"",
-    btnindex:"2"
+    btnindex:"2",
+    experience:"",
   },
 
   /**
@@ -82,7 +83,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //获取当前月份
   date:function(){
@@ -117,9 +124,15 @@ Page({
         'time': time,
       },
       success(res) {
+        
+        let exper=0;
+        for(let i=0; i<res.data.length;i++){
+          exper = parseInt(exper) + parseInt(res.data[i].experience);
+        }
         that.setData({
           logdata: res.data,
-        })
+          experience: exper,
+        });
       }
     })
   },
@@ -142,9 +155,14 @@ Page({
         'time': time,
       },
       success(res) {
+        let exper = 0;
+        for (let i = 0; i < res.data.length; i++) {
+          exper = parseInt(exper) + parseInt(res.data[i].experience);
+        }
         that.setData({
-          logdata:res.data,
-        })
+          logdata: res.data,
+          experience: exper,
+        });
       }
     })
   },
@@ -172,4 +190,5 @@ Page({
       this.logdata();
     }
   },
+  
 })

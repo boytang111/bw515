@@ -1,4 +1,4 @@
 /**app.wxss**/
-image{
-  object-fit: cover;
+.personal{
+  background: -webkit-linear-gradient(top,#fabe00,#ea5504);
 }

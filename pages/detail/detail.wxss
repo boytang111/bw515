@@ -8,7 +8,6 @@
 .product-photo image{
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 .cost{
   font-size: 46rpx;
@@ -37,6 +36,7 @@
   padding: 0 60rpx;
   margin-top: 30rpx;
   padding-bottom: 250rpx;
+  overflow: hidden;
 }
 .description text{
   display: block;
@@ -44,7 +44,7 @@
 }
 .description image{
   width: 100%;
-  object-fit: cover;
+  float: left;
 }
 
 .exchange{

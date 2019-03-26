@@ -9,7 +9,7 @@
 .personal{
   display: flex;
   align-items: center;
-  background: #000;
+  background: #fff;
   padding: 8rpx 24rpx;
   box-sizing: border-box;
   position: fixed;
@@ -17,6 +17,7 @@
   top: 0;
   width: 100%;
   z-index: 2;
+  border-bottom: 2px solid #585858;
 }
 .avatar{
   width: 82rpx;
@@ -30,7 +31,7 @@
 }
 .nick-name{
   margin-left: 20rpx;
-  color: white;
+  color: #000;
   font-size: 30rpx;
   flex: 1.5;
   white-space: nowrap;
@@ -39,8 +40,8 @@
 }
 .score{
   flex: 2.5;
-  font-size: 32rpx;
-  color: white;
+  font-size: 25rpx;
+  color: #000;
   padding-left: 10rpx;
   box-sizing:border-box;
 }
@@ -49,12 +50,12 @@
   line-height: 40rpx;
 }
 .score text:last-child{
-  font-size: 40rpx;
+  font-size: 25rpx;
   font-weight: bold;
 }
 
 page{
-  background: #e5e5e5;
+  background: #fff;
   padding-top: 90rpx;
 }
 .brand{
@@ -67,10 +68,10 @@ page{
 }
 .brand-title{
   height: 60rpx;
-  width: 280rpx;
-  background: #3f3f3f;
+  width: 320rpx;
+  background: #fff;
   position: relative;
-  color: white;
+  color: #585858;
   font-size: 34rpx;
   font-weight: bolder;
   display: flex;
@@ -81,11 +82,11 @@ page{
   width: 0;
   height: 0;
   display: block;
-  border-right: solid 40rpx transparent;
-  border-top: solid 60rpx #3f3f3f;
+  border-right: solid 40rpx #fff;
+  border-top: solid 60rpx transparent;
   position: absolute;
   top: 0;
-  right: -39rpx;
+  right: 0;
 }
 .brand-title .star{
   width: 36rpx;
@@ -95,6 +96,7 @@ page{
 }
 .brand navigator{
   font-size: 28rpx;
+  color: #585858;
 }
 
 .good-row{
@@ -107,6 +109,9 @@ page{
   font-size: 0;
   text-align: center;
   margin-right: 25rpx;
+  box-sizing: border-box;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 5px;
 }
 .good-row .good:nth-child(3){
   margin-right: 0;
@@ -123,9 +128,8 @@ page{
   min-height: 50rpx;
 }
 .good .price{
-  background: black;
   min-height: auto;
-  color: white;
+  color: #ea5404;
   font-size: 22rpx;
   line-height: 1.5;
   display: inline-block;

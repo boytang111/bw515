@@ -1,10 +1,16 @@
-<view class="rule-title">积分积累</view>
-<view class='rule-item'>会员在俱乐部会员平台的使用行为，均可积累积分</view>
+<view class="rule-title">积分获取</view>
+<view class='rule-item'>1.参与平台的玩法（新人礼、醉爱翻牌）。</view>
+<view class='rule-item'>2.参与特殊活动奖励。</view>
+<view class='rule-item'>3.在线上线下购买啤酒获赠。</view >
 
-<view class="rule-title">积分积累细则</view>
-<view class='rule-item'>通过互动、购买及分享会员可获取积分，具体分值，请参考会员平台的会员中心实时更新。以下仅供参考。</view>
-
-<image src='{{url}}/budweiser/rule.png' class='rule-image'></image>
+<view class="rule-title">积分兑换礼遇</view>
+<view class='rule-item'>1.会员可自助通过会员平台进行积分兑换。</view>
+<view class='rule-item'>2.积分抵扣金额或优惠金额将不可用于开具发票每笔积分可兑换各类商品、优惠礼券及增值服务,具体项目会视情况调整,详情可见会员平台。</view>
+<view class='rule-item'>3.积分兑换的商品不退不换。</view >
+<view class='rule-item'>例:如购买一瓶产品累积了20积分,退货时账户内只余8积分，则先扣除8积分，剩余的12积分待下一笔积分入账后再扣除。</view >
 
 <view class="rule-title">积分有效期</view>
-<view class='rule-item'>每笔积分的有效期至次年当月月底，例：如2017年4月17日此笔积分生效，则2018年4月30日此笔积分到期。积分到期系统将自动清零。</view>
+<view class='rule-item'>目前积分长期有效，后续调整另行通知。</view>
+
+<view class="rule-title">积分查询</view>
+<view class='rule-item'>会员积分详细信息可进入会员平台中的个人中心进行查询，如有任何疑义，可通过400客服进行咨询。</view>

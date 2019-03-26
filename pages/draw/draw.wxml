@@ -1,7 +1,7 @@
 <view class="title">醉爱翻牌</view>
 <view class='count'>今日可翻牌次数：{{two_find}}</view>
 
-<navigator class='more'><text>如何获得更多翻牌次数</text></navigator>
+<!-- <navigator class='more'><text>如何获得更多翻牌次数</text></navigator> -->
 
 <view class='draw-container'>
   <view class='draw-item {{selectIndex==0?"active":""}}' data-index='0' bindtap='onSelect'>
@@ -26,7 +26,7 @@
   <view>（温馨提示，据说选喜欢的啤酒中奖几率更高哦~）</view>
 </view>
 
-<navigator class='rule'><text>查看活动规则及条款</text></navigator>
+<view class='rule' catchtap='rule'><text>“醉爱翻牌”活动规则</text></view>
 
 <view class='black' wx:if="{{bax}}">
   <view class='more-container' wx:if="{{container}}">
@@ -57,6 +57,26 @@
     <view class='buttons'>
       <text catchtap='back'>确定</text>
     </view>
+  </view>
+
+  <view class='clause' wx:if="{{clause}}">
+    <image class='close' src='{{url}}/budweiser/close.png' catchtap='close_clause'></image>
+    <text class='title'>“醉爱翻牌”活动规则</text>
+    <text class='term'>
+    游戏玩法：
+    抽出喜欢的卡片并点击翻开，每次翻牌消耗一次翻牌机会。
+     
+    抽奖次数获取：
+    1、激活银卡获赠2次机会
+    2、升级金级每日抽取一次
+    3、关注平台不定期赠送
+     
+    奖品设置：
+    1、NPC潮牌帽子一件
+    2、1个月腾讯视频会员
+    3、随机5~100积分
+    4、随机1~5经验值
+    </text>
   </view>
 
 </view>

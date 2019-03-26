@@ -59,6 +59,7 @@ Page({
   onReady: function () {
     this.couponajax();
     app.action_member_log("virtual-confirm", this.data.detailid);
+
     wx.hideLoading()
   },
 
@@ -101,7 +102,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let that = this;
+    wx.showShareMenu({
+      withShareTicket: true,
+      success(res) {
+        app.click_interaction("zfxcx")
+      },
+    })
   },
   //产品信息
   couponajax: function () {
@@ -144,4 +151,5 @@ Page({
       }
     })
   },
+  
 })

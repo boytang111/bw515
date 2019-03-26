@@ -6,7 +6,7 @@
       <view>设置</view>
     </navigator>
     <view class='name'>未登录</view>
-    <view class='name'></view>
+    <view class='name_img'></view>
     <view class='avatar'>
       <image src='../../img/default-avatar.png'></image>
     </view>
@@ -22,30 +22,28 @@
       <view>设置</view>
     </navigator>
     <view class='name'>{{indexdata.nickname}}</view>
-    <view class='name'></view>
+    <view class='name_img'></view>
     <view class='avatar'>
       <image src='{{indexdata.headimg}}'></image>
     </view>
-    <view>积分：{{indexdata.integral>999?"999+":indexdata.integral}}</view>
+    <view>积分：<text>{{indexdata.integral>9999?"9999+":indexdata.integral}}</text></view>
     <navigator url='../score-rule/score-rule'>
       <image src='../../img/breadcrumb.png' class='icon'></image>
       <view>积分规则</view>
     </navigator>
   </view>
   <view class='card'>
-    <image src='{{url}}/budweiser/silver.png'></image>
+    <image catchtap='card' src='{{experience_lever==1?"https://applet.qm-vip.com/budweiser/silver.png":experience_lever==2?"https://applet.qm-vip.com/budweiser/gold.png":experience_lever==3?"https://applet.qm-vip.com/budweiser/platinum.png":""}}'></image>
     <navigator url='../guide/guide' class='ps'><text>升级指南</text></navigator>
     <view class='progress'>
       <view class='progr'>
         <progress percent="{{progress}}" stroke-width="12rpx" border-radius="15rpx" activeColor="rgb(105,105,105)" backgroundColor="rgb(61,60,61)" />
-        <text>{{indexdata.experience||"0"}}/750</text>
+        <text>{{indexdata.experience||"0"}}/{{experience_lever==1?"1500":experience_lever==2?"3500":"无限"}}</text>
       </view>
       
     </view>
     <view class='privilege'>
-      <view>特权1:xxxx</view>
-      <view>特权1:xxxx</view>
-      <view>特权1:xxxx</view>
+      <view>银级会员	可获取积分与经验值、赠送2次翻牌	</view>
     </view>
   </view>
 </view>
@@ -69,10 +67,10 @@
   </navigator>
 </view>
 
-<view class='title'>百威精彩·上海</view>
-<view class='address'>
-  <text>更换地址</text>
+<view class='title'>猜你喜欢</view>
+<!-- <view class='address'>
+  <text>猜你喜欢</text>
   <image src='../../img/position.png'></image>
-</view>
+</view> -->
 
-<image class='personal-img' src='{{url}}/budweiser/personal-img.png'></image>
+<image mode='aspectFill' class='personal-img' src='{{url}}/budweiser/personal-img.jpg'></image>

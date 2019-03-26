@@ -1,5 +1,6 @@
-// pages/score-rule/score-rule.js
-const app = getApp();
+// pages/activity/activity.js
+//获取应用实例
+const app = getApp()
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    app.action_member_log("guide");
+
   },
 
   /**
@@ -69,5 +70,6 @@ Page({
         app.click_interaction("zfxcx")
       },
     })
-  }
+  },
+  
 })

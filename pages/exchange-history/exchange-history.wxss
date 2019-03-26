@@ -5,7 +5,7 @@ page{
 .personal{
   display: flex;
   align-items: center;
-  background: #000;
+  background: #fff;
   padding: 8rpx 24rpx;
 }
 .avatar{
@@ -20,7 +20,7 @@ page{
 }
 .nick-name{
   margin-left: 20rpx;
-  color: white;
+  color: #000;
   font-size: 30rpx;
   flex:.5;
   white-space: nowrap;
@@ -30,8 +30,8 @@ page{
 .score{
   flex: 1;
   text-align: center;
-  font-size: 32rpx;
-  color: white;
+  font-size: 25rpx;
+  color: #000;
 }
 
 .score text{
@@ -39,7 +39,7 @@ page{
   line-height: 40rpx;
 }
 .score text:last-child{
-  font-size: 40rpx;
+  font-size: 25rpx;
   font-weight: bold;
 }
 .title{
