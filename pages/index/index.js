@@ -24,13 +24,14 @@ Page({
     mylogin:"",
     //获取跳转回来的页面
     back:"",
+    //额外加经验
+    text:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.member(app.globalData.member_id);
     this.setData({
       nickname: app.globalData.nickname,
       headimg: app.globalData.headimg,
@@ -63,6 +64,7 @@ Page({
       this.daily_login();
     };
     this.getdata();
+    this.member(app.globalData.member_id);
   },
 
   /**
@@ -168,6 +170,7 @@ Page({
             that.setData({
               newday: true,
               newdaydata: res.data.msg,
+              text: res.data.txt,
             })
           }
         }

@@ -59,21 +59,19 @@
   top: 30%;
   left: 20%;
   right: 20%;
-  background: #eee;
+  background: #e6e6e6;
   border-radius: 8rpx;
 }
 .gift-container .congratulation{
-  width: 110%;
-  height: 130rpx;
-  position: absolute;
-  left: -5%;
-  top: -50rpx;
+  width: 100%;
+  border-top-left-radius:8rpx;
+  border-top-right-radius:8rpx;
 }
 .gift-title{
   font-size: 32rpx;
   color: #646464;
   text-align: center;
-  margin-top: 100rpx;
+  margin-top: -50rpx;
 }
 .gift-container .prize{
   background: white;

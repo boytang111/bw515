@@ -41,6 +41,7 @@ Page({
   onReady: function () {
     this.logdata();
     app.action_member_log("score-detail");
+    this.indexajax();
     wx.hideLoading()
   },
 
@@ -48,7 +49,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -190,5 +191,31 @@ Page({
       this.logdata();
     }
   },
-  
+  //获取用户积分
+  indexajax() {
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key);
+    wx.request({
+      url: app.globalData.url + '/Member/index', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'openid': app.globalData.openid,
+        'absign': str,
+        'time': time,
+        'member_id': app.globalData.member_id,
+      },
+      success(res) {
+        console.log(res.data);
+        that.setData({
+          nickname: res.data.nickname,
+          headimg: res.data.headimg,
+          integral: res.data.integral
+        })
+      }
+    })
+  },
 })

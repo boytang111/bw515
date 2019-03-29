@@ -1,8 +1,9 @@
 //app.js
 var util = require('utils/md5.js')
 App({
-  onLaunch: function () {
+  onLaunch: function (option) {
     // 登录
+    console.log(option)
     var that=this;
   },
   globalData: {

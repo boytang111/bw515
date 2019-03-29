@@ -7,4 +7,4 @@
 <view class='rule-item'>普通与银级暂不扣除经验值</view>
 
 <view class="rule-title">经验值获取方式</view>
-<image src='{{url}}/budweiser/rule2.png' class='rule-image'></image>
+<image mode='widthFix' src='{{url}}/budweiser/rule2.png' class='rule-image'></image>

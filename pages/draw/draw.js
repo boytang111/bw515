@@ -9,15 +9,16 @@ Page({
   data: {
     selectIndex: null,
     url: app.globalData.url,
-    black:false,
+    black: false,
     container:false,
+    bax: false,
     //次数
     two_find:"",
     id:"",
     prize_img:"",
     prize_name:"",
     type:"",
-    clause:false,
+    clause: false,
   },
 
   /**

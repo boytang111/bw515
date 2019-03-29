@@ -25,7 +25,7 @@
   <view class='button refuse' wx:if="{{detail_number==0}}">已抢完</view>
   <view catchtap='qita'><text>其他获取方式</text></view>
 </view>
-
+<!--  -->
 <view class='black' wx:if="{{black}}">
 
  <view class='more-container' wx:if="{{container}}">
@@ -73,9 +73,9 @@
     <navigator url='../coupon/coupon'><text>进入我的优惠券查看</text></navigator>
     <view class='get-button lose' catchtap='luck'>再来一次</view>
   </view>
-
+<!--  -->
   <view class='gift-container' wx:if="{{yes_more}}">
-    <image class='congratulation' src='../../img/congratulation.png'></image>
+    <image mode='widthFix' class='congratulation' src='../../img/congratulation.png'></image>
     <view class='gift-title'>恭喜你博取到了本件礼品:</view>
     <view class='prize'>
       <image src='../../img/good-picture.png'></image>

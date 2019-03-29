@@ -42,7 +42,7 @@
   </view>
 
   <view class='gift-container' wx:if="{{black}}">
-    <image class='congratulation' src='../../img/congratulation.png'></image>
+    <image mode='widthFix' class='congratulation' src='../../img/congratulation.png'></image>
     <view class='gift-title'>本次翻牌您获得了：</view>
     <view class='prize'>
       <image wx:if="{{id==0}}" src='../../img/xiexie.png'></image>
