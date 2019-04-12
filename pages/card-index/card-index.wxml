@@ -28,81 +28,14 @@ circular
     <image src='{{url}}/budweiser/platinum.png' class='card'></image>
   </swiper-item>
 </swiper>
-
-<view class='title'>可获得特权</view>
 <view class='got' wx:if="{{current_item==0}}">
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权1：每日登陆可获得经验值</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权2：购买商品可获得积分</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权3：立即可获赠2张醉爱券</text>
-  </view>
+  <image mode='widthFix' class='got-item' src='../../img/current_item1.jpg'></image>
 </view>
 <view class='got' wx:if="{{current_item==1}}">
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权1：每日登陆可获得经验值</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权2：购买商品可获得积分</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权3：立即获赠2张醉爱券</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权4：可对金级礼品进行兑换</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权5：每日获赠醉爱券一张</text>
-  </view>
+  <image mode='widthFix' class='got-item' src='../../img/current_item2.jpg'></image>
 </view>
 <view class='got' wx:if="{{current_item==2}}">
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权1：每日登陆可获得经验值</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权2：购买商品可获得积分</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权3：立即获赠2张醉爱券</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权4：可对金级礼品进行兑换</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权5：每日获赠醉爱券一张</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权6：可对铂金礼品进行兑换</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权7：用户每年的生日惊喜</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权8：百威的盛典特邀</text>
-  </view>
-  <view class='got-item'>
-    <image src='{{url}}/budweiser/badge.png'></image>
-    <text>特权9：会员卡的封面可自定义</text>
-  </view>
+  <image mode='widthFix' class='got-item' src='../../img/current_item3.jpg'></image>
 </view>
 
 <!-- <view class='title'>未获得特权</view>

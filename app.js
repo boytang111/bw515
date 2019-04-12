@@ -3,8 +3,8 @@ var util = require('utils/md5.js')
 App({
   onLaunch: function (option) {
     // 登录
-    console.log(option)
     var that=this;
+    
   },
   globalData: {
     url:'https://applet.qm-vip.com',
@@ -20,6 +20,11 @@ App({
     integral:"",
     //地理位置授权
     getLocation:true,
+    //二维码参数
+    scene:'',
+    source:"",
+    //是否是东北地区
+    position:"",
   },
   // getPermission: function (obj) {
   //   let that = this;

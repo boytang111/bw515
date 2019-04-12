@@ -89,9 +89,9 @@
 }
 .progress{
   position: absolute;
-  width: 40%;
+  width: 45%;
   right: 30rpx;
-  bottom: 77rpx;
+  bottom: 72rpx;
 }
 .progr{
   width: 100%;
@@ -171,4 +171,63 @@
 }
 .name_img{
   width: 180rpx;
+}
+.phone{
+  width: 100rpx;
+  position: fixed;
+  right: 0;
+  bottom: 100rpx;
+}
+.phone image{
+  width: 100%;
+}
+.black{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 3;
+}
+.more-container{
+  background: white;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  right: 10%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.more-container .content{
+  background: #eee;
+  height: 140rpx;
+  font-size: 30rpx;
+  color: #3d3d3d;
+  text-align: center;
+}
+.more-container .content .teach{
+  font-size: 32rpx;
+  color: black;
+  padding-top: 50rpx;
+}
+.more-container .content .reason{
+  font-size: 26rpx;
+  color: #6D6D6D;
+  margin-top: 30rpx;
+}
+.buttons{
+  background: white;
+  display: flex;
+  font-size: 30rpx;
+  line-height: 74rpx;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.buttons text{
+  flex: 1;
+}
+.buttons text:nth-child(1){
+  color: #7a7a7a;
+  border-right: solid 1rpx #bfbfbf;
 }

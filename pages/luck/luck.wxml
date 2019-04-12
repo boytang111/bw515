@@ -17,12 +17,9 @@
 <!--  -->
 <view class='black' wx:if="{{black}}">
   <view class='gift-container'>
-    <image mode='widthFix' class='congratulation' src='../../img/congratulation.png'></image>
-    <view class='gift-title'>恭喜你获得</view>
-    <view class='prize'>
-      <image src='{{luckdata.type=="integral"?"../../img/jifen.png":luckdata.type=="experience"?"../../img/jinyan.png":luckdata.type=="coupon"?prize_img:""}}'></image>
-    </view>
-    <view class='gift' style='color:red'>{{luckdata.name}}</view>
+    <image mode='widthFix' class='congratulation' src='{{luckdata.id==0?"../../img/new_06.png":luckdata.number==200?"../../img/new_02.png":luckdata.number==500?"../../img/new_03.png":luckdata.number==100?"../../img/new_01.png":""}}'></image>
+    <view class='gift-title' wx:if="{{luckdata.id!=0}}">恭喜你获得：{{luckdata.name}}</view>
+    <view class='gift'>更多积分详情可在“个人中心”查看</view>
     <view class='look-for' catchtap='back'>去首页看看</view>
   </view>
 </view>

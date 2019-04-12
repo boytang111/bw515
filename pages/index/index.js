@@ -16,9 +16,9 @@ Page({
     //用户积分
     integral:app.globalData.integral,
     userinfo:true,
-    black:true,
+    black:false,
     luck_draw:false,
-    newday:false,
+    newday: false,
     newdaydata:"",
     newdaycode:"",
     mylogin:"",
@@ -26,6 +26,12 @@ Page({
     back:"",
     //额外加经验
     text:"",
+    newdaydatalbt:"",
+    newdaylbt:false,
+    //是否加积分抽奖
+    qrinter:'',
+    qr:false,
+    qrcode:"",
   },
 
   /**
@@ -49,11 +55,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.daily_login();
+    
     this.slide_list();
     this.slide();
     app.action_member_log("index")
-    wx.hideLoading()
   },
 
   /**
@@ -63,8 +68,11 @@ Page({
     if (this.data.mylogin==1){
       this.daily_login();
     };
+    this.daily_login();
     this.getdata();
     this.member(app.globalData.member_id);
+    this.pull_cap_qrcode();
+    wx.hideLoading()
   },
 
   /**
@@ -99,13 +107,27 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let that=this;
-    wx.showShareMenu({
-      withShareTicket: true,
-      success(res) {
-        that.click_interaction("zfxcx")
+    let that = this;
+    return {
+      title: '百威创新', // 转发标题（默认：当前小程序名称）
+      path: '/pages/login/index', // 转发路径（当前页面 path ），必须是以 / 开头的完整路径
+      success(e) {
+        // shareAppMessage: ok,
+        // shareTickets 数组，每一项是一个 shareTicket ，对应一个转发对象
+        // 需要在页面onLoad()事件中实现接口
+        wx.showShareMenu({
+          withShareTicket: true,
+          success(res) {
+            that.click_interaction("zfxcx")
+          },
+        })
       },
-    })
+      fail(e) {
+        // shareAppMessage:fail cancel
+        // shareAppMessage:fail(detail message) 
+      },
+      complete() { }
+    }
   },
   getAddress: function () {
     var that = this;
@@ -153,10 +175,7 @@ Page({
             that.setData({
               luck_draw: true,
               newday: false,
-            })
-          }else{
-            that.setData({
-              black: false,
+              black:true,
             })
           }
         } else if (res.data.code == 200){
@@ -164,11 +183,13 @@ Page({
           if (res.data.luck_draw_one.code == 200) {
             that.setData({
               luck_draw: true,
+              black: true,
               newdaydata:res.data.msg,
             })
           }else{
             that.setData({
               newday: true,
+              black: true,
               newdaydata: res.data.msg,
               text: res.data.txt,
             })
@@ -210,9 +231,16 @@ Page({
   },
   //点击取消
   black:function(){
-    this.setData({
-      black:false,
-    })
+    if (this.data.qrcode==200){
+      this.setData({
+        newday: false,
+      })
+    }else{
+      this.setData({
+        black: false,
+      })
+    }
+    
   },
   //点击弹出经验框
   newday:function(){
@@ -220,12 +248,13 @@ Page({
       this.setData({
         luck_draw: false,
         newday: false,
-        black:false,
+        black: false,
       })
     }else{
       this.setData({
         luck_draw: false,
         newday: true,
+        black: true,
       })
     }
     
@@ -353,12 +382,10 @@ Page({
           wx.getStorage({
             key: "newdaydata",
             success(res) {
-              console.log("123")
-              console.log(res.data)
               that.setData({
-                newdaydata: res.data,
+                newdaydatalbt: res.data,
                 black: true,
-                newday: true,
+                newdaylbt: true,
               })
               wx.setStorage({
                 key: 'key',
@@ -373,5 +400,56 @@ Page({
         }
       }
     })
+  },
+  //是否有资格游戏接口
+  pull_cap_qrcode: function (){
+    let that = this;
+    let time = app.time();
+    let data = {
+      'time': time
+    }
+    let str = app.signature(data, app.globalData.key)
+    var memberdata;
+    wx.request({
+      url: app.globalData.url + '/Index/pull_cap_qrcode', // 仅为示例，并非真实的接口地址
+      method: 'post',
+      data: {
+        'absign': str,
+        'openid': app.globalData.openid,
+        'member_id': app.globalData.member_id,
+        'time': time,
+        'number': app.globalData.scene
+      },
+      success(res) {
+        if (res.data.code == 200) {
+          that.setData({
+            qr:true,
+            black:true,
+            qrinter: res.data.integral,
+            qrcode: res.data.code,
+          })
+          app.globalData.position=res.data.position
+        }
+      }
+    })
+  },
+  //关闭弹窗
+  qrfalse:function(){
+    this.setData({
+      qr:false,
+    });
+    if (this.data.newdaycode == 201) {
+      this.setData({
+        luck_draw: false,
+        newday: false,
+        black: false,
+      })
+    } else {
+      this.setData({
+        luck_draw: false,
+        newday: true,
+      })
+    }
   }
+  
 })

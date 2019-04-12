@@ -254,6 +254,9 @@
   font-size: 28rpx;
   text-align: center;
 }
+.gift navigator{
+  text-decoration: underline
+}
 .new .confirm{
   background: white;
   font-size: 30rpx;

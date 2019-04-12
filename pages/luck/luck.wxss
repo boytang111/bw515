@@ -56,11 +56,13 @@
 }
 .gift-container{
   position: absolute;
-  top: 30%;
-  left: 20%;
-  right: 20%;
-  background: #e6e6e6;
+  top: 27%;
+  left: 10%;
+  right: 10%;
+  background: #fff;
   border-radius: 8rpx;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx;
 }
 .gift-container .congratulation{
   width: 100%;
@@ -69,9 +71,10 @@
 }
 .gift-title{
   font-size: 32rpx;
-  color: #646464;
+  color: #000;
+  font-weight: bold;
   text-align: center;
-  margin-top: -50rpx;
+  margin-top: 30rpx;
 }
 .gift-container .prize{
   background: white;
@@ -87,20 +90,20 @@
   height: 150rpx;
 }
 .gift{
-  width: 242rpx;
-  margin: auto;
-  line-height: 52rpx;
+  width:100%;
+  margin: 30rpx 0 55rpx 0;
   font-size: 28rpx;
-  color: black;
-  background: white;
+  color: #7f7f7f;
   text-align: center;
-  border-radius: 0 0 6rpx 6rpx;
 }
 .look-for{
-  line-height: 100rpx;
-  background: white;
+  width: 80%;
+  margin: auto;
+  line-height: 86rpx;
+  background: #000000;
+  color: #fff;
   text-align: center;
   font-size: 34rpx;
   margin-top: 20rpx;
-  border-radius: 0 0 8rpx 8rpx;
+  border-radius: 15rpx;
 }

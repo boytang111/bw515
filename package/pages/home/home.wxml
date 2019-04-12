@@ -1,0 +1,14 @@
+<image src='{{position=="dongbei"?"../../images/background1.png":"../../images/background.png"}}' mode='widthFix'></image>
+<image src='../../images/gai_01.png' bindtap='startActive' mode='widthFix' style="display:{{showStatus_1==1?'block':'none'}}"></image>
+<image catchtap='startActive' src='../../images/finger.png' mode='widthFix' style="display:{{showStatus_1==1?'block':'none'}}"></image>
+<text catchtap='startActive' style="display:{{showStatus_1==1?'block':'none'}}">点击拉开瓶盖</text>
+<image src='../../images/ribbon.png' mode='widthFix' style="display:{{showStatus_2==1?'block':'none'}}"></image>
+<image src='../../images/gai_02.png' mode='widthFix' style="display:{{showStatus_3==1?'block':'none'}}"></image>
+<image src='../../images/gai_03.png' mode='widthFix' style="display:{{showStatus_4==1?'block':'none'}}"></image>
+<view catchtap='showStatus' style="display:{{showStatus_5==1?'block':'none'}}">
+  <image src='../../images/prizeBack.png' mode='widthFix'></image>
+  <text class='text' wx:if='{{id==0}}'>谢谢参与</text>
+  <text class='text' wx:if='{{id==3}}'>{{number}}元红包</text>
+  <text class='text' wx:if='{{id==2}}'>手机话费{{number}}元</text>
+  <text class='text' wx:if='{{id==1}}'>演唱会门票</text>
+</view>

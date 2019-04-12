@@ -29,6 +29,25 @@
     "pages/view/webview",
     "pages/rule/rule"
   ],
+  "subpackages": [
+    {
+      "root": "package",
+      "pages": [
+        "pages/index/index",
+        "pages/home/home",
+        "pages/serviceConfig/serviceConfig"
+      ],
+      "independent": true
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "package"
+      ]
+    }
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",

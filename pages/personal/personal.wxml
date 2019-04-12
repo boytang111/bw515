@@ -37,7 +37,7 @@
     <navigator url='../guide/guide' class='ps'><text>升级指南</text></navigator>
     <view class='progress'>
       <view class='progr'>
-        <progress percent="{{progress}}" stroke-width="12rpx" border-radius="15rpx" activeColor="rgb(105,105,105)" backgroundColor="rgb(61,60,61)" />
+        <progress percent="{{progress}}" stroke-width="16rpx" border-radius="15rpx" activeColor="rgb(105,105,105)" backgroundColor="rgb(61,60,61)" />
         <text>{{indexdata.experience||"0"}}/{{experience_lever==1?"1500":experience_lever==2?"3500":"无限"}}</text>
       </view>
       
@@ -74,3 +74,18 @@
 </view> -->
 
 <image mode='aspectFill' class='personal-img' src='{{url}}/budweiser/personal-img.jpg'></image>
+
+<view class='phone' catchtap='phonetrue'>
+  <image mode='widthFix' src='../../img/phone.png'></image>
+</view>
+<view class='black' wx:if="{{phone}}">
+  <view class='more-container'>
+    <view class='content'>
+      <view class='teach'>客服热线：4000455868</view>
+    </view>
+    <view class='buttons'>
+      <text catchtap='phoneflase'>取消</text>
+      <text catchtap='phone'>立即呼叫</text>
+    </view>
+  </view>
+</view>

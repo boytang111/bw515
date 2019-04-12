@@ -25,10 +25,24 @@ Page({
 
   },
   //事件处理函数
-  onLoad: function () {
+  onLoad: function (option) {
     wx.showLoading({
       title: '拼命加载中',
     })
+    var scene
+    var source
+    if (option.scene) {
+      scene = decodeURIComponent(option.scene);
+      app.globalData.scene = scene;
+    } else {
+      app.globalData.scene = "";
+    }
+    if (option.source){
+      source = decodeURIComponent(option.source);
+      app.globalData.source = source;
+    }else{
+      app.globalData.source = "";
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -133,6 +147,7 @@ Page({
                   'iv': res.iv,
                   'time': time,
                   'absign': str,
+                  'source': app.globalData.source,
                 },
                 success(res) {
                   if (res.data.code == 200) {
@@ -219,6 +234,7 @@ Page({
             'iv': res.iv,
             'time': time,
             'absign': str,
+            'source': app.globalData.source
           },
           success(res) {
             that.setData({

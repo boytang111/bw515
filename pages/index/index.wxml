@@ -61,31 +61,42 @@
 
   <view class='new' wx:if="{{luck_draw}}">
     <!-- <image src='../../img/congratulation.png'></image> -->
-    <view class='title' style='padding:40rpx 0 0 0;'>欢迎加入百威大家庭</view>
+    <view class='title' style='padding:40rpx 0 0 0;'>欢迎加入百威大家庭欢迎加入百威大家庭</view>
     <view class='gift'>抽奖机会x1次</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
       <text catchtap='newday'>知道了</text>
-      <navigator url='../luck/luck'>去抽奖</navigator>
+      <navigator url='/package/pages/home/home'>去抽奖</navigator>
+      <!-- <navigator url='../luck/luck'>去抽奖</navigator> -->
     </view>
   </view>
-  <!--  -->
-  <view class='new' wx:if="{{newday}}" >
-    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>{{newdaydata}}</view>
-    <view class='title'>{{text||""}}</view>
+  <view class='new' wx:if="{{qr}}">
+    <!-- <image src='../../img/congratulation.png'></image> -->
+    <view class='title' style='padding:40rpx 0 0 0;'>恭喜你获得{{qrinter}}积分</view>
+    <view class='gift'>抽奖机会x1次</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
-      <text catchtap='black'>确定</text>
+      <text catchtap='qrfalse'>知道了</text>
+      <navigator url='/package/pages/home/home'>去抽奖</navigator>
     </view>
   </view>
-  <!-- <view class='new' wx:if="{{newday}}" >
-    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>{{newdaydata}}</view>
-    <view class='gift'>抽奖机会x1次</view>
-    <view class='gift'>已经放入您的卡券中心</view>
+  <!--   -->
+  <view class='new' wx:if="{{newday}}" >
+    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>欢迎回来！</view>
+    <view class='title'>{{newdaydata}}</view>
+    <view class='gift'><navigator url='../guide/guide'>经验值的作用？</navigator></view>
     <view class='confirm'>
       <text catchtap='black'>确定</text>
     </view>
-  </view> -->
+  </view>
+  <view class='new' wx:if="{{newdaylbt}}" >
+    <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>完成任务！</view>
+    <view class='title'>{{newdaydatalbt}}</view>
+    <view class='gift'><navigator url='../guide/guide'>经验值的作用？</navigator></view>
+    <view class='confirm'>
+      <text catchtap='black'>确定</text>
+    </view>
+  </view>
   <view class='dialog-container' wx:if="{{false}}">
     <image src='../../img/close.png' class='close'></image>
     <view class='title'>你有一张百威创新会员卡待领取！</view>

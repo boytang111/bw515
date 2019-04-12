@@ -52,28 +52,13 @@
 }
 .got{
   margin-top: 20rpx;
-  padding: 0 50rpx;
   display: flex;
   flex-wrap: wrap;
 }
-.grey text{
-  color: #858585;
-}
 .got-item{
-  flex-shrink: 0;
-  font-size: 32rpx;
-  color: #670000;
-  margin-right: 40rpx;
-  margin-bottom: 10rpx;
-  display: flex;
-  width: 100%;
-  align-items: center;
+ width: 100%;
 }
-.got-item image{
-  width: 42rpx;
-  height: 52rpx;
-  margin-right: 10rpx;
-}
+
 .mackitem{
   width: 100%;
   height: 100%;

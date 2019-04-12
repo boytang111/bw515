@@ -11,7 +11,7 @@
 
 <view class='time-selector'>
   <picker mode='date' fields='month' bindchange="bindDateChange">{{date}}<text>></text></picker>
-  <view wx:if="{{btnindex==2}}">获得{{experience}}积分</view>
+  <view wx:if="{{btnindex==2}}">获得{{experience}}经验</view>
   <view wx:if="{{btnindex==1}}">获得{{experience}}积分</view>
 </view>
 

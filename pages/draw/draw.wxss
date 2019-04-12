@@ -58,7 +58,7 @@
 }
 .draw-item.active{
   z-index: 2;
-  top: 20%;
+  top: 40%;
   transform: scale(1.5) rotate(0) translate(0, 0);
 }
 
