@@ -61,13 +61,12 @@
 
   <view class='new' wx:if="{{luck_draw}}">
     <!-- <image src='../../img/congratulation.png'></image> -->
-    <view class='title' style='padding:40rpx 0 0 0;'>欢迎加入百威大家庭欢迎加入百威大家庭</view>
+    <view class='title' style='padding:40rpx 0 0 0;'>欢迎加入百威大家庭</view>
     <view class='gift'>抽奖机会x1次</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
       <text catchtap='newday'>知道了</text>
-      <navigator url='/package/pages/home/home'>去抽奖</navigator>
-      <!-- <navigator url='../luck/luck'>去抽奖</navigator> -->
+      <navigator url='../luck/luck'>去抽奖</navigator>
     </view>
   </view>
   <view class='new' wx:if="{{qr}}">
