@@ -234,6 +234,7 @@ Page({
     if (this.data.qrcode==200){
       this.setData({
         newday: false,
+        qr:true,
       })
     }else{
       this.setData({
