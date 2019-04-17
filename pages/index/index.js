@@ -438,6 +438,7 @@ Page({
   qrfalse:function(){
     this.setData({
       qr:false,
+      black: false,
     });
     if (this.data.newdaycode == 201) {
       this.setData({

@@ -20,7 +20,7 @@
 </view>
 
 <view class='exchange'>
-  <view>{{requirement_level==0?"仅限银级会员专享":requirement_level==1?"仅限黄金会员专享":requirement_level==2?"仅限铂金会员专享":""}}</view>
+  <view>{{requirement_level==1?"仅限银级会员专享":requirement_level==2?"仅限黄金会员专享":requirement_level==3?"仅限铂金会员专享":""}}</view>
   <view wx:if="{{detail_number!=0}}" class='button {{exchange==false?"refuse":""}}' catchtap='{{exchange==false?"":"exchange"}}'>{{exchange==false?"积分不足":"立即兑换"}}</view>
   <view class='button refuse' wx:if="{{detail_number==0}}">已抢完</view>
   <view catchtap='qita'><text>其他获取方式</text></view>

@@ -53,7 +53,7 @@ Page({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: 'https://applet.qm-vip.com/index/code2session', // 仅为示例，并非真实的接口地址
+          url: 'https://innovationbeer.bud.cn/index/code2session', // 仅为示例，并非真实的接口地址
           method: 'post',
           data: {
             'code': res.code,

@@ -7,7 +7,7 @@ App({
     
   },
   globalData: {
-    url:'https://applet.qm-vip.com',
+    url:'https://innovationbeer.bud.cn',
     key:"",
     openid:"",
     //用户id
@@ -175,4 +175,23 @@ App({
       }
     })
   },
+  login:function(){
+    var that=this;
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'https://innovationbeer.bud.cn/index/code2session', // 仅为示例，并非真实的接口地址
+          method: 'post',
+          data: {
+            'code': res.code,
+          },
+          success(res) {
+            that.globalData.key = res.data.key
+            that.globalData.openid = res.data.openid;
+          }
+        })
+      }
+    })
+  }
 })
