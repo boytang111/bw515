@@ -11,15 +11,30 @@
 </view>
 
 
-<view class='rule'><text>查看活动规则及条款</text></view>
+<view class='rule' catchtap='cil'><text>查看活动规则及条款</text></view>
 
 <view class='btn' catchtap='luck'>开始抽奖</view>
 <!--  -->
 <view class='black' wx:if="{{black}}">
   <view class='gift-container'>
-    <image mode='widthFix' class='congratulation' src='{{luckdata.id==0?"../../img/new_06.png":luckdata.number==200?"../../img/new_02.png":luckdata.number==500?"../../img/new_03.png":luckdata.number==100?"../../img/new_01.png":""}}'></image>
+    <image wx:if="{{luckdata.id==0}}" mode='widthFix' class='congratulation' src='../../img/new_06.png'></image>
+    <image wx:if="{{luckdata.id!=0}}" mode='widthFix' class='congratulation' src='{{luckdata.type=="integral"?"https://innovationbeer.bud.cn/budweiser/jinyan.png":""}}'></image>
     <view class='gift-title' wx:if="{{luckdata.id!=0}}">恭喜你获得：{{luckdata.name}}</view>
     <view class='gift'>更多积分详情可在“个人中心”查看</view>
     <view class='look-for' catchtap='back'>去首页看看</view>
+  </view>
+</view>
+
+<view class='black' wx:if="{{guizei}}">
+  <view class='clause'>
+  <image class='close' src='{{url}}/budweiser/close.png' catchtap='close_clause'></image>
+  <text class='title'>尊享创新会新人礼</text>
+  <text class='term'>
+  活动规则：
+    1、 本次活动为百威尊享创新会新用户专享。
+    2、 如果抽中实物礼品，用户需提供真实信息。如因用户资料不全导致活动奖品无法正确发放的情况，主办方不对由此产生的任何后果负责。
+    3、 活动期间使用任何舞弊行为的用户一经发现，即刻取消活动资格。
+  </text>
+  <text class='title font'> 123</text>
   </view>
 </view>

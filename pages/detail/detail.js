@@ -32,6 +32,7 @@ Page({
     prize_img:"",
     name:"",
     gouy:false,
+    id: "",
   },
 
   /**
@@ -258,6 +259,7 @@ Page({
             that.setData({
               more: false,
               no_more: true,
+              id:0,
             })
           } else {
             if (res.data.type != "coupon") {

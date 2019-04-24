@@ -7,12 +7,12 @@
 
   <view class='dialog-check' wx:if="{{user}}">
     <view class='dialog-title'>
-      <image src='{{url}}/budweiser/beer-dialog.png'></image>
-      <view>
+      <image mode='widthFix' src='{{url}}/budweiser/beer-dialog.png'></image>
+      <view style='margin-top:45rpx'>
         <text class='age-title'>你已经年满18周岁了吗？</text>
         <view class='agree-container'>
           <view class='box' catchtap='imgbap'>
-            <image src='{{imgstatu==true?"https://applet.qm-vip.com/budweiser/black-tick.png":""}}'></image>
+            <image src='{{imgstatu==true?"https://innovationbeer.bud.cn/budweiser/black-tick.png":""}}'></image>
           </view>
           <view class='text'>已年满18周岁，并同意百威中国<text catchtap='clausebap'>隐私条款</text></view>
         </view>

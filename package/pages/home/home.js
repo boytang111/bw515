@@ -12,6 +12,7 @@ Page({
     showStatus_4:0,
     showStatus_5:0,
     id:"",
+    name:"",
     number:"",
     position: app.globalData.position,
   },
@@ -125,19 +126,13 @@ Page({
       },
       success(res) {
         that.setData({
-          id: res.data.id
+          id: res.data.id,
         })
-        if (res.data.id==3){
+        if (res.data.id!=0){
           that.setData({
-            number: res.data.number,
-          })
-          
-        } else if (res.data.id == 1){
-          that.setData({
-            src: res.data.number,
+            name: res.data.name,
           })
         }
-        
       }
     })
   },

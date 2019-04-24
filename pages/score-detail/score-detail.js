@@ -172,7 +172,7 @@ Page({
       success(res) {
         let exper = 0;
         for (let i = 0; i < res.data.length; i++) {
-          exper = parseInt(exper) + parseInt(res.data[i].experience);
+          exper = parseInt(exper) + parseInt(res.data[i].integral);
         }
         that.setData({
           logdata: res.data,

@@ -71,7 +71,9 @@
   </view>
   <view class='new' wx:if="{{qr}}">
     <!-- <image src='../../img/congratulation.png'></image> -->
-    <view class='title' style='padding:40rpx 0 0 0;'>恭喜你获得{{qrinter}}积分</view>
+    <view wx:if="{{qrcode==200}}" class='title' style='padding:40rpx 0 0 0;'>恭喜您获得哈啤奖励</view>
+    <view wx:if="{{qrcode==200}}" class='title'>积分+{{qrinter}}（可兑换礼品）</view>
+    <view wx:if="{{qrcode==211}}" class='title' style='padding:40rpx 0 0 0;'>上次抽奖机会未使用</view>
     <view class='gift'>抽奖机会x1次</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
@@ -88,14 +90,14 @@
       <text catchtap='black'>确定</text>
     </view>
   </view>
-  <view class='new' wx:if="{{newdaylbt}}" >
+  <!-- <view class='new' wx:if="{{newdaylbt}}" >
     <view class='title' style='padding:30rpx 30rpx 0 30rpx;'>完成任务！</view>
     <view class='title'>{{newdaydatalbt}}</view>
     <view class='gift'><navigator url='../guide/guide'>经验值的作用？</navigator></view>
     <view class='confirm'>
       <text catchtap='black'>确定</text>
     </view>
-  </view>
+  </view> -->
   <view class='dialog-container' wx:if="{{false}}">
     <image src='../../img/close.png' class='close'></image>
     <view class='title'>你有一张百威创新会员卡待领取！</view>

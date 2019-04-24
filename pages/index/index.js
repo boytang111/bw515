@@ -31,7 +31,7 @@ Page({
     //是否加积分抽奖
     qrinter:'',
     qr:false,
-    qrcode:"",
+    qrcode:"0",
   },
 
   /**
@@ -176,6 +176,11 @@ Page({
               luck_draw: true,
               newday: false,
               black:true,
+            })
+          }else{
+            that.setData({
+              luck_draw: false,
+              black: false,
             })
           }
         } else if (res.data.code == 200){
@@ -430,6 +435,14 @@ Page({
             qrcode: res.data.code,
           })
           app.globalData.position=res.data.position
+        } else if (res.data.code == 211){
+          that.setData({
+            qr: true,
+            black: true,
+            qrinter: res.data.integral,
+            qrcode: res.data.code,
+          })
+          app.globalData.position = res.data.position
         }
       }
     })

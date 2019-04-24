@@ -56,7 +56,7 @@
 }
 .gift-container{
   position: absolute;
-  top: 27%;
+  top: 200rpx;
   left: 10%;
   right: 10%;
   background: #fff;
@@ -107,3 +107,51 @@
   margin-top: 20rpx;
   border-radius: 15rpx;
 }
+.guizei{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  border-radius: 8rpx 8rpx 0 0;
+  background: white;
+  box-sizing: border-box;
+  padding: 28rpx;
+}
+.clause {
+  position:absolute;
+  background:white;
+  width:84%;
+  left:7%;
+  top:15%;
+  box-sizing:border-box;
+  border-radius:14rpx
+}
+.clause .close {
+  position:absolute;
+  width:34rpx;
+  height:34rpx;
+  top:20rpx;
+  right:20rpx;
+}
+.clause .title{
+  display:block;
+  font-size:30rpx;
+  color:#45000B;
+  font-weight:bold;
+  text-align:center;
+  line-height:3.5;
+  margin-top: 0;
+}
+.clause .title.font{
+  color: #fff;
+}
+.term {
+  display:block;
+  background:#EEEEEE;
+  box-sizing:border-box;
+  padding:20rpx 20rpx 50rpx 20rpx;
+  overflow-y:scroll;
+  font-size:27rpx;
+  text-indent:54rpx;
+}
+

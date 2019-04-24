@@ -10,6 +10,7 @@ Page({
     url: app.globalData.url,
     luckdata:[],
     black:false,
+    guizei: false,
     time:"",
     activeindex:"1"
   },
@@ -146,6 +147,18 @@ Page({
           })
         }
       }, 500)
+    })
+  },
+  //点击弹出规则关闭
+  close_clause:function(){
+    this.setData({
+      guizei:false,
+    })
+  },
+  //dakai
+  cil:function(){
+    this.setData({
+      guizei: true,
     })
   }
 })
