@@ -11,7 +11,7 @@
 
 <view class='nav'>
   <view class='nav-item {{btnindex==2?"active":""}}' data-index="2" catchtap='navbtn'>虚拟物品</view>
-  <view class='nav-item {{btnindex==1?"active":""}}' data-index="1" catchtap='navbtn'>实际商品</view>
+  <view class='nav-item {{btnindex==1?"active":""}}' data-index="1" catchtap='navbtn'>实物商品</view>
 </view>
 
 <scroll-view class='content' scroll-y>

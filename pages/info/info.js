@@ -1,6 +1,7 @@
 // pages/info/info.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
@@ -12,6 +13,7 @@ Page({
     gender:false,
     birthday:false,
     date:"",
+    data2:"",
     infogender:"1",
     ingender:"",
   },
@@ -31,7 +33,8 @@ Page({
   onReady: function () {
     this.infoajax();
     app.action_member_log("info");
-    wx.hideLoading()
+    wx.hideLoading();
+    this.timedata();
   },
 
   /**
@@ -94,6 +97,17 @@ Page({
       },
       complete() { }
     }
+  },
+  //获取当前时间，并往前推18年
+  timedata:function(){
+    var time = util.formatTime(new Date());
+    let data = time.substring(0, 4);
+    let date= parseInt(data)-18;
+    console.log(date)
+    let data2 = date.toString()+"-12-31"
+    this.setData({
+      data2: data2
+    })
   },
   //查询数据
   infoajax(){

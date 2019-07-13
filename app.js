@@ -35,7 +35,7 @@ App({
         title: '提示',
         content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
       })
-    }   
+    }
   },
   globalData: {
     url:'https://innovationbeer.bud.cn',
@@ -49,6 +49,8 @@ App({
     headimg:"",
     //用户积分
     integral:"",
+    //用户手机号
+    phone:"",
     //地理位置授权
     getLocation:true,
     //二维码参数
@@ -66,8 +68,8 @@ App({
   //       })
   //     },
   //     fail: function () {
-        
-        
+
+
   //       wx.getSetting({
   //         success: function (res) {
   //           var statu = res.authSetting;
@@ -79,7 +81,7 @@ App({
   //                 if (tip.confirm) {
   //                   wx.openSetting({
   //                     success: function (data) {
-                        
+
   //                       if (data.authSetting["scope.userLocation"] === true) {
   //                         let time = that.time();
   //                         let data = {

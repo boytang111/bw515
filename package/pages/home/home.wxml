@@ -9,4 +9,7 @@
   <image src='../../images/prizeBack.png' mode='widthFix'></image>
   <text class='text' wx:if='{{id==0}}'>谢谢参与</text>
   <text class='text' wx:if='{{id!=0}}'>{{name}}</text>
+  <text class='text2' wx:if='{{class_id==1}}'>我们将自动转入您的微信账户请留意</text>
+  <text class='text2' wx:if='{{class_id==2}}'>我们将短信通知您，\n并于7个工作日内充值到账。</text>
+  <text class='text2' wx:if='{{class_id==3}}'>我们将短信通知您，\n并于7个工作日内与您取得联系，\n请确保电话畅通。</text>
 </view>

@@ -14,14 +14,14 @@
   <image src='../../img/logo2.png' class='logo'></image>
 </view>
 <view class='container'>
-  <!-- <image src='../../img/index-bg.png'></image> -->
+  <!-- <image src='../../img/index-bg.png'></image> catchtap="view"-->
   <swiper class='banner' autoplay circular interval="{{2000}}">
-    <swiper-item wx:for="{{index_img}}" wx:key="index" data-src="{{item.url}}" data-id="lbt" catchtap="view">
+    <swiper-item wx:for="{{index_img}}" wx:key="index" data-src="{{item.url}}" data-id="lbt" >
       <image src='{{url}}{{item.img}}'></image>
     </swiper-item>
   </swiper>
 
-  <view class='title'>百威精彩·上海</view>
+  <view class='title'>尊享创新</view>
 
   <view class='section-box'>
     <view class='section positive' wx:for="{{index_img2}}" wx:key="index" data-src="{{item.url}}" data-id="gghwz" catchtap='view'>
@@ -74,11 +74,16 @@
     <view wx:if="{{qrcode==200}}" class='title' style='padding:40rpx 0 0 0;'>恭喜您获得哈啤奖励</view>
     <view wx:if="{{qrcode==200}}" class='title'>积分+{{qrinter}}（可兑换礼品）</view>
     <view wx:if="{{qrcode==211}}" class='title' style='padding:40rpx 0 0 0;'>上次抽奖机会未使用</view>
-    <view class='gift'>抽奖机会x1次</view>
+    <view wx:if="{{qrcode==211}}" class='gift'>抽奖机会x1次</view>
+    <view wx:if="{{qrcode==200}}" class='gift'>抽奖机会x1次</view>
+    <view wx:if="{{qrcode==100}}" class='title color'>1 </view>
+    <view wx:if="{{qrcode==100}}" class='title' style='padding:40rpx 0 0 0;'>该二维码已被使用</view> 
+    <view wx:if="{{qrcode==100}}" class='gift color'> 1</view>
     <!-- <view class='gift'>已经放入您的卡券中心</view> -->
     <view class='confirm'>
-      <text catchtap='qrfalse'>知道了</text>
-      <navigator url='/package/pages/home/home'>去抽奖</navigator>
+      <text wx:if="{{qrcode==100}}" catchtap='qrfalse'>知道了</text>
+      <navigator wx:if="{{qrcode==200}}" url='/package/pages/home/home'>去抽奖</navigator>
+      <navigator wx:if="{{qrcode==211}}" url='/package/pages/home/home'>去抽奖</navigator>
     </view>
   </view>
   <!--   -->

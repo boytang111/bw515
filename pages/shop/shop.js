@@ -16,7 +16,9 @@ Page({
     headimg: app.globalData.headimg,
     //用户积分
     integral: app.globalData.integral,
-    userinfo: true,
+    //用户手机号
+    phone: app.globalData.phone,
+    userinfo: false,
   },
 
   /**
@@ -26,11 +28,16 @@ Page({
     this.setData({
       nickname: app.globalData.nickname,
       headimg: app.globalData.headimg,
-      integral: app.globalData.integral
+      integral: app.globalData.integral,
+      phone: app.globalData.phone
     });
-    if (this.data.nickname == "") {
+    if (this.data.phone == "") {
       this.setData({
         userinfo: false,
+      });
+    } else {
+      this.setData({
+        userinfo: true,
       });
     }
     wx.showLoading({

@@ -59,12 +59,19 @@ Page({
             'code': res.code,
           },
           success(res) {
-            app.globalData.key = res.data.key
-            app.globalData.openid = res.data.openid;
-            if (app.globalData.openid!=""){
-              //that.map();
-              that.getSetting();
-              wx.hideLoading()
+            if(res.data.code==200){
+              app.globalData.key = res.data.key
+              app.globalData.openid = res.data.openid;
+              if (app.globalData.openid != "") {
+                //that.map();
+                that.getSetting();
+                wx.hideLoading()
+              }
+            }else{
+              wx.reLaunch({
+                url: '../login/index'
+              })
+              
             }
           }
         })
@@ -168,6 +175,10 @@ Page({
                     }else {
                       that.indextap();
                     }
+                  }else{
+                    wx.reLaunch({
+                      url: '../login/index'
+                    })
                   }
                 }
               })
@@ -237,23 +248,30 @@ Page({
             'source': app.globalData.source
           },
           success(res) {
-            that.setData({
-              user: false,
-              ufer: true,
-              member_id: res.data.member_id
-            })
-            that.member(res.data.member_id);
-            app.globalData.member_id = res.data.member_id;
+            if(res.data.code==200){
+              that.setData({
+                user: false,
+                ufer: true,
+                member_id: res.data.member_id
+              })
+              that.member(res.data.member_id);
+              app.globalData.member_id = res.data.member_id;
 
-            if (res.data.phone == null ||"" ) {
-              that.setData({
-                phone: true,
-              });
+              if (res.data.phone == null || "") {
+                that.setData({
+                  phone: true,
+                });
+              } else {
+                that.setData({
+                  phone: true,
+                });
+              }
             }else{
-              that.setData({
-                phone: true,
-              });
+              wx.reLaunch({
+                url: '../login/index'
+              })
             }
+            
           }
         })
       }, fail: function () {

@@ -61,13 +61,13 @@
     <image src='../../img/personal3.png'></image>
     <view>兑换记录</view>
   </navigator>
-  <navigator class='nav-item' url='../myorder/myorder'>
+  <!-- <navigator class='nav-item' url='../myorder/myorder'>
     <image src='../../img/personal4.png'></image>
     <view>我的订单</view>
-  </navigator>
+  </navigator> -->
 </view>
 
-<view class='title'>猜你喜欢</view>
+<!-- <view class='title'>猜你喜欢</view> -->
 <!-- <view class='address'>
   <text>猜你喜欢</text>
   <image src='../../img/position.png'></image>
@@ -78,7 +78,7 @@
 <view class='phone' catchtap='phonetrue'>
   <image mode='widthFix' src='../../img/phone.png'></image>
 </view>
-<view class='black' wx:if="{{phone}}">
+<view class='black' wx:if="{{phoneclick}}">
   <view class='more-container'>
     <view class='content'>
       <view class='teach'>客服热线：4000455868</view>

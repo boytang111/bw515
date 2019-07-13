@@ -437,3 +437,6 @@
   left: 50rpx;
   top: -6rpx;
 }
+.new .color{
+  color: #eee;
+}

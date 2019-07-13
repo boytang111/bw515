@@ -26,7 +26,7 @@
   justify-content: space-between;
   color: #000;
   font-size: 28rpx;
-  padding: 20rpx 0;
+  padding: 20rpx 50rpx;
   box-sizing: border-box;
   background: #fff;
   border-bottom: 2px solid #585858;
@@ -34,7 +34,6 @@
 .user-status navigator{
   font-size: 18rpx;
   text-align: center;
-  flex: 0.5
 }
 .user-status .icon{
   width: 32rpx;

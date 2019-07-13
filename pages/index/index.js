@@ -15,12 +15,13 @@ Page({
     headimg:app.globalData.headimg,
     //用户积分
     integral:app.globalData.integral,
-    userinfo:true,
+    userinfo: false,
     black:false,
     luck_draw:false,
     newday: false,
     newdaydata:"",
     newdaycode:"",
+    luck_draw_one:"",
     mylogin:"",
     //获取跳转回来的页面
     back:"",
@@ -69,7 +70,7 @@ Page({
       this.daily_login();
     };
     this.daily_login();
-    this.getdata();
+    //this.getdata();
     this.member(app.globalData.member_id);
     this.pull_cap_qrcode();
     wx.hideLoading()
@@ -168,7 +169,8 @@ Page({
       },
       success(res) {
         that.setData({
-          newdaycode: res.data.code
+          newdaycode: res.data.code,
+          luck_draw_one: res.data.luck_draw_one.code
         })
         if(res.data.code==201){
           if (res.data.luck_draw_one.code == 200) {
@@ -329,14 +331,22 @@ Page({
             userinfo: false,
           })
         } else if (res.data.code == 200){
-          app.globalData.nickname = res.data.nickname;
-          app.globalData.headimg = res.data.headimg;
-          app.globalData.integral = res.data.integral;
-          that.setData({
-            nickname: res.data.nickname,
-            headimg: res.data.headimg,
-            integral: res.data.integral
-          });
+          if (res.data.phone != null||""){
+            app.globalData.nickname = res.data.nickname;
+            app.globalData.headimg = res.data.headimg;
+            app.globalData.integral = res.data.integral;
+            app.globalData.phone = res.data.phone;
+            that.setData({
+              nickname: res.data.nickname,
+              headimg: res.data.headimg,
+              integral: res.data.integral,
+              userinfo: true,
+            });
+          }else{
+            that.setData({
+              userinfo: false,
+            })
+          }
         }
       }
     })
@@ -390,8 +400,8 @@ Page({
             success(res) {
               that.setData({
                 newdaydatalbt: res.data,
-                black: true,
-                newdaylbt: true,
+                black: false,
+                newdaylbt: false,
               })
               wx.setStorage({
                 key: 'key',
@@ -427,12 +437,14 @@ Page({
         'number': app.globalData.scene
       },
       success(res) {
+        that.setData({
+          qrcode: res.data.code,
+        })
         if (res.data.code == 200) {
           that.setData({
             qr:true,
             black:true,
             qrinter: res.data.integral,
-            qrcode: res.data.code,
           })
           app.globalData.position=res.data.position
         } else if (res.data.code == 211){
@@ -440,9 +452,26 @@ Page({
             qr: true,
             black: true,
             qrinter: res.data.integral,
-            qrcode: res.data.code,
           })
           app.globalData.position = res.data.position
+        }else{
+          if (that.data.newdaycode==200){
+            that.setData({
+              qr: false,
+              black: true,
+            })
+          } else if (that.data.luck_draw_one==200){
+            that.setData({
+              qr: false,
+              black: true,
+            })
+          }else{
+            that.setData({
+              qr: false,
+              black: false,
+            })
+          }
+          
         }
       }
     })

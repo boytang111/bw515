@@ -11,8 +11,9 @@ Page({
     showStatus_3:0,
     showStatus_4:0,
     showStatus_5:0,
-    id:"",
+    id:"-1",
     name:"",
+    class_id:"",
     number:"",
     position: app.globalData.position,
   },
@@ -37,25 +38,25 @@ Page({
     // })
   },
   startActive: function () {
-      let _this=this;
+    let _this = this;
+    _this.setData({
+      showStatus_1: 0,
+      showStatus_2: 1,
+      showStatus_4: 1
+    })
+    // setTimeout(function(){
+    //   _this.setData({
+    //     showStatus_3: 0,
+    //     showStatus_4:1
+    //   })
+    _this.pull_cap_prize();
+    setTimeout(function () {
       _this.setData({
-        showStatus_1:0,
-        showStatus_2:1,
-        showStatus_3:1
+        showStatus_2: 1,
+        showStatus_5: 1
       })
-      setTimeout(function(){
-        _this.setData({
-          showStatus_3: 0,
-          showStatus_4:1
-        })
-        _this.pull_cap_prize();
-        setTimeout(function () {
-          _this.setData({
-            showStatus_2: 1,
-            showStatus_5: 1
-          })
-        }, 800)
-      },800)
+    }, 1500)
+    // },500)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -131,8 +132,10 @@ Page({
         if (res.data.id!=0){
           that.setData({
             name: res.data.name,
+            class_id: res.data.class_id,
           })
         }
+        console.log(res)
       }
     })
   },

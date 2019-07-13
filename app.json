@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/login/index",
     "pages/index/index",
     "pages/draw/draw",
@@ -48,11 +48,11 @@
       ]
     }
   },
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "百威创新",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#646464",
@@ -83,5 +83,6 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于体验百威创新品牌的无限乐趣"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

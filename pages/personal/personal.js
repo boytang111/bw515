@@ -10,8 +10,9 @@ Page({
     url: app.globalData.url,
     indexdata:[],
     nickname:"",
-    userinfo:true,
-    phone:false,
+    phone: app.globalData.phone,
+    userinfo:false,
+    phoneclick:false,
     progress:"",
     experience_lever:"",
   },
@@ -22,10 +23,15 @@ Page({
   onLoad: function (options) {
     this.setData({
       nickname: app.globalData.nickname,
+      phone: app.globalData.phone,
     });
-    if (this.data.nickname == "") {
+    if (this.data.phone == "") {
       this.setData({
         userinfo: false,
+      });
+    }else{
+      this.setData({
+        userinfo: true,
       });
     }
     wx.showLoading({
@@ -173,12 +179,12 @@ Page({
   //点击拨打电话
   phonetrue: function () {
     this.setData({
-      phone:true,
+      phoneclick:true,
     })
   },
   phoneflase: function () {
     this.setData({
-      phone: false,
+      phoneclick: false,
     })
   },
   phone:function(){
